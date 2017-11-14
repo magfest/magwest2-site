@@ -1,12 +1,21 @@
 backend:
-  name: git-gateway
-  #repo: magfest/magwest2-site # Path to your Github repository
+  name: github
+  repo: magfest/magwest2-site # Path to your Github repository
   branch: master # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
 public_folder: "img/uploads"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "announcements"
+    label: "Announcements"
+    folder: "site/content/announcements"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
   - name: "pages"
     label: "Pages"
     folder: "site/content/pages"
@@ -31,7 +40,7 @@ collections: # A list of collections the CMS should be able to edit
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "URL", name: "url", widget: "string"}
+      - {label: "URL", name: "href", widget: "string"}
 
   - name: "art"
     label: "Art Pages"

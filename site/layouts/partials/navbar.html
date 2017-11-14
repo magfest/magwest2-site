@@ -13,16 +13,39 @@
       <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
         <ul class="right hide-on-med-and-down">
           {{ range .Site.Menus.main }}
+            {{ if .HasChildren }}
+            <ul id="n{{.Identifier}}" class="dropdown-content">
+              {{ range .Children }}
+              <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+              {{ end }}
+            </ul>
+            <li><a class="dropdown-button grey-text text-darken-2" data-hover="true" data-beloworigin="true" href="#!" data-activates="n{{.Identifier}}">{{ .Name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+            {{ else }}
             <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+            {{ end }}
           {{end}}
         </ul>
         <ul class="side-nav" id="mobile-sidebar">
           {{ range .Site.Menus.main }}
+          {{ if .HasChildren }}
+          <ul id="m{{.Identifier}}" class="dropdown-content">
+            {{ range .Children }}
             <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+            {{ end }}
+          </ul>
+          <li><a class="dropdown-button grey-text text-darken-2" data-beloworigin="true" data-hover="false" href="#!" data-activates="m{{.Identifier}}">{{ .Name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+          {{ else }}
+          <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+          {{ end }}
           {{end}}
-          {{ if .Site.GetPage "section" "sidebar" }}
-          {{ range $p := .Site.GetPage "section" "sidebar" }}
-            <li><a href="{{$p.URL}}" class="grey-text text-darken-2"> {{ .Title }} </a></li>
+          {{ with .Site.GetPage "section" "sidebar" }}
+          {{ range $p := .Pages }}
+            <li><a href="{{$p.Params.href}}" class="grey-text text-darken-2"> {{ $p.Title }} </a></li>
+          {{ end }}
+          {{ end }}
+          {{ with .Site.GetPage "section" "announcements" }}
+          {{ range $p := .Pages }}
+            <li><a href="{{$p.URL}}" class="grey-text text-darken-2"> {{ $p.Title }} </a></li>
           {{ end }}
           {{ end }}
         </ul>

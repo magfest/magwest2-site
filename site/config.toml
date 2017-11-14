@@ -8,10 +8,12 @@ title = "MAGWest 2: Electric Boogaloo"
 [[menu.main]]
     name = "What is MAGWest?"
     url  = "/about"
+    identifier = "about"
     weight = 1
 
 [[menu.main]]
     name = "What To See"
+    parent = "about"
     url = "/art/digital-art"
     weight = 2
 

@@ -1,0 +1,8 @@
+<ul class="collection grey lighten-2">
+  <li class="collection-header center-align grey lighten-2"><h5>Useful Links</h5></li>
+{{ with .Site.GetPage "section" "sidebar" }}
+{{ range $p := .Pages }}
+  <a href="{{$p.Params.href}}" class="grey-text text-darken-2 collection-item"> {{ $p.Title }} </a>
+{{ end }}
+{{ end }}
+</ul>
