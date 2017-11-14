@@ -1,0 +1,31 @@
+baseurl = "/"
+languageCode = "en-us"
+title = "MAGWest 2: Electric Boogaloo"
+
+[params]
+  description = "MAGWest is a 3-day festival celebrating video games, video game music, and the culture of people who create them."
+
+[[menu.main]]
+    name = "What is MAGWest?"
+    url  = "/about"
+    weight = 1
+
+[[menu.main]]
+    name = "What To See"
+    url = "/art/digital-art"
+    weight = 2
+
+[[menu.main]]
+    name = "What To Do"
+    url = "/art/animation"
+    weight = 2
+
+[[menu.main]]
+    name = "Contribute"
+    url = "/art/life-drawings"
+    weight = 3
+
+[[menu.main]]
+    name = "Contact"
+    url = "/art/other"
+    weight = 3

@@ -1,0 +1,31 @@
+<header>
+  <nav class="grey lighten-5">
+    <div class="nav-wrapper">
+      <style scoped>
+      @media only screen and (max-width:992px){
+          .brand-logo{
+            font-size: 2.3vmax !important;
+            text-overflow: ellipsis;
+          }
+        }
+      </style>
+      <a href="{{ .Site.BaseURL }}" class="brand-logo grey-text text-darken-2">{{ .Site.Title }}</a>
+      <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          {{ range .Site.Menus.main }}
+            <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+          {{end}}
+        </ul>
+        <ul class="side-nav" id="mobile-sidebar">
+          {{ range .Site.Menus.main }}
+            <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+          {{end}}
+          {{ if .Site.GetPage "section" "sidebar" }}
+          {{ range $p := .Site.GetPage "section" "sidebar" }}
+            <li><a href="{{$p.URL}}" class="grey-text text-darken-2"> {{ .Title }} </a></li>
+          {{ end }}
+          {{ end }}
+        </ul>
+    </div>
+  </nav>
+</header>

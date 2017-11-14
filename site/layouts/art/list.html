@@ -1,0 +1,10 @@
+{{ partial "header" . }}
+
+<div class="content container {{ .Title }} {{ .Section | urlize }}">
+  <h1>{{ .Section }}</h1>
+  {{ range $p := .Pages}}
+  <a href="{{ $p.URL }}">{{ $p.Title }}</a>
+  {{ end }}
+</div>
+
+{{ partial "footer" . }}

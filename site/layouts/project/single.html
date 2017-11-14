@@ -1,0 +1,19 @@
+{{ partial "header" . }}
+
+{{ if .Content }}
+<div class="content container">
+  {{ .Content }}
+
+</div>
+{{ end }}
+<div class="art ignore-css">
+  {{ range $album := .Params.albums }}
+  {{ with $album.title }}
+  <h3 class="center">{{ $album.title }}</h3>
+  {{ end }}
+  <div id="{{ $album.user_id }}" data-nanogallery2='{ "userID": "{{ $album.user_id }}", "kind": "flickr", "album": "{{ $album.album_id }}", "thumbnailHeight": "auto", "thumbnailWidth": 150, "thumbnailAlignment": "center", "thumbnailLabel" : { "display": false } }'>
+  </div>
+  {{ end }}
+</div>
+
+{{ partial "footer" . }}

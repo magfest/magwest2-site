@@ -1,0 +1,86 @@
+backend:
+  name: git-gateway
+  #repo: magfest/magwest2-site # Path to your Github repository
+  branch: master # Branch to update (master by default)
+
+media_folder: "src/img/uploads" # Folder where user uploaded files should go
+public_folder: "img/uploads"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "pages"
+    label: "Pages"
+    folder: "site/content/pages"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "URL", name: "url", widget: "string"}
+
+  - name: "index"
+    label: "Homepage"
+    folder: "site/content"
+    create: false
+    fields:
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "URL", name: "url", widget: "string"}
+
+  - name: "sidebar"
+    label: "Sidebar Items"
+    folder: "site/content/sidebar"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "URL", name: "url", widget: "string"}
+
+  - name: "art"
+    label: "Art Pages"
+    folder: "site/content/art"
+    create: true
+    fields:
+      - {label: "Category Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - name: "albums"
+        label: "Flickr Albums"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Album Title", name: "title", widget: "string", required: false}
+          - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
+          - {label: "Flickr Album ID", name: "album_id", widget: "string"}
+
+  - name: "footer"
+    label: "Footer Details"
+    folder: "site/content/footer"
+    create: false
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true, default: "main"}
+      - {label: "Copyright Info", name: "copyright", widget: "string", required: false}
+      - {label: "Footer Slogan", name: "slogan", widget: "string", required: false}
+      - name: "icons"
+        label: "Social Media Icon"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Service Name", name: "title", widget: "string", required: false}
+          - {label: "Service URL", name: "url", widget: "string", required: false}
+          - {label: "Service Icon Available Here: https://material.io/icons/", name: "icon", widget: "string", required: false, default: "explore"}
+
+  - name: "project"
+    label: "Projects"
+    folder: "site/content/project"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Project Overview", name: "overview", widget: "markdown", required: false}
+      - {label: "Cover Image", name: "image", widget: "image", required: false}
+      - {label: "Project Date (For Sorting Purposes)", name: "date", widget: "datetime"}
+      - name: "albums"
+        label: "Flickr Albums"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Album Title", name: "title", widget: "string", required: false}
+          - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
+          - {label: "Flickr Album ID", name: "album_id", widget: "string"}
