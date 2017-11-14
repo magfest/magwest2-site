@@ -7,27 +7,115 @@ title = "MAGWest 2: Electric Boogaloo"
 
 [[menu.main]]
     name = "What is MAGWest?"
-    url  = "/about"
-    identifier = "about"
+    identifier = "is"
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    parent = "is"
+    url = "/about"
+    weight = 1
+
+[[menu.main]]
+    name = "How To Attend"
+    parent = "is"
+    url = "/attend"
+    weight = 1
+
+[[menu.main]]
+    name = "Directions"
+    parent = "is"
+    url = "/directions"
+    weight = 1
+
+[[menu.main]]
+    name = "Frequently Asked Questions"
+    parent = "is"
+    url = "/faq"
+    weight = 1
+
+[[menu.main]]
+    name = "Code of Conduct"
+    parent = "is"
+    url = "/codeofconduct"
     weight = 1
 
 [[menu.main]]
     name = "What To See"
-    parent = "about"
-    url = "/art/digital-art"
+    identifier = "see"
     weight = 2
+
+[[menu.main]]
+    name = "Rockstars"
+    parent = "see"
+    url = "/rockstars"
+    weight = 1
+
+[[menu.main]]
+    name = "Guests"
+    parent = "see"
+    url = "/guests"
+    weight = 1
+
+[[menu.main]]
+    name = "Visualists"
+    parent = "see"
+    url = "/visualists"
+    weight = 1
+
+[[menu.main]]
+    name = "Schedule"
+    parent = "see"
+    url = "/schedule"
+    weight = 1
 
 [[menu.main]]
     name = "What To Do"
-    url = "/art/animation"
+    identifier = "do"
     weight = 2
 
 [[menu.main]]
+    name = "Panels"
+    parent = "do"
+    url = "/panels"
+    weight = 1
+
+[[menu.main]]
+    name = "Consoles"
+    parent = "do"
+    url = "/consoles"
+    weight = 1
+
+[[menu.main]]
+    name = "LAN"
+    parent = "do"
+    url = "/lan"
+    weight = 1
+
+[[menu.main]]
+    name = "Arcade"
+    parent = "do"
+    url = "/arcade"
+    weight = 1
+
+[[menu.main]]
+    name = "Jamspace"
+    parent = "do"
+    url = "/jamspace"
+    weight = 1
+
+[[menu.main]]
+    name = "Tabletop"
+    parent = "do"
+    url = "/tabletop"
+    weight = 1
+
+[[menu.main]]
     name = "Contribute"
-    url = "/art/life-drawings"
+    identifier = "help"
     weight = 3
 
 [[menu.main]]
     name = "Contact"
-    url = "/art/other"
-    weight = 3
+    url = "/contact"
+    weight = 4
