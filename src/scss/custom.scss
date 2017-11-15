@@ -1,0 +1,18 @@
+@import "./node_modules/materialize-css/sass/materialize.scss";
+
+
+.primary-color {
+  @extend .grey, .lighten-2
+}
+
+.secondary-color {
+  @extend .red, .lighten-2
+}
+
+.primary-color-text {
+  @extend .black-text, .text-darken-2
+}
+
+.secondary-color-text {
+  @extend .blue-text, .text-darken-4
+}

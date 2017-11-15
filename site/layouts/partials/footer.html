@@ -1,10 +1,10 @@
 </div>
 </div>
 </main>
-<footer class="page-footer {{ .Site.Params.primary }} lighten-4">
+<footer class="page-footer primary-color lighten-3">
   {{ with .Site.GetPage "page" "footer/main.md" }}
          <div class="container">
-           <div class="row center-align {{ .Site.Params.primaryText }} {{ .Site.Params.secondaryTextBrightness }}">
+           <div class="row center-align primary-color-text text-darken-4">
              {{ $Site := .Site }}
              {{ range .Params.icons }}
              {{ partial "icon_range" (dict "Site" $Site "Icon" . "URLClass" "social-media" "IconClass" "fa-lg") }}
@@ -12,10 +12,10 @@
 
            </div>
          </div>
-         <div class="footer-copyright {{ .Site.Params.primaryText }} {{ .Site.Params.primaryTextBrightness }}">
+         <div class="footer-copyright primary-color-text">
            <div class="container">
            {{ .Params.copyright }}
-           <a class="{{ .Site.Params.primaryText }} {{ .Site.Params.primaryTextBrightness }} right" href="#!">{{ .Params.slogan|markdownify }}</a>
+           <a class="primary-color-text  right" href="#!">{{ .Params.slogan|markdownify }}</a>
            </div>
          </div>
      {{ end }}

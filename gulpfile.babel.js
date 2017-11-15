@@ -1,4 +1,6 @@
 import gulp from "gulp";
+import sass from "gulp-sass";
+import autoprefixer from "gulp-autoprefixer";
 import cp from "child_process";
 import gutil from "gulp-util";
 import postcss from "gulp-postcss";
@@ -19,8 +21,8 @@ const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
 
-gulp.task("build", ["css", "js", "videos", "images", "hugo", "fonts"]);
-gulp.task("build-preview", ["css", "js", "videos", "images", "fonts", "hugo-preview"]);
+gulp.task("build", ["css", "js", "videos", "images", "hugo", "fonts", "scss"]);
+gulp.task("build-preview", ["css", "js", "videos", "images", "fonts", "hugo-preview", "scss"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -31,6 +33,17 @@ gulp.task("css", () => (
       nestedcss(),
       hdBackgrounds(),
       cssextend()]))
+    .pipe(gulp.dest("./dist/css"))
+    .pipe(browserSync.stream())
+));
+gulp.task("scss", () => (
+  gulp.src("./src/scss/*.scss")
+    .pipe(sass({
+        outputStyle : "compressed"
+    }))
+    .pipe(autoprefixer({
+        browsers : ["last 20 versions"]
+    }))
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 ));
@@ -71,7 +84,7 @@ gulp.task("images", () => (
     .pipe(browserSync.stream())
 ));
 
-gulp.task("server", ["hugo", "css", "js", "videos", "images", "fonts"], () => {
+gulp.task("server", ["hugo", "css", "js", "videos", "images", "fonts", "scss"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
@@ -80,6 +93,7 @@ gulp.task("server", ["hugo", "css", "js", "videos", "images", "fonts"], () => {
   });
   gulp.watch("./src/js/**/*.js", ["js"]);
   gulp.watch("./src/css/**/*.css", ["css"]);
+  gulp.watch("./src/scss/**/*.scss", ["scss"]);
   gulp.watch("./src/img/**/*", ["images"]);
   gulp.watch("./src/videos/**/*", ["videos"]);
   gulp.watch("./src/fonts/**/*", ["fonts"])

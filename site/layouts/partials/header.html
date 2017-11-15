@@ -17,7 +17,7 @@
   <!-- CSS -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="stylesheet" href="/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/custom.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link href="/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
 
@@ -28,7 +28,7 @@
   <!-- RSS -->
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
-<body class="{{ .Section | urlize }} {{ .Site.Params.primary }} lighten-5">
+<body class="{{ .Section | urlize }} primary-color lighten-4">
 
 {{ partial "navbar" . }}
 <main>
