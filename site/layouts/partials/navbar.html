@@ -39,11 +39,15 @@
           {{ end }}
           {{end}}
           {{ with .Site.GetPage "section" "sidebar" }}
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Useful Links</a></li>
           {{ range $p := .Pages }}
             <li><a href="{{$p.Params.href}}" class="grey-text text-darken-2"> {{ $p.Title }} </a></li>
           {{ end }}
           {{ end }}
           {{ with .Site.GetPage "section" "announcements" }}
+          <li><div class="divider"></div></li>
+          <li><a class="subheader">Recent Announcements</a></li>
           {{ range $p := .Pages }}
             <li><a href="{{$p.URL}}" class="grey-text text-darken-2"> {{ $p.Title }} </a></li>
           {{ end }}
