@@ -801,3 +801,13 @@ video {
   border: none;
   border-radius: 1em;
 }
+
+.title-stroke{
+  font-weight: 900 !important;
+  -webkit-text-stroke: 1px black;
+}
+
+.center-image{
+  margin-left: auto;
+  margin-right: auto;
+}

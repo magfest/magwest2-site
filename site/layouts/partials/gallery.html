@@ -1,0 +1,21 @@
+{{ if . }}
+  {{ range $p := .ByPublishDate }}
+    <div class="col s12 l6">
+      <div class="card small">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class='activator' src="{{ $p.Params.image | default "/img/default_announcement.jpeg"}}">
+
+        </div>
+        <div class="card-content grey lighten-2" style="height: 100%;">
+          <span class="card-title activator grey-text text-darken-4">{{ $p.Title }}
+            <i class="material-icons right">more_vert</i></span>
+          <a href="{{ $p.URL }}">Click Here For More Details</a>
+        </div>
+        <div class='card-reveal'>
+          <span class="card-title grey-text text-darken-4 title-stroke"><i class="material-icons right">close</i></span>
+          {{ $p.Summary }}
+        </div>
+      </div>
+    </div>
+  {{ end }}
+{{ end }}
