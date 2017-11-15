@@ -28,12 +28,21 @@
         <ul class="side-nav" id="mobile-sidebar">
           {{ range .Site.Menus.main }}
           {{ if .HasChildren }}
-          <ul id="m{{.Identifier}}" class="dropdown-content">
-            {{ range .Children }}
-            <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
-            {{ end }}
-          </ul>
-          <li><a class="dropdown-button grey-text text-darken-2" data-beloworigin="true" data-hover="false" href="#!" data-activates="m{{.Identifier}}">{{ .Name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+          <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+              <li>
+                <a class="collapsible-header grey-text text-darken-2">{{.Name}}<i class="material-icons">arrow_drop_down</i></a>
+                <div class="collapsible-body">
+                  <ul>
+                    {{ range .Children }}
+                    <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+                    {{ end }}
+                    <li><div class="divider"></div></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </li>
           {{ else }}
           <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
           {{ end }}
