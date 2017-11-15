@@ -2,8 +2,11 @@ baseurl = "/"
 languageCode = "en-us"
 title = "MAGFWest 2: Electric Boogaloo"
 
+
+
 [params]
   description = "MAGWest is a 3-day festival celebrating video games, video game music, and the culture of people who create them."
+  primaryColor = "green"
 
 [[menu.main]]
     name = "What is MAGWest?"

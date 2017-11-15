@@ -1,8 +1,8 @@
-<ul class="collection grey lighten-2">
-  <li class="collection-header center-align grey lighten-2"><h5>Recent <a href="/announcements">Announcements</a></h5></li>
+<ul class="collection {{ .Site.Params.primaryColor }} lighten-2">
+  <li class="collection-header center-align {{ .Site.Params.primaryColor }} lighten-2"><h5>Recent <a href="/announcements">Announcements</a></h5></li>
 {{ with .Site.GetPage "section" "announcements" }}
 {{ range $p := first 3 .Pages }}
-  <a href="{{$p.URL}}" class="grey-text text-darken-2 collection-item"> {{ $p.Title }} </a>
+  <a href="{{$p.URL}}" class="{{ .Site.Params.primaryColor }}-text text-darken-2 collection-item"> {{ $p.Title }} </a>
 {{ end }}
 {{ end }}
 </ul>

@@ -86,8 +86,8 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/pages"
     create: true
     fields:
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
       - {label: "URL", name: "url", widget: "string"}
 
   - name: "index"

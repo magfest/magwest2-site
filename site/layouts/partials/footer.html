@@ -1,20 +1,21 @@
 </div>
 </div>
 </main>
-<footer class="page-footer grey lighten-4">
+<footer class="page-footer {{ .Site.Params.primaryColor }} lighten-4">
   {{ with .Site.GetPage "page" "footer/main.md" }}
          <div class="container">
-           <div class="row center-align grey-text text-darken-4">
+           <div class="row center-align {{ .Site.Params.primaryColor }}-text text-darken-4">
+             {{ $Site := .Site }}
              {{ range $p := .Params.icons }}
-             <a href="{{ $p.url }}" class="social-media grey-text text-darken-3" target="_blank"><i class="fa fa-{{ $p.icon }} grey lighten-2" aria-hidden="true"></i></a>
+             <a href="{{ $p.url }}" class="social-media {{ $Site.Params.primaryColor }}-text text-darken-3" target="_blank"><i class="fa fa-{{ $p.icon }} {{ $Site.Params.primaryColor }} lighten-2" aria-hidden="true"></i></a>
              {{ end }}
 
            </div>
          </div>
-         <div class="footer-copyright grey-text text-darken-2">
+         <div class="footer-copyright {{ .Site.Params.primaryColor }}-text text-darken-2">
            <div class="container">
            {{ .Params.copyright }}
-           <a class="grey-text text-darken-2 right" href="#!">{{ .Params.slogan|markdownify }}</a>
+           <a class="{{ .Site.Params.primaryColor }}-text text-darken-2 right" href="#!">{{ .Params.slogan|markdownify }}</a>
            </div>
          </div>
      {{ end }}

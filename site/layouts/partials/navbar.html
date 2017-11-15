@@ -1,5 +1,5 @@
 <header>
-  <nav class="grey lighten-5">
+  <nav class="{{ .Site.Params.primaryColor }} lighten-5">
     <div class="nav-wrapper">
       <style scoped>
       @media only screen and (max-width:992px){
@@ -9,33 +9,34 @@
           }
         }
       </style>
-      <a href="{{ .Site.BaseURL }}" class="brand-logo grey-text text-darken-2">{{ .Site.Title }}</a>
-      <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons grey-text text-darken-4">menu</i></a>
+      <a href="{{ .Site.BaseURL }}" class="brand-logo {{ .Site.Params.primaryColor }}-text text-darken-2">{{ .Site.Title }}</a>
+      <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons {{ .Site.Params.primaryColor }}-text text-darken-4">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          {{ range .Site.Menus.main }}
-            {{ if .HasChildren }}
+          {{ $Site := .Site }}
+          {{ range $p := .Site.Menus.main }}
+            {{ if $p.HasChildren }}
             <ul id="n{{.Identifier}}" class="dropdown-content">
-              {{ range .Children }}
-              <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+              {{ range $c := $p.Children }}
+              <li><a href="{{$c.URL}}" class="{{ $Site.Params.primaryColor }}-text text-darken-2"> {{ $c.Name }} </a></li>
               {{ end }}
             </ul>
-            <li><a class="dropdown-button grey-text text-darken-2" data-hover="true" data-beloworigin="true" href="#!" data-activates="n{{.Identifier}}">{{ .Name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button {{ $Site.Params.primaryColor }}-text text-darken-2" data-hover="true" data-beloworigin="true" href="#!" data-activates="n{{$p.Identifier}}">{{ $p.Name }}<i class="material-icons right">arrow_drop_down</i></a></li>
             {{ else }}
-            <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+            <li><a href="{{$p.URL}}" class="{{ $Site.Params.primaryColor }}-text text-darken-2"> {{ $p.Name }} </a></li>
             {{ end }}
           {{end}}
         </ul>
         <ul class="side-nav" id="mobile-sidebar">
-          {{ range .Site.Menus.main }}
-          {{ if .HasChildren }}
+          {{ range $p := .Site.Menus.main }}
+          {{ if $p.HasChildren }}
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header grey-text text-darken-2">{{.Name}}<i class="material-icons">arrow_drop_down</i></a>
+                <a class="collapsible-header {{ $Site.Params.primaryColor }}-text text-darken-2">{{$p.Name}}<i class="material-icons">arrow_drop_down</i></a>
                 <div class="collapsible-body">
                   <ul>
-                    {{ range .Children }}
-                    <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+                    {{ range $c := $p.Children }}
+                    <li><a href="{{$c.URL}}" class="{{ $Site.Params.primaryColor }}-text text-darken-2"> {{ $c.Name }} </a></li>
                     {{ end }}
                     <li><div class="divider"></div></li>
                   </ul>
@@ -44,21 +45,21 @@
             </ul>
           </li>
           {{ else }}
-          <li><a href="{{.URL}}" class="grey-text text-darken-2"> {{ .Name }} </a></li>
+          <li><a href="{{$p.URL}}" class="{{ $Site.Params.primaryColor }}-text text-darken-2"> {{ $p.Name }} </a></li>
           {{ end }}
           {{end}}
           {{ with .Site.GetPage "section" "sidebar" }}
           <li><div class="divider"></div></li>
           <li><a class="subheader">Useful Links</a></li>
           {{ range $p := .Pages }}
-            <li><a href="{{$p.Params.href}}" class="grey-text text-darken-2"> {{ $p.Title }} </a></li>
+            <li><a href="{{$p.Params.href}}" class="{{ $Site.Params.primaryColor }}-text text-darken-2"> {{ $p.Title }} </a></li>
           {{ end }}
           {{ end }}
           {{ with .Site.GetPage "section" "announcements" }}
           <li><div class="divider"></div></li>
           <li><a class="subheader">Recent Announcements</a></li>
           {{ range $p := .Pages }}
-            <li><a href="{{$p.URL}}" class="grey-text text-darken-2"> {{ $p.Title }} </a></li>
+            <li><a href="{{$p.URL}}" class="{{ $Site.Params.primaryColor }}-text text-darken-2"> {{ $p.Title }} </a></li>
           {{ end }}
           {{ end }}
         </ul>
