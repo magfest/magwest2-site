@@ -1,0 +1,5 @@
+{{ if isset . "Icon" }}
+<a href="{{ .Icon.URL }}" class="{{ .URLClass }} {{ .Site.Params.primary }}-text text-{{ .IconBrightness|default .Site.Params.secondaryBrightness }}" target="_blank"><i class="{{ .IconClass }} fa fa-{{ .Icon.icon }} {{ .Site.Params.primary }} {{ .BackgroundBrightness|default .Site.Params.primaryBrightness }}" aria-hidden="true"></i></a>
+{{ else }}
+<a href="{{ .URL }}" class="{{ .URLClass }} {{ .Site.Params.primary }}-text text-{{ .IconBrightness|default .Site.Params.secondaryBrightness }}" target="_blank"><i class="{{ .IconClass }} fa fa-{{ .Icon }} {{ .Site.Params.primary }} {{ .BackgroundBrightness|default .Site.Params.primaryBrightness }}" aria-hidden="true"></i></a>
+{{ end}}

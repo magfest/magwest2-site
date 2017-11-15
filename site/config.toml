@@ -6,7 +6,15 @@ title = "MAGFWest 2: Electric Boogaloo"
 
 [params]
   description = "MAGWest is a 3-day festival celebrating video games, video game music, and the culture of people who create them."
-  primaryColor = "green"
+  primary = "purple"
+  secondary = "red"
+  primaryBrightness = "lighten-2"
+  secondaryBrightness = "darken-3"
+  primaryText = "black-text"
+  secondaryText = "blue-text"
+  primaryTextBrightness = "text-darken-2"
+  secondaryTextBrightness = "text-darken-4"
+
 
 [[menu.main]]
     name = "What is MAGWest?"

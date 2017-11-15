@@ -1,8 +1,8 @@
-<ul class="collection {{ .Site.Params.primaryColor }} lighten-2">
-  <li class="collection-header center-align {{ .Site.Params.primaryColor }} lighten-2"><h5>Useful Links</h5></li>
+<ul class="collection {{ .Site.Params.primary }} {{ .Site.Params.primaryBrightness }}">
+  <li class="collection-header center-align {{ .Site.Params.primary }} {{ .Site.Params.primaryBrightness }}"><h5>Useful Links</h5></li>
 {{ with .Site.GetPage "section" "sidebar" }}
 {{ range $p := .Pages }}
-  <a href="{{$p.Params.href}}" class="{{ .Site.Params.primaryColor }}-text text-darken-2 collection-item"> {{ $p.Title }} </a>
+  <a href="{{$p.Params.href}}" class="{{ .Site.Params.primaryText }} {{ .Site.Params.primaryTextBrightness }} collection-item"> {{ $p.Title }} </a>
 {{ end }}
 {{ end }}
 </ul>

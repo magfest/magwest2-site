@@ -1,27 +1,28 @@
 {{ if . }}
   {{ range $p := .ByPublishDate }}
     <div class="col s12 l6">
-      <div class="card small">
+      <div class="card medium">
         <div class="card-image waves-effect waves-block waves-light">
           <img class='activator' src="{{ $p.Params.image | default "/img/default_announcement.jpeg"}}">
 
         </div>
-        <div class="card-content {{ .Site.Params.primaryColor }} lighten-2" style="height: 100%;">
-          <span class="card-title activator {{ .Site.Params.primaryColor }}-text text-darken-4">{{ $p.Title }}
+        <div class="card-content {{ .Site.Params.primary }} {{ .Site.Params.primaryBrightness }}" style="height: 100%;">
+          <span class="card-title activator {{ .Site.Params.primaryText }} {{ .Site.Params.primaryTextBrightness }}">{{ $p.Title }}
             <i class="material-icons right">more_vert</i></span>
-          <a href="{{ $p.URL }}">Click Here For More Details</a>
+          <a href="{{ $p.URL }}" class="{{ .Site.Params.secondaryText }} {{ .Site.Params.secondaryTextBrightness }}">Click Here For More Details</a>
         </div>
         {{ if isset $p.Params "icons" }}
-        <div class="card-action {{ .Site.Params.primaryColor }} lighten-2">
+        <div class="card-action {{ .Site.Params.primary }} {{ .Site.Params.primaryBrightness }} center-align">
 
-            {{ range $p.Params.icons }}
-            <i class="fa fa-{{ .icon }}"></i>
-            {{ end }}
+          {{ $Site := .Site }}
+          {{ range .Params.icons }}
+          {{ partial "icon_range" (dict "Site" $Site "Icon" . "IconBrightness" "darken-4" "IconClass" "fa-lg") }}
+          {{ end }}
 
         </div>
         {{ end }}
         <div class='card-reveal'>
-          <span class="card-title {{ .Site.Params.primaryColor }}-text text-darken-4 title-stroke"><i class="material-icons right">close</i></span>
+          <span class="card-title {{ .Site.Params.primaryText }} {{ .Site.Params.secondaryTextBrightness }} title-stroke"><i class="material-icons right">close</i></span>
           {{ $p.Summary }}
         </div>
       </div>
