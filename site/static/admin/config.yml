@@ -15,6 +15,71 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Cover Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published Date", name: "publishDate", widget: "datetime"}
+
+  - name: "guests"
+    label: "Guests"
+    folder: "site/content/guests"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published Date", name: "publishDate", widget: "datetime"}
+      - name: "icons"
+        label: "Social Media Icon"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Service Name", name: "title", widget: "string", required: false}
+          - {label: "Service URL", name: "url", widget: "string", required: false}
+          - {label: "Service Icon Available Here: http://fontawesome.io/icons/", name: "icon", widget: "string", required: false, default: "compass"}
+
+  - name: "bands"
+    label: "Bands"
+    folder: "site/content/bands"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published Date", name: "publishDate", widget: "datetime"}
+      - name: "icons"
+        label: "Social Media Icon"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Service Name", name: "title", widget: "string", required: false}
+          - {label: "Service URL", name: "url", widget: "string", required: false}
+          - {label: "Service Icon Available Here: http://fontawesome.io/icons/", name: "icon", widget: "string", required: false, default: "compass"}
+
+  - name: "visualists"
+    label: "Visualists"
+    folder: "site/content/visualists"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "image", widget: "image"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Published Date", name: "publishDate", widget: "datetime"}
+      - name: "icons"
+        label: "Social Media Icon"
+        widget: "list"
+        required: false
+        fields:
+          - {label: "Service Name", name: "title", widget: "string", required: false}
+          - {label: "Service URL", name: "url", widget: "string", required: false}
+          - {label: "Service Icon Available Here: http://fontawesome.io/icons/", name: "icon", widget: "string", required: false, default: "compass"}
+
+  - name: "faq"
+    label: "Frequently Asked Questions"
+    title: "Frequently Asked Questions"
+    folder: "site/content/faq"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Weight", name: "weight", widget: "number"}
 
   - name: "pages"
     label: "Pages"
@@ -41,22 +106,7 @@ collections: # A list of collections the CMS should be able to edit
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "URL", name: "href", widget: "string"}
-
-  - name: "art"
-    label: "Art Pages"
-    folder: "site/content/art"
-    create: true
-    fields:
-      - {label: "Category Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
-      - name: "albums"
-        label: "Flickr Albums"
-        widget: "list"
-        required: false
-        fields:
-          - {label: "Album Title", name: "title", widget: "string", required: false}
-          - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
-          - {label: "Flickr Album ID", name: "album_id", widget: "string"}
+      - {label: "Weight", name: "weight", widget: "number"}
 
   - name: "footer"
     label: "Footer Details"
@@ -74,22 +124,3 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Service Name", name: "title", widget: "string", required: false}
           - {label: "Service URL", name: "url", widget: "string", required: false}
           - {label: "Service Icon Available Here: https://material.io/icons/", name: "icon", widget: "string", required: false, default: "explore"}
-
-  - name: "project"
-    label: "Projects"
-    folder: "site/content/project"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string", required: false}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
-      - {label: "Project Overview", name: "overview", widget: "markdown", required: false}
-      - {label: "Cover Image", name: "image", widget: "image", required: false}
-      - {label: "Project Date (For Sorting Purposes)", name: "date", widget: "datetime"}
-      - name: "albums"
-        label: "Flickr Albums"
-        widget: "list"
-        required: false
-        fields:
-          - {label: "Album Title", name: "title", widget: "string", required: false}
-          - {label: "Flickr User ID", name: "user_id", widget: "string", default: "144498668@N03", required: false}
-          - {label: "Flickr Album ID", name: "album_id", widget: "string"}

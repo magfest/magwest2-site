@@ -46,9 +46,9 @@ title = "MAGFWest 2: Electric Boogaloo"
     weight = 2
 
 [[menu.main]]
-    name = "Rockstars"
+    name = "Bands"
     parent = "see"
-    url = "/rockstars"
+    url = "/bands"
     weight = 1
 
 [[menu.main]]

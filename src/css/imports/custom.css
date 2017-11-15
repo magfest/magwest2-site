@@ -1,0 +1,15 @@
+ul.faq{
+
+  li {
+    font-size: 2em;
+  }
+  ul > li {
+    font-size: 1em;
+    margin-left: 2em;
+    list-style-type: disc;
+  }
+}
+
+.rounded{
+  border-radius: 5px;
+}
