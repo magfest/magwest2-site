@@ -7,7 +7,7 @@
            <div class="row center-align primary-color-text text-darken-4">
              {{ $Site := .Site }}
              {{ range .Params.icons }}
-             {{ partial "icon_range" (dict "Site" $Site "Icon" . "URLClass" "social-media" "IconClass" "fa-lg") }}
+             {{ partial "icon_range" (dict "Site" $Site "Icon" . "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
              {{ end }}
 
            </div>

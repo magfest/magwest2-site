@@ -3,19 +3,20 @@
 
 
 $primary-color: color("grey", "lighten-2");
-  $primary-color-light: false;
-  $primary-color-dark: false;
-  @if not $primary-color-light {
-    $primary-color-light: lighten($primary-color, 15%);
-  }
-  @if not $primary-color-dark {
-    $primary-color-dark: darken($primary-color, 15%);
-  }
-  $secondary-color: color("red", "lighten-1");
-  $success-color: color("green", "base");
-  $error-color: color("red", "base");
+$primary-color-light: false;
+$primary-color-dark: false;
+@if not $primary-color-light {
+  $primary-color-light: lighten($primary-color, 15%);
+}
+@if not $primary-color-dark {
+  $primary-color-dark: darken($primary-color, 15%);
+}
+$secondary-color: color("red", "lighten-1");
+$success-color: color("green", "base");
+$error-color: color("red", "base");
 
-  $link-color: color("light-blue", "darken-1");
+
+  $link-color: color("blue", "darken-4");
 
 .primary-color {
   @extend .grey, .lighten-2
@@ -31,6 +32,10 @@ $primary-color: color("grey", "lighten-2");
 }
 
 .secondary-color-text {
+  @extend .blue-text, .text-darken-4
+}
+
+.link-color{
   @extend .blue-text, .text-darken-4
 }
 
@@ -105,4 +110,12 @@ $primary-color: color("grey", "lighten-2");
 .landing-mini-event{
   height:10em;
   background-color: white;
+}
+
+.social-media-icon:hover{
+  color: darken($primary-color, 50%);
+}
+
+.link-color:hover{
+  color: lighten($link-color, 25%) !important;
 }

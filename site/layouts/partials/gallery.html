@@ -9,14 +9,14 @@
         <div class="card-content primary-color" style="height: 100%;">
           <span class="card-title activator primary-color-text">{{ $p.Title }}
             <i class="material-icons right">more_vert</i></span>
-          <a href="{{ $p.URL }}" class="secondary-color-text">Click Here For More Details</a>
+          <a href="{{ $p.URL }}" class="link-color waves-effect waves-light"><p>Click Here For More Details</p></a>
         </div>
         {{ if isset $p.Params "icons" }}
         <div class="card-action primary-color center-align">
 
           {{ $Site := .Site }}
           {{ range .Params.icons }}
-          {{ partial "icon_range" (dict "Site" $Site "Icon" . "IconBrightness" "darken-4" "IconClass" "fa-lg") }}
+          {{ partial "icon_range" (dict "Site" $Site "Icon" . "IconBrightness" "darken-4" "IconClass" "fa-lg social-media-icon") }}
           {{ end }}
 
         </div>

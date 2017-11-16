@@ -1,5 +1,5 @@
 <ul class="collection primary-color ">
-  <li class="collection-header center-align primary-color"><h5 class="primary-color-text text-darken-3">Recent <a href="/announcements" class="secondary-color-text  text-darken-4">Announcements</a></h5></li>
+  <li class="collection-header center-align primary-color"><h5 class="primary-color-text text-darken-3">Recent <a href="/announcements" class="link-color">Announcements</a></h5></li>
 {{ with .Site.GetPage "section" "announcements" }}
 {{ range $p := first 3 .Pages }}
   <a href="{{$p.URL}}" class="primary-color-text collection-item"> {{ $p.Title }} </a>
