@@ -1,9 +1,14 @@
 {{ partial "header" . }}
 <div class="">
   <div class="row">
-    <div class="col s12">
+    <div class="col s12 secondary-color-text content-text">
       {{ .Content }}
     </div>
+    {{ with .Site.GetPage "section" "announcements" }}
+    <div class="col s12">
+      {{ partial "gallery" .Pages }}
+    </div>
+    {{ end }}
   </div>
 </div>
 <script>

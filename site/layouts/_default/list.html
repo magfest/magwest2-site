@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 
 <div class="{{ .Title }} {{ .Section | urlize }}">
-  <h1>{{ .Title }}</h1>
+  <h1 class="secondary-color-text">{{ .Title }}</h1>
   {{ partial "gallery" .Data.Pages }}
 </div>
 

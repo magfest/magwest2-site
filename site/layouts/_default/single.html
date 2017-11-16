@@ -3,13 +3,30 @@
 <div class="" style="margin-top: 0.5em;">
   <div class="row">
     <div class="col s12">
-      {{ if .Title }}<h3 class="center-align">{{ .Title }}</h3>{{ end }}
-      <img class="center-image" src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
+      {{ if .Title }}<h2 class="center-align secondary-color-text">{{ .Title }}</h2>{{ end }}
+
     </div>
   </div>
-  {{ if .Content }}
-  {{ .Content }}
+  {{ if .Params.icons }}
+  <div class="row center-align social-media-row">
+    {{ range .Params.icons }}
+    {{ partial "icon_range" (dict "Icon" . "IconBrightness" "darken-4" "IconClass" "fa-fw fa-lg social-media-icon" "URLClass" "social-media-row primary-color") }}
+    {{ end }}
+  </div>
   {{ end }}
+  <div class="row">
+    <div class="col s12 l4 right">
+      <img class="center-image {{ .Section |urlize }}" src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
+    </div>
+    {{ if .Content }}
+    <div class="col s12 l8 secondary-color-text">
+    {{ .Content }}
+    </div>
+    {{ end }}
+  </div>
+
+
+
 </div>
 
 {{ partial "footer" . }}
