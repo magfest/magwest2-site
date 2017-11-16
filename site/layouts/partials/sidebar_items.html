@@ -1,5 +1,5 @@
 <ul class="collection primary-color">
-  <li class="collection-header center-align primary-color"><h5>Useful Links</h5></li>
+  <li class="collection-header center-align primary-color"><h5 class="primary-color-text text-darken-3">Useful Links</h5></li>
 {{ with .Site.GetPage "section" "sidebar" }}
 {{ range $p := .Pages }}
   <a href="{{$p.Params.href}}" class="primary-color-text collection-item"> {{ $p.Title }} </a>

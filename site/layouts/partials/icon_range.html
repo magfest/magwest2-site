@@ -1,5 +1,5 @@
 {{ if isset . "Icon" }}
-<a href="{{ .Icon.URL }}" class="{{ .URLClass }} primary-color-text text-{{ .IconBrightness|default "darken-4" }}" target="_blank"><i class="{{ .IconClass }} fa fa-{{ .Icon.icon }} primary-color {{ .BackgroundBrightness|default "" }}" aria-hidden="true"></i></a>
+<a href="{{ .Icon.url }}" class="{{ .URLClass }} primary-color-text text-{{ .IconBrightness|default "darken-4" }}" target="_blank"><i class="{{ .IconClass }} fa fa-{{ .Icon.icon }} primary-color {{ .BackgroundBrightness|default "" }}" aria-hidden="true"></i></a>
 {{ else }}
-<a href="{{ .URL }}" class="{{ .URLClass }} primary-color-text text-{{ .IconBrightness|default "darken-4" }}" target="_blank"><i class="{{ .IconClass }} fa fa-{{ .Icon }} primary-color {{ .BackgroundBrightness|default "" }}" aria-hidden="true"></i></a>
+<a href="{{ .url }}" class="{{ .URLClass }} primary-color-text text-{{ .IconBrightness|default "darken-4" }}" target="_blank"><i class="{{ .IconClass }} fa fa-{{ .icon }} primary-color {{ .BackgroundBrightness|default "" }}" aria-hidden="true"></i></a>
 {{ end}}
