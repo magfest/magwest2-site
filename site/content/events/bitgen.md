@@ -1,5 +1,5 @@
 ---
-title: MAGWest
+title: BitGen
 image: /img/uploads/MAGWest_2017_logo.png
 date_string: 'TBA, 2018'
 location: 'Santa Clara, CA'

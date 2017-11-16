@@ -1,6 +1,6 @@
 backend:
-  name: git-gateway
-  #repo: magfest/magwest2-site # Path to your Github repository
+  name: github
+  repo: magfest/magwest2-site # Path to your Github repository
   branch: master # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
@@ -34,6 +34,18 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Service Name", name: "title", widget: "string", required: false}
           - {label: "Service URL", name: "url", widget: "string", required: false}
           - {label: "Service Icon Available Here: http://fontawesome.io/icons/", name: "icon", widget: "string", required: false, default: "compass"}
+
+  - name: "events"
+    label: "Events"
+    folder: "site/content/events"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Logo", name: "image", widget: "image"}
+      - {label: "Date", name: "date_string", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Tagline", name: "tagline", widget: "string"}
+      - {label: "Weight", name: "weight", widget: "number", default: "0"}
 
   - name: "bands"
     label: "Bands"

@@ -1,0 +1,8 @@
+{{ partial "simple_header" . }}
+
+<div class="landing-box {{ .Title }} {{ .Section | urlize }}">
+  <h1 class="left-align white-text">MAGFest {{ .Title }}</h1>
+  {{ partial "event_gallery" .Data.Pages }}
+</div>
+
+{{ partial "simple_footer" . }}
