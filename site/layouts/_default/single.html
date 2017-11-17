@@ -15,6 +15,13 @@
   </div>
   {{ end }}
   <div class="row">
+    {{ if eq .Dir "pages/" }}
+    {{ if .Content }}
+    <div class="col s12 secondary-color-text context-text">
+    {{ .Content }}
+    </div>
+    {{ end }}
+    {{ else }}
     <div class="col s12 l4 right">
       <img class="center-image {{ .Section |urlize }}" src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
     </div>
@@ -22,6 +29,7 @@
     <div class="col s12 l8 secondary-color-text context-text">
     {{ .Content }}
     </div>
+    {{ end }}
     {{ end }}
   </div>
 
