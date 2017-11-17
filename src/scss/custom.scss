@@ -35,8 +35,13 @@ $error-color: color("red", "base");
   @extend .grey-text, .text-lighten-2
 }
 
-.content-text > *{
+.content-text > *, .context-text strong, .context-text em{
   @extend .secondary-color-text
+}
+
+
+.context-text a{
+  @extend .link-color
 }
 
 .link-color{
