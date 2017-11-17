@@ -169,9 +169,6 @@ img {
   max-width: 100%;
 
 
-  @media (max-width: 30em) {
-    min-height: 200px;
-  }
 }
 
 

@@ -74,15 +74,27 @@ $error-color: color("red", "base");
   position: relative;
 
   @media #{$medium-and-down}{
-    height: 5em;
+    height: 7em;
     padding: 2em 0;
     margin: 0.5em 0;
     width: 100%;
   }
+
+
+}
+.landing-event-title{
+  font-size: 3vw;
 }
 
 .landing-event-image{
   padding-top: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  @media #{$medium-and-down}{
+    max-height: 50%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .landing-event-text{
@@ -101,13 +113,24 @@ $error-color: color("red", "base");
   bottom: 0;
   left: 0;
   background-color: white;
+  font-size: 1.25vw;
+  @media #{$medium-and-down}{
+    font-size: 3vw;
+  }
 
 }
 
 .landing-event-tagline-text{
   line-height: 2;
 }
-.landing-event-url{
+.landing-event-url:hover > .landing-event-box{
+  height: 35em;
+  background: rgba($primary-color-light, 0.5);
+  opacity: 0.25;
+  @media #{$medium-and-down}{
+    height: 7em;
+
+  }
 
 }
 
