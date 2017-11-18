@@ -127,6 +127,16 @@ title = "MAGFWest 420: Electric Boogaloo"
     weight = 3
 
 [[menu.main]]
+    name = "Volunteer"
+    parent = "help"
+    url = "/volunteer"
+
+[[menu.main]]
+    name = "Donate"
+    parent = "help"
+    url = "/donate"
+
+[[menu.main]]
     name = "Contact"
     url = "/contact"
     weight = 4

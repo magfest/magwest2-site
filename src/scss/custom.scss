@@ -1,6 +1,8 @@
 @import "./node_modules/materialize-css/sass/materialize.scss";
 
-
+nav .button-collapse i{
+  line-height: .75em !important;
+}
 
 $primary-color: color("grey", "lighten-2");
 $primary-color-light: false;
@@ -16,7 +18,7 @@ $success-color: color("green", "base");
 $error-color: color("red", "base");
 
 
-  $link-color: color("blue", "darken-4");
+  $link-color: color("light-blue", "darken-4");
 
 .primary-color {
   @extend .grey, .lighten-2
@@ -45,7 +47,7 @@ $error-color: color("red", "base");
 }
 
 .link-color{
-  @extend .blue-text, .text-darken-4
+  @extend .light-blue-text, .text-darken-4
 }
 
 .events{
@@ -192,7 +194,41 @@ a.social-media-row{
 
 img.gallery{
   max-height: 300px;
-  
+
   min-height: 300px;
   width: auto;
+}
+
+ul.faq{
+
+  li {
+    font-size: 2em;
+  }
+  ul > li {
+    font-size: 1em;
+    margin-left: 2em;
+    list-style-type: disc;
+
+
+  }
+}
+
+.context-text.pages li {
+  margin-left: 2em;
+}
+.rounded{
+  border-radius: 5px;
+}
+
+
+
+
+.title-stroke{
+  font-weight: 900 !important;
+  -webkit-text-stroke: 1px black;
+}
+
+.center-image{
+  margin-left: auto;
+  margin-right: auto;
 }
