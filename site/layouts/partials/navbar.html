@@ -10,7 +10,7 @@
         }
       </style>
       <a href="{{ .Site.BaseURL }}" class="brand-logo primary-color-text truncate ">{{ .Site.Title }}</a>
-      <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="material-icons primary-color-text text-darken-4">menu</i></a>
+      <a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="fa fa-bars primary-color-text text-darken-4"></i></a>
         <ul class="right hide-on-med-and-down">
           {{ $Site := .Site }}
           {{ range $p := .Site.Menus.main }}
@@ -20,7 +20,7 @@
               <li><a href="{{$c.URL}}" class="primary-color-text "> {{ $c.Name }} </a></li>
               {{ end }}
             </ul>
-            <li><a class="dropdown-button primary-color-text " data-hover="true" data-beloworigin="true" href="#!" data-activates="n{{$p.Identifier}}">{{ $p.Name }}<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a class="dropdown-button primary-color-text " data-hover="true" data-beloworigin="true" href="#!" data-activates="n{{$p.Identifier}}">{{ $p.Name }}<i class="fa fa-angle-down right"></i></a></li>
             {{ else }}
             <li><a href="{{$p.URL}}" class="primary-color-text "> {{ $p.Name }} </a></li>
             {{ end }}
@@ -36,7 +36,7 @@
           <li class="no-padding">
             <ul class="collapsible collapsible-accordion">
               <li>
-                <a class="collapsible-header primary-color-text ">{{$p.Name}}<i class="material-icons">arrow_drop_down</i></a>
+                <a class="collapsible-header primary-color-text ">{{$p.Name}}<i class="fa fa-angle-down"></i></a>
                 <div class="collapsible-body">
                   <ul>
                     {{ range $c := $p.Children }}

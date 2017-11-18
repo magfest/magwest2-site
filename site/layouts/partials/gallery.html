@@ -8,7 +8,7 @@
         </div>
         <div class="card-content primary-color" style="height: 100%;">
           <span class="card-title activator primary-color-text">{{ $p.Title }}
-            <i class="material-icons right">more_vert</i></span>
+            <i class="fa fa-ellipsis-v right"></i></span>
           <a href="{{ $p.URL }}" class="link-color waves-effect waves-light"><p>Click Here For More Details</p></a>
         </div>
         {{ if isset $p.Params "icons" }}
@@ -22,8 +22,10 @@
         </div>
         {{ end }}
         <div class='card-reveal'>
-          <span class="card-title primary-color-text text-darken-4 title-stroke"><i class="material-icons right">close</i></span>
-          {{ $p.Summary }}
+          <span class="card-title primary-color-text text-darken-4 title-stroke"><i class="fa fa-times right"></i></span>
+          <p class="primary-color-text">
+          {{ $p.Summary|markdownify }}
+        </p>
         </div>
       </div>
     </div>
