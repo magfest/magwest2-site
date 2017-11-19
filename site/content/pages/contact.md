@@ -2,7 +2,6 @@
 title: Contact
 url: /contact
 ---
-![undefined](/img/uploads/temp2.png)
 
 ## Please fill out the form below
 
@@ -18,5 +17,5 @@ Let us know when you'd like to book a reservation and we'll contact you within 3
   <div class="input-field">
   <textarea name="message" class="materialize-textarea" placeholder="When would you like to book a reservation?"></textarea>
   </div>
-  <button class="btn waves-effect waves-light primary primaryBrightness">Send</button>
+  <button class="btn waves-effect waves-light primary-color primary-color-text">Send</button>
 </form>

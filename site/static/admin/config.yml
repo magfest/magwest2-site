@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: magfest/magwest2-site # Path to your Github repository
+  name: git-gateway
+  #repo: magfest/magwest2-site # Path to your Github repository
   branch: master # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
@@ -136,3 +136,4 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Service Name", name: "title", widget: "string", required: false}
           - {label: "Service URL", name: "url", widget: "string", required: false}
           - {label: "Service Icon Available Here: https://material.io/icons/", name: "icon", widget: "string", required: false, default: "explore"}
+          - {label: "Weight", name: "weight", widget: "number", required: false, default: "0"}
