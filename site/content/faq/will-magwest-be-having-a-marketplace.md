@@ -1,5 +1,5 @@
 ---
 title: Will MAGWest be having a Marketplace?
-weight: '815'
+weight: '700'
 ---
 Not this year.
