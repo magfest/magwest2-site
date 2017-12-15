@@ -1,6 +1,6 @@
 ---
 title: Will MAGWest Be Selling One Day Badges?
-weight: '2'
+weight: '200'
 ---
 We will be selling one-day badges for the following prices:
 
