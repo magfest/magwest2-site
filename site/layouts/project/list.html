@@ -1,0 +1,11 @@
+{{ partial "header" . }}
+
+<div class="content container {{ .Title }} {{ .Section | urlize }}">
+  <div class="row">
+  {{ partial "gallery" .Pages }}
+  </div>
+</div>
+
+
+
+{{ partial "footer" . }}

@@ -1,142 +1,131 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "MAGFWest 420: Electric Boogaloo"
-
-
+title = "MAGWest 2"
 
 [params]
-  description = "MAGWest is a 3-day festival celebrating video games, video game music, and the culture of people who create them."
-  primary = "purple"
-  secondary = "red"
-  primaryBrightness = "lighten-2"
-  secondaryBrightness = "darken-3"
-  primaryText = "black-text"
-  secondaryText = "blue-text"
-  primaryTextBrightness = "text-darken-2"
-  secondaryTextBrightness = "text-darken-4"
+  description = "& Knuckles"
 
+  [[menu.main]]
+      name = "What is MAGWest?"
+      identifier = "is"
+      weight = 1
 
-[[menu.main]]
-    name = "What is MAGWest?"
-    identifier = "is"
-    weight = 1
+  [[menu.main]]
+      name = "About"
+      parent = "is"
+      url = "/about"
+      weight = 1
 
-[[menu.main]]
-    name = "About"
-    parent = "is"
-    url = "/about"
-    weight = 1
+  [[menu.main]]
+      name = "How To Attend"
+      parent = "is"
+      url = "/attend"
+      weight = 1
 
-[[menu.main]]
-    name = "How To Attend"
-    parent = "is"
-    url = "/attend"
-    weight = 1
+  [[menu.main]]
+      name = "Directions"
+      parent = "is"
+      url = "/directions"
+      weight = 1
 
-[[menu.main]]
-    name = "Directions"
-    parent = "is"
-    url = "/directions"
-    weight = 1
+  [[menu.main]]
+      name = "Frequently Asked Questions"
+      parent = "is"
+      url = "/faq"
+      weight = 1
 
-[[menu.main]]
-    name = "Frequently Asked Questions"
-    parent = "is"
-    url = "/faq"
-    weight = 1
+  [[menu.main]]
+      name = "Code of Conduct"
+      parent = "is"
+      url = "/codeofconduct"
+      weight = 1
 
-[[menu.main]]
-    name = "Code of Conduct"
-    parent = "is"
-    url = "/codeofconduct"
-    weight = 1
+  [[menu.main]]
+      name = "What To See"
+      identifier = "see"
+      weight = 2
 
-[[menu.main]]
-    name = "What To See"
-    identifier = "see"
-    weight = 2
+  [[menu.main]]
+      name = "Bands"
+      parent = "see"
+      url = "/bands"
+      weight = 1
 
-[[menu.main]]
-    name = "Bands"
-    parent = "see"
-    url = "/bands"
-    weight = 1
+  [[menu.main]]
+      name = "Guests"
+      parent = "see"
+      url = "/guests"
+      weight = 1
 
-[[menu.main]]
-    name = "Guests"
-    parent = "see"
-    url = "/guests"
-    weight = 1
+  [[menu.main]]
+      name = "Visualists"
+      parent = "see"
+      url = "/visualists"
+      weight = 1
 
-[[menu.main]]
-    name = "Visualists"
-    parent = "see"
-    url = "/visualists"
-    weight = 1
+  [[menu.main]]
+      name = "Schedule"
+      parent = "see"
+      url = "/schedule"
+      weight = 1
 
-[[menu.main]]
-    name = "Schedule"
-    parent = "see"
-    url = "/schedule"
-    weight = 1
+  [[menu.main]]
+      name = "What To Do"
+      identifier = "do"
+      weight = 2
 
-[[menu.main]]
-    name = "What To Do"
-    identifier = "do"
-    weight = 2
+  [[menu.main]]
+      name = "Panels"
+      parent = "do"
+      url = "/panels"
+      weight = 1
 
-[[menu.main]]
-    name = "Panels"
-    parent = "do"
-    url = "/panels"
-    weight = 1
+  [[menu.main]]
+      name = "Consoles"
+      parent = "do"
+      url = "/consoles"
+      weight = 1
 
-[[menu.main]]
-    name = "Consoles"
-    parent = "do"
-    url = "/consoles"
-    weight = 1
+  [[menu.main]]
+      name = "LAN"
+      parent = "do"
+      url = "/lan"
+      weight = 1
 
-[[menu.main]]
-    name = "LAN"
-    parent = "do"
-    url = "/lan"
-    weight = 1
+  [[menu.main]]
+      name = "Arcade"
+      parent = "do"
+      url = "/arcade"
+      weight = 1
 
-[[menu.main]]
-    name = "Arcade"
-    parent = "do"
-    url = "/arcade"
-    weight = 1
+  [[menu.main]]
+      name = "Jamspace"
+      parent = "do"
+      url = "/jamspace"
+      weight = 1
 
-[[menu.main]]
-    name = "Jamspace"
-    parent = "do"
-    url = "/jamspace"
-    weight = 1
+  [[menu.main]]
+      name = "Tabletop"
+      parent = "do"
+      url = "/tabletop"
+      weight = 1
 
-[[menu.main]]
-    name = "Tabletop"
-    parent = "do"
-    url = "/tabletop"
-    weight = 1
+  [[menu.main]]
+      name = "Contribute"
+      identifier = "help"
+      weight = 3
 
-[[menu.main]]
-    name = "Contribute"
-    identifier = "help"
-    weight = 3
+  [[menu.main]]
+      name = "Volunteer"
+      parent = "help"
+      url = "/volunteer"
 
-[[menu.main]]
-    name = "Volunteer"
-    parent = "help"
-    url = "/volunteer"
+  [[menu.main]]
+      name = "Donate"
+      parent = "help"
+      url = "/donate"
 
-[[menu.main]]
-    name = "Donate"
-    parent = "help"
-    url = "/donate"
-
-[[menu.main]]
-    name = "Contact"
-    url = "/contact"
-    weight = 4
+  [[menu.main]]
+      name = "Contact"
+      url = "/contact"
+      weight = 4

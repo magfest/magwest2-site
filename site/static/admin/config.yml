@@ -1,12 +1,59 @@
 backend:
-  name: git-gateway
-  #repo: magfest/magwest2-site # Path to your Github repository
-  branch: master # Branch to update (master by default)
+  #name: git-gateway
+  name: github #comment me out on development
+  repo: daredoes/netlify-web-development # comment me out on production
+  branch: west # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
 public_folder: "img/uploads"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Sidebar"
+        name: "sidebar"
+        file: "site/content/pages/sidebar.md"
+        fields:
+          - name: "items"
+            label: "Sidebar Links"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "URL", name: "href", widget: "string"}
+              - {label: "Display?", name: "display", widget: "boolean", default: true}
+      - label: "Footer"
+        name: "footer"
+        file: "site/content/pages/footer.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string", required: true, default: "main"}
+          - {label: "Copyright Info", name: "copyright", widget: "string", required: false}
+          - {label: "Footer Slogan", name: "slogan", widget: "string", required: false}
+          - name: "icons"
+            label: "Social Media Icon"
+            widget: "list"
+            required: false
+            fields:
+              - {label: "Service Name", name: "title", widget: "string", required: false}
+              - {label: "Service URL", name: "url", widget: "string", required: false}
+              - {label: "Service Icon Available Here: https://material.io/icons/", name: "icon", widget: "string", required: false, default: "explore"}
+              - {label: "On Click", name: "onclick", widget: "markdown", required: false}
+
+  - name: "index"
+    label: "Homepage"
+    folder: "site/content"
+    create: false
+    fields:
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "URL", name: "url", widget: "string"}
+      - {label: "Profile Picture", name: "image", widget: "image", required: false}
+      - {label: "First Name", name: "first_name", widget: "string"}
+      - {label: "Middle Name(s)", name: "middle_name", widget: "string", required: false}
+      - {label: "Last Name", name: "last_name", widget: "string"}
+      - {label: "Birth Date", name: "birth_date", widget: "datetime"}
+
   - name: "announcements"
     label: "Announcements"
     folder: "site/content/announcements"
@@ -92,48 +139,3 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Weight", name: "weight", widget: "number"}
-
-  - name: "pages"
-    label: "Pages"
-    folder: "site/content/pages"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string", tagname: "h1", required: false}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
-      - {label: "URL", name: "url", widget: "string"}
-
-  - name: "index"
-    label: "Homepage"
-    folder: "site/content"
-    create: false
-    fields:
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "URL", name: "url", widget: "string"}
-
-  - name: "sidebar"
-    label: "Sidebar Items"
-    folder: "site/content/sidebar"
-    create: true
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "URL", name: "href", widget: "string"}
-      - {label: "Weight", name: "weight", widget: "number"}
-
-  - name: "footer"
-    label: "Footer Details"
-    folder: "site/content/footer"
-    create: false
-    fields:
-      - {label: "Title", name: "title", widget: "string", required: true, default: "main"}
-      - {label: "Copyright Info", name: "copyright", widget: "string", required: false}
-      - {label: "Footer Slogan", name: "slogan", widget: "string", required: false}
-      - name: "icons"
-        label: "Social Media Icon"
-        widget: "list"
-        required: false
-        fields:
-          - {label: "Service Name", name: "title", widget: "string", required: false}
-          - {label: "Service URL", name: "url", widget: "string", required: false}
-          - {label: "Service Icon Available Here: https://material.io/icons/", name: "icon", widget: "string", required: false, default: "explore"}
-          - {label: "Weight", name: "weight", widget: "number", required: false, default: "0"}

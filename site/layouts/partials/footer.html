@@ -1,20 +1,44 @@
-</div>
+<div class="modal contact-modal modal-fixed-footer" id="contact-modal">
+<form class="" netlify name="contact" onsubmit="$('#contact-modal').modal('close');">
+  <div class="modal-content">
+    <h3 class="center-align">Contact Form</h3>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <label for="name" class="active">You Name</label>
+          <input name="name" required>
+        </div>
+        <div class="input-field col s12">
+          <label for="email" class="active">Your Email</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="input-field col s12">
+          <label for="comments" class="active">Comments</label>
+          <textarea name="comments" class="materialize-textarea" required></textarea>
+        </div>
+      </div>
+
+  </div>
+  <div class="modal-footer">
+    <input type="submit" value="send" href="#!" class=" waves-effect waves-green btn-flat ">
+  </div>
+  </form>
 </div>
 </main>
-<footer class="page-footer primary-color lighten-3">
-  {{ with .Site.GetPage "page" "footer/main.md" }}
+<footer class="page-footer primary-color darken-4 no-print z-depth-4">
+  {{ with .Site.GetPage "page" "pages/footer.md" }}
          <div class="container">
-           <div class="row center-align primary-color-text text-darken-4">
-             {{ range sort .Params.icons "weight" }}
-             {{ partial "icon_range" (dict "Icon" . "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
+           <div class="row center-align link-color">
+             {{ range .Params.icons }}
+             {{ partial "icon_range" (dict "Icon" . "Color" "primary-color" "TextColor"  "link-color" "BackgroundBrightness" "darken-2" "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
              {{ end }}
 
            </div>
          </div>
-         <div class="footer-copyright primary-color-text">
+         <div class="footer-copyright">
            <div class="container">
-           {{ .Params.copyright }}
-           <a class="primary-color-text  right" href="#!">{{ .Params.slogan|markdownify }}</a>
+           <span>{{ .Params.copyright }}</span>
+           <span class="context-text right">{{ .Params.slogan|markdownify }}</span>
            </div>
          </div>
      {{ end }}
@@ -28,8 +52,11 @@
 <script>
 $(document).ready(function() {
    $(".button-collapse").sideNav();
-   $(".dropdown-button").dropdown({
-   });
+   $('.slider').slider();
+   $(".default-children *").addClass("browser-default");
+   $(".modal").modal({});
+   {{ block "jquery" . }}
+   {{ end}}
 });
 </script>
 </body>

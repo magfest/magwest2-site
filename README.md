@@ -1,3 +1,15 @@
+# Victor Hugo CMS Template
+<!-- Markdown snippet -->
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bdougie/restaurant-template-cms&stack=cms)
+
+![casper theme image](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+
+**A [Hugo](http://gohugo.io/) boilerplate for creating truly epic websites**
+
+This is a boilerplate for using Hugo as a static site generator and Gulp + Weback as your
+asset pipeline.
+
+It's setup to use post-css and babel for CSS and JavaScript.
 
 ## Usage
 Be sure that you have the latest node, npm and [Hugo](https://gohugo.io/overview/installing/) installed. If you need to install hugo, run:
@@ -52,7 +64,7 @@ backend:
   name: github
   repo: owner/repo # Path to your Github repository
   branch: master # Branch to update (master by default)
-
+  
   ...
 ```
 When a user navigates to `/admin` she'll be prompted to login, and once authenticated
@@ -69,7 +81,7 @@ log in.
 
 ### Find out more and contribute
 
-Visit the [Netlify CMS](https://github.com/netlify/netlify-cms/) to find out more and contribute.
+Visit the [Netlify CMS](https://github.com/netlify/netlify-cms/) to find out more and contribute. 
 
 ## Basic Concepts
 

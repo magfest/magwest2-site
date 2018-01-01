@@ -1,0 +1,69 @@
+@import "./node_modules/materialize-css/sass/materialize.scss";
+$primary-color: color("grey", "darken-4");
+$primary-color-light: false;
+$primary-color-dark: false;
+@if not $primary-color-light {
+  $primary-color-light: lighten($primary-color, 15%);
+}
+@if not $primary-color-dark {
+  $primary-color-dark: darken($primary-color, 15%);
+}
+$secondary-color: color("green", "darken-2");
+$success-color: color("green", "base");
+$error-color: color("red", "base");
+$tertiary-color: color("grey", "darken-1");
+
+  $link-color: color("grey", "lighten-3");
+
+.primary-color {
+  @extend .red, .darken-4
+}
+
+.secondary-color {
+  @extend .yellow, .darken-2
+}
+
+.tertiary-color {
+  @extend .amber, .lighten-3
+}
+
+.primary-color-text {
+  @extend .grey-text, .text-darken-4
+}
+
+.secondary-color-text {
+  @extend .light-blue-text, .text-darken-4
+}
+
+.tertiary-color-text{
+  @extend .light-blue-text, .text-lighten-2
+}
+
+.content-text > *{
+  @extend .primary-color-text
+}
+
+.link-color-disabled{
+  @extend .grey-text, .text-lighten-3
+}
+
+.link-color{
+  @extend .grey-text, .text-lighten-3;
+}
+
+
+.link-color:hover{
+  color: lighten($secondary-color, 30%) !important;
+}
+
+.link-color-disabled:hover{
+  color: lighten(red, 30%) !important;
+}
+
+.link-secondary-color{
+  color: $secondary-color;
+}
+
+.link-secondary-color:hover{
+  color: lighten($secondary-color, 15%) !important;
+}

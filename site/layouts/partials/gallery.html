@@ -1,31 +1,28 @@
 {{ if . }}
-  {{ range $p := .ByPublishDate }}
+  {{ range .ByPublishDate }}
     <div class="col s12 l6">
       <div class="card medium">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class='activator gallery' src="{{ $p.Params.image | default "/img/default_announcement.jpeg"}}">
+          <img class='activator gallery' src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
 
         </div>
         <div class="card-content primary-color" style="height: 100%;">
-          <span class="card-title activator primary-color-text">{{ $p.Title }}
+          <span class="card-title activator primary-color-text">{{ .Title }}
             <i class="fa fa-ellipsis-v right"></i></span>
-          <a href="{{ $p.URL }}" class="link-color waves-effect waves-light"><p>Click Here For More Details</p></a>
+          <a href="{{ .URL }}" class="secondary-color-text">Click Here For More Details</a>
         </div>
-        {{ if isset $p.Params "icons" }}
+        {{ if isset .Params "icons" }}
         <div class="card-action primary-color center-align">
 
-          {{ $Site := .Site }}
           {{ range .Params.icons }}
-          {{ partial "icon_range" (dict "Site" $Site "Icon" . "IconBrightness" "darken-4" "IconClass" "fa-lg social-media-icon") }}
+          {{ partial "icon_range" (dict "Icon" . "IconBrightness" "darken-4" "IconClass" "fa-lg") }}
           {{ end }}
 
         </div>
         {{ end }}
         <div class='card-reveal'>
-          <span class="card-title primary-color-text text-darken-4 title-stroke"><i class="fa fa-times right"></i></span>
-          <p class="primary-color-text">
-          {{ $p.Summary|markdownify }}
-        </p>
+          <span class="card-title primary-color-text text-darken-4 title-stroke"><i class="fa fa-times-circle right"></i></span>
+          {{ .Summary }}
         </div>
       </div>
     </div>
