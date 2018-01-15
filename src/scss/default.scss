@@ -1,5 +1,13 @@
 @import "colors.scss";
 
+header{
+  z-index: 1;
+}
+
+main{
+  z-index: 0;
+}
+
 div.social-media-row{
   margin-top: -6em;
 }
@@ -83,4 +91,11 @@ a{
 }
 .modal-footer > span {
   font-size: 1.5em;
+}
+
+@media #{$large-and-up} {
+
+  .logo-padding{
+    margin-left:1em !important;
+  }
 }

@@ -1,0 +1,10 @@
+{{ if . }}
+<ul class="collapsible popout" data-collapsible="accordion">
+  {{ range .ByPublishDate }}
+      <li>
+        <div class="collapsible-header secondary-color"><i class="fa {{ .Params.fa|default "fa-newspaper-o"}}"></i>{{ .Title }} - Click For Details!</div>
+        <div class="collapsible-body context-text secondary-color">{{ .Content }}</div>
+      </li>
+  {{ end }}
+  </ul>
+{{ end }}
