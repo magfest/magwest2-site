@@ -69,6 +69,7 @@
     "url-loader": "^0.5.7",
     "verror": "^1.10.0",
     "webpack": "^1.13.1",
-    "whatwg-fetch": "^1.0.0"
+    "whatwg-fetch": "^1.0.0",
+    "wide-align": "^1.1.2"
   }
 }
