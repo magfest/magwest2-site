@@ -1,14 +1,16 @@
 {{ partial "header" . }}
 
 <div class="container partial-transparency {{ .Title }} {{ .Section | urlize }}">
-  <h1 class="center-align secondary-color-text black-outline thin-outline">{{ .Title }}</h1>
+  <h1 class="center-align secondary-color-text black-outline ">{{ .Title }}</h1>
   <ul class="faq">
     {{ range .Pages.ByWeight.Reverse }}
     <div class="hoverable rounded">
-      <li class="secondary-color-text">{{ .Title }}</li>
+      <li class="secondary-color-text underline ">{{ .Title }}</li>
+      {{ with .Content }}
       <ul>
-        <li class="flow-text context-text tertiary-color-text">{{ .Content }}</li>
+        <li class="flow-text context-text tertiary-color-text">{{ . }}</li>
       </ul>
+      {{ end }}
     </div>
     {{ end }}
   </ul>

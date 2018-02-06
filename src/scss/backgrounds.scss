@@ -97,14 +97,16 @@
 
 .bg-mag-splash{
 @media #{$large-and-up} {
-    background-image: url(/img/splash_large.jpg);
+    background-image: url(/img/splash_alt_large.jpg);
 
   }
 	 @media #{$medium-and-down} {
-    background-image: url(/img/splash_medium.jpg);
+    background-image: url(/img/splash_alt_medium.jpg);
   }
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .bg-splash{
