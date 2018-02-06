@@ -44,6 +44,7 @@
     "gulp-postcss": "^6.1.1",
     "gulp-sass": "^3.1.0",
     "gulp-util": "^3.0.7",
+    "has-unicode": "^2.0.1",
     "immutable": "^3.8.2",
     "imports-loader": "^0.6.5",
     "json-schema": "^0.2.3",
