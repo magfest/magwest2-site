@@ -1,7 +1,7 @@
 backend:
-  name: git-gateway
-  #name: github #comment me out on development
-  #repo: magfest/magwest2-site # comment me out on production
+  #name: git-gateway
+  name: github #comment me out on development
+  repo: magfest/magwest2-site # comment me out on production
   branch: master # Branch to update (master by default)
 
 media_folder: "src/img/uploads" # Folder where user uploaded files should go
@@ -48,11 +48,6 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - {label: "URL", name: "url", widget: "string"}
-      - {label: "Profile Picture", name: "image", widget: "image", required: false}
-      - {label: "First Name", name: "first_name", widget: "string"}
-      - {label: "Middle Name(s)", name: "middle_name", widget: "string", required: false}
-      - {label: "Last Name", name: "last_name", widget: "string"}
-      - {label: "Birth Date", name: "birth_date", widget: "datetime"}
 
   - name: "announcements"
     label: "Announcements"

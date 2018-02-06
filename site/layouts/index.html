@@ -1,22 +1,10 @@
 {{ partial "header" . }}
 
-<div id="mainContainer1" class="container partial-transparency">
+<div id="mainContainer1" class="container partial-transparency" style="margin-top: 2em">
   <div class="row">
     <div class="col s12 secondary-color-text content-text">
       {{ .Content }}
     </div>
-    {{ with .Site.GetPage "section" "announcements" }}
-    <div class="col s12">
-      <div class="row">
-        <div class="col s12">
-          <h2 class="secondary-color-text black-outline center-align">Announcements</h2>
-        </div>
-        <div class="col s12">
-          {{ partial "collapsible" .Pages }}
-        </div>
-    </div>
-  </div>
-    {{ end }}
   </div>
 
 </div>
