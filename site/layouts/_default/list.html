@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 
-<div class="container {{ .Title }} {{ .Section | urlize }}">
-  <h1 class="secondary-color-text">{{ .Title }}</h1>
+<div class="container partial-transparency {{ .Title }} {{ .Section | urlize }}">
+  <h1 class="secondary-color-text center black-outline thin-outline">{{ .Title }}</h1>
   {{ if .Data.Pages }}
   {{ partial "gallery" .Data.Pages }}
   {{ else }}

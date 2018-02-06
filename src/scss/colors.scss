@@ -8,7 +8,7 @@ $primary-color-dark: false;
 @if not $primary-color-dark {
   $primary-color-dark: darken($primary-color, 15%);
 }
-$secondary-color: color("blue", "lighten-2");
+$secondary-color: color("blue-grey", "lighten-1");
 $success-color: color("green", "base");
 $error-color: color("red", "base");
 $tertiary-color: color("grey", "darken-1");
@@ -20,7 +20,7 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .secondary-color {
-  @extend .blue, .lighten-2
+  @extend .blue-grey, .lighten-1
 }
 
 .tertiary-color {
@@ -28,15 +28,23 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .primary-color-text {
-  @extend .grey-text, .text-darken-4
+  @extend .blue-grey-text, .text-lighten-4
 }
 
 .secondary-color-text {
-  @extend .light-blue-text, .text-darken-4
+  @extend .red-text, .text-darken-2
 }
 
 .tertiary-color-text{
-  @extend .light-blue-text, .text-lighten-2
+  @extend .grey-text, .text-lighten-1
+}
+
+.body-container{
+  @extend .grey, .lighten-1
+}
+
+.partial-transparency{
+    background-color: rgba($secondary-color, 0.6);
 }
 
 .content-text > *{

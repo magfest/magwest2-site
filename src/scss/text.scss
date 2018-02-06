@@ -4,3 +4,15 @@
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
+
+.thin-outline{
+  -webkit-text-stroke-width: 1.65px !important;
+}
+
+.regular-outline{
+  -webkit-text-stroke-width: 4px !important;
+}
+
+.thick-outline{
+  -webkit-text-stroke-width: 6px !important;
+}

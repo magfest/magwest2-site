@@ -1,3 +1,5 @@
+@import "./node_modules/materialize-css/sass/materialize.scss";
+
 .darkness{
   background-image: url(/img/patterns/darkness.png);
 }
@@ -91,4 +93,23 @@
 }
 .bg-pixel_weave-2x{
   background-image: url(/img/patterns/pixel_weave_@2X.png);
+}
+
+.bg-mag-splash{
+@media #{$large-and-up} {
+    background-image: url(/img/splash_large.jpg);
+
+  }
+	 @media #{$medium-and-down} {
+    background-image: url(/img/splash_medium.jpg);
+  }
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-splash{
+	@extend .bg-mag-splash
+}
+
+.bg-splash-alt{
 }
