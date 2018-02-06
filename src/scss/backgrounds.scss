@@ -97,11 +97,11 @@
 
 .bg-mag-splash{
 @media #{$large-and-up} {
-    background-image: url(/img/splash_alt_large.jpg);
+    background-image: url(/img/texture.jpg);
 
   }
 	 @media #{$medium-and-down} {
-    background-image: url(/img/splash_alt_medium.jpg);
+    background-image: url(/img/texture.jpg);
   }
   background-repeat: no-repeat;
   background-size: cover;
