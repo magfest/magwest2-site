@@ -24,9 +24,28 @@
   margin-right: 0 !important;
 }
 
+.no-margin-vertical{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.no-margin-top{
+  margin-top: 0 !important;
+}
+
+.no-margin-bottom{
+  margin-bottom: 0 !important;
+}
+
+
 .auto-margin-horizontal{
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+.pad-vertical{
+  padding-top: 2em !important;
+  padding-bottom: 2em !important;
 }
 
 .small-image{

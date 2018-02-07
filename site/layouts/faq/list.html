@@ -1,6 +1,6 @@
 {{ partial "header-with-nav" . }}
 
-<div class="container bg-pink_rice {{ .Title }} {{ .Section | urlize }}">
+<div class="container bg-pink_rice pad-vertical {{ .Title }} {{ .Section | urlize }}">
   <h1 class="center-align secondary-color-text black-outline ">{{ .Title }}</h1>
   <ul class="faq">
     {{ range .Pages.ByWeight.Reverse }}
