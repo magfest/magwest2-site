@@ -3,7 +3,7 @@
   {{ range .ByPublishDate }}
       <li>
         <div class="collapsible-header secondary-color primary-color-text"><i class="fa {{ .Params.fa|default "fa-newspaper-o"}}"></i>{{ .Title }} - Click For Details!</div>
-        <div class="collapsible-body content-text secondary-color">{{ .Content }}</div>
+        <div class="collapsible-body context-text secondary-color">{{ .Content }}</div>
       </li>
   {{ end }}
   </ul>

@@ -48,6 +48,10 @@
   padding-bottom: 2em !important;
 }
 
+.scrollable-x{
+  overflow-x: scroll;
+}
+
 .small-image{
   width: 250px;
   height: auto;
@@ -119,7 +123,7 @@ nav .button-collapse i{
 }
 
 
-.content-text ul > li {
+.context-text ul > li {
   list-style-type: square !important;
   list-style-position: outside;
 
@@ -131,6 +135,9 @@ nav .button-collapse i{
   }
 }
 
+.context-text p{
+  font-size: 1.55rem;
+}
 
 
 .content.pages {

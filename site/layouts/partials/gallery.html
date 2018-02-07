@@ -8,15 +8,16 @@
 
           <div class="uk-position-cover uk-flex uk-flex-center uk-flex-top">
             <div class="primary-color  full-width rounded uk-position-z-index">
-            <a href="{{ .URL }}"><h4 class="link-color underline-on-hover">{{ .Title }}</h4></a>
+            <a href="{{ .URL }}"><h4 class="link-color underline-on-hover truncate">{{ .Title }}</h4></a>
           </div>
         </div>
 
           <div class="uk-position-cover uk-flex uk-flex-center uk-flex-bottom ">
-            <div class="primary-color full-width rounded uk-position-z-index">
+            <div class="primary-color full-width rounded uk-position-z-index" >
               {{ range .Params.icons }}
             {{ partial "icon_range" (dict "Icon" . "IconBrightness" "" "URLClass" "social-media" "IconClass" "fa-lg") }}
-            {{ end }}</div>
+            {{ end }}
+          </div>
             </div>
 
       </div>
