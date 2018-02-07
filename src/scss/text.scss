@@ -22,3 +22,19 @@
 .underline{
   text-decoration: underline;
 }
+.underline-on-hover:hover{
+  text-decoration: underline;
+}
+
+.border{
+  border-style: solid;
+}
+
+.black-border{
+  border-color: black;
+}
+
+.collection.options > .collection-item span{
+  font-size: 48px;
+  margin: auto 0;
+}

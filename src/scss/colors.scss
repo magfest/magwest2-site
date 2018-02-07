@@ -66,6 +66,15 @@ $tertiary-color: color("grey", "darken-1");
   color: lighten($secondary-color-text, 10%) !important;
 }
 
+.option-color{
+  @extend .black-text, .text-lighten-3;
+}
+
+
+.option-color:hover{
+  color: lighten($secondary-color-text, 100%) !important;
+}
+
 .link-color-disabled:hover{
   color: lighten(red, 30%) !important;
 }

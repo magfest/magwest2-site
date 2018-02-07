@@ -88,6 +88,10 @@
   background-image: url(/img/patterns/witewall_3_@2X.png);
 }
 
+.bg-pink_rice{
+  background-image: url(/img/patterns/pink_rice.png);
+}
+
 .bg-pixel_weave{
   background-image: url(/img/patterns/pixel_weave.png);
 }
@@ -108,10 +112,24 @@
   background-attachment: fixed;
   background-position: center;
 }
+.bg-logo-splash{
+@media #{$large-and-up} {
+    background-image: url(/img/logo.png);
+
+  }
+	 @media #{$medium-and-down} {
+    background-image: url(/img/logo.png);
+  }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
 
 .bg-splash{
 	@extend .bg-mag-splash
 }
 
 .bg-splash-alt{
+  @extend .bg-logo-splash
 }
