@@ -29,4 +29,5 @@
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
 <body class="{{ .Section | urlize }} tertiary-color">
+  {{ partial "navbar" . }}
 <main class="bg-splash">

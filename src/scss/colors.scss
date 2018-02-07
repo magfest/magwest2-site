@@ -9,7 +9,7 @@ $primary-color-dark: false;
 @if not $primary-color-dark {
   $primary-color-dark: darken($primary-color, 15%);
 }
-$secondary-color: color("indigo", "darken-2");
+$secondary-color: color("grey", "darken-2");
 $secondary-color-text: color("grey", "darken-4");
 $success-color: color("green", "base");
 $error-color: color("red", "base");
@@ -22,7 +22,7 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .secondary-color {
-  @extend .indigo, .darken-2
+  @extend .grey, .darken-2
 }
 
 .tertiary-color {
@@ -46,7 +46,7 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .partial-transparency{
-    background-color: rgba($secondary-color, 0.8);
+    background-color: lighten(rgba($secondary-color, 0.6), 10%);
 }
 
 .content-text > *{
