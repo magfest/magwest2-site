@@ -54,11 +54,11 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .link-color-disabled{
-  @extend .grey-text, .text-lighten-3
+  @extend .white-text, .text-lighten-3
 }
 
 .link-color{
-  @extend .grey-text, .text-lighten-3;
+  @extend .white-text, .text-lighten-3;
 }
 
 
