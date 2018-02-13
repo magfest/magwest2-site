@@ -6,7 +6,7 @@ $option-color: #fae3fd;
   font-size: 2em;
   color: $body-color;
   background-color: rgba(234,222,221, 0.8);
-  margin-top: 2em; 
+  margin-top: 2em;
   margin-bottom: 2em;
 }
 
@@ -58,6 +58,10 @@ $option-color: #fae3fd;
   margin-right: auto !important;
   padding-bottom: 10px;
 
+details:hover{
+  cursor: pointer;
+}
+
   details {
     margin-left: 3em;
     width: 85%;
@@ -74,7 +78,7 @@ $option-color: #fae3fd;
     border: none;
     box-shadow: 3px 3px 4px black;
   }
-  
+
   details[open] > summary {
     box-shadow: none;
   //  outline: 0 !important;
