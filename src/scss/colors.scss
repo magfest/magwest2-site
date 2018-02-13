@@ -1,6 +1,6 @@
 @import "./node_modules/materialize-css/sass/materialize.scss";
 @import "text.scss";
-$primary-color: color("red", "darken-2");
+$primary-color: color("pink", "lighten-3");
 $primary-color-light: false;
 $primary-color-dark: false;
 @if not $primary-color-light {
@@ -18,7 +18,7 @@ $tertiary-color: color("grey", "darken-1");
   $link-color: color("grey", "lighten-3");
 
 .primary-color {
-  @extend .red, .darken-2
+  @extend .pink, .lighten-3
 }
 
 .secondary-color {

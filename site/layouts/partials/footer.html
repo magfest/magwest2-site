@@ -13,8 +13,12 @@
           <input type="email" name="email" required>
         </div>
         <div class="input-field col s12">
-          <label for="comments" class="active">Comments</label>
-          <textarea name="comments" class="materialize-textarea" required></textarea>
+          <label for="subject" class="active">Subject</label>
+          <input type="text" name="subject" required>
+        </div>
+        <div class="input-field col s12">
+          <label for="message" class="active">Message</label>
+          <textarea name="message" class="materialize-textarea" required></textarea>
         </div>
       </div>
 
@@ -25,12 +29,12 @@
   </form>
 </div>
 </main>
-<footer class="page-footer primary-color darken-4 no-print z-depth-4">
+<footer class="page-footer primary-color no-print z-depth-4">
   {{ with .Site.GetPage "page" "pages/footer.md" }}
          <div class="container">
            <div class="row center-align link-color">
              {{ range .Params.icons }}
-             {{ partial "icon_range" (dict "Icon" . "Color" "primary-color" "TextColor"  "link-color" "BackgroundBrightness" "darken-2" "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
+             {{ partial "icon_range" (dict "Icon" . "Color" "primary-color" "TextColor"  "link-color" "BackgroundBrightness" "accent-2" "URLClass" "social-media" "IconClass" "fa-lg social-media-icon") }}
              {{ end }}
 
            </div>
