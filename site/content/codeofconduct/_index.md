@@ -40,7 +40,8 @@ Do not affix anything to or write on the walls of the hotel or the directional s
 
 The offering for sale of any merchandise at the festival may be undertaken only in the Marketplace area or by special arrangement with the MAGWest staff. All sales will be governed by the rules applicable to the Marketplace approved vendors. Anyone wishing to sell goods or merchandise must first obtain pre-approval from MAGWest. Please note that it is illegal to sell merchandise or services in any area of the hotel not designated for such activity. Such actions constitute "illegal solicitation", and may result in the perpetrator being removed from hotel grounds.
 
-Personal Conduct in Festival Areas and in Hotel Public Areas
+# Personal Conduct in Festival Areas and in Hotel Public Areas
+
 There is no smoking or vaping in any portion of the hotel. Our hosts respectfully request that those who step outside to smoke kindly refrain from standing directly in front of any of the entrances, as the smoke is carried inside. Please take notice of posted signs.
 
 Please remember that you are a guest of the hotel, and that there may be other guests staying or dining at the hotel who are not attendees of the festival. Please maintain a level of noise appropriate to the time and place. We expect everyone to cooperate fully with MAGWest staff, hotel staff, and any local security or law enforcement personnel. "Disorderly conduct" includes any fighting, any inappropriate horseplay, or any actions that may disturb or disrupt of any festival or hotel functions. Disorderly conduct may result in revocation of your badge.
