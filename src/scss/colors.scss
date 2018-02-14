@@ -46,7 +46,7 @@ $tertiary-color: color("grey", "darken-1");
 }
 
 .partial-transparency{
-    background-color: lighten(rgba($secondary-color, 0.6), 10%);
+    background-color: lighten(rgba($secondary-color, 0.6), 1%);
 }
 
 .content-text > *{

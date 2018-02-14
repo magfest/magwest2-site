@@ -99,6 +99,10 @@
   background-image: url(/img/patterns/pixel_weave_@2X.png);
 }
 
+.bg-love{
+  background-image: url(/img/patterns/hearts-seamless-backgrounds-07-150x150.jpg);
+}
+
 .bg-mag-splash{
 @media #{$large-and-up} {
     background-image: url(/img/texture.jpg);
@@ -132,4 +136,8 @@
 
 .bg-splash-alt{
   @extend .bg-logo-splash
+}
+
+.bg-container{
+  @extend .bg-love
 }
