@@ -58,25 +58,36 @@ $option-color: #fae3fd;
   margin-right: auto !important;
   padding-bottom: 10px;
 
-details:hover{
-  cursor: pointer;
-}
+  details:hover{
+    cursor: pointer;
+  }
 
   details {
     margin-left: 3em;
     width: 85%;
-    background-image: url(/img/patterns/hearts-seamless-backgrounds-07-150x150.jpg);
+    background-image: url(/img/patterns/hearts-seamless-backgrounds-07-150x150.jpg); // http://www.vectortiles.com/seamless-heart-backgrounds/
     // background-size: contain;
     margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
     border: black 1px solid;
-  }
 
-  details > summary {
-    padding: 2px 6px;
-    border: none;
-    box-shadow: 3px 3px 4px black;
+    summary {
+        padding: 2px 6px;
+        border: none;
+        box-shadow: 3px 3px 4px black;
+    }
+
+    p {
+      border-radius: 0 0 10px 10px;
+      padding: 2px 6px;
+      margin: 0;
+      box-shadow: 3px 3px 4px black;
+    }
+  }
+  
+  details.no-caret summary::-webkit-details-marker {
+    display: none;
   }
 
   details[open] > summary {
@@ -86,13 +97,6 @@ details:hover{
 
   details[open] > summary:focus {
     outline: 0 !important;
-  }
-
-  details > p {
-    border-radius: 0 0 10px 10px;
-    padding: 2px 6px;
-    margin: 0;
-    box-shadow: 3px 3px 4px black;
   }
 }
 
