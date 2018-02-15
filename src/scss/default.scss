@@ -1,7 +1,72 @@
 @import "colors.scss";
 
+.full-width{
+  width: 100%;
+}
+
+.full-height{
+  height: 100%;
+}
+
+.same-height{
+  height: 150px;
+}
+
+.no-margin{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.no-margin-horizontal{
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.no-margin-vertical{
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.no-margin-top{
+  margin-top: 0 !important;
+}
+
+.no-margin-bottom{
+  margin-bottom: 0 !important;
+}
 
 
+.auto-margin-horizontal{
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.pad-vertical{
+  padding-top: 2em !important;
+  padding-bottom: 2em !important;
+}
+
+.scrollable-x{
+  overflow-x: scroll;
+}
+
+.small-image{
+  width: 250px;
+  height: auto;
+
+}
+.medium-image{
+  width: 500px;
+  height: auto;
+
+}
+
+.collection.options > .collection-item {
+  height: 5em;
+  @extend .transparent;
+}
 div.social-media-row{
   margin-top: -6em;
 }
@@ -54,11 +119,11 @@ nav .button-collapse i{
 }
 
 .page-footer *, .context-text *, body *{
-  font-family: "Oswald", Arial;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 
-.content-text ul > li {
+.context-text ul > li {
   list-style-type: square !important;
   list-style-position: outside;
 
@@ -70,6 +135,9 @@ nav .button-collapse i{
   }
 }
 
+.context-text p{
+  font-size: 1.55rem;
+}
 
 
 .content.pages {

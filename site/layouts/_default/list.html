@@ -1,9 +1,11 @@
-{{ partial "header" . }}
+{{ partial "header-with-nav" . }}
 
-<div class="container partial-transparency {{ .Title }} {{ .Section | urlize }}">
-  <h1 class="secondary-color-text center ">{{ .Title }}</h1>
+<div class="container pad-vertical partial-transparency {{ .Title }} {{ .Section | urlize }}">
+  <h1 class="secondary-color-text center black-outline no-margin-top">{{ .Title }}</h1>
   {{ if .Data.Pages }}
+  <div class="uk-child-width-expand@s uk-text-center" uk-grid>
   {{ partial "gallery" .Data.Pages }}
+  </div>
   {{ else }}
   <p class="secondary-color-text"> Information coming soon!</p>
   {{ end }}

@@ -1,0 +1,9 @@
+{{ partial "header-with-nav" . }}
+
+<div class="container bg-container pad-vertical {{ .Title }} {{ .Section | urlize }}">
+  <h1 class="center-align secondary-color-text black-outline ">{{ .Title }}</h1>
+    <div class="hoverable rounded partial-transparency container">
+        <div class="flow-text context-text tertiary-color-text">{{ .Content }}</div>
+    </div>
+
+{{ partial "footer" . }}

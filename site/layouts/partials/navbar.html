@@ -1,5 +1,5 @@
 <header class="no-print">
-  <nav class="primary-color darken-4">
+  <nav class="primary-color">
     <div class="nav-wrapper">
       <style scoped>
       @media only screen and (max-width:992px){
@@ -34,12 +34,6 @@
             <li><a href="{{$p.URL}}" class="link-color "> {{ $p.Name }} </a></li>
             {{ end }}
           {{end}}
-          {{ if .PrevInSection }}
-          <li><a href="{{.PrevInSection.URL}}" class="link-color "> Previous </a></li>
-          {{ end }}
-          {{ if .NextInSection }}
-          <li><a href="{{.NextInSection.URL}}" class="link-color "> Next </a></li>
-          {{ end }}
         </ul>
         <ul class="side-nav" id="mobile-sidebar">
           {{ if (not .Pages) and .Section }}
@@ -67,12 +61,7 @@
           <li><a href="{{$p.URL}}" class="primary-color-text "> {{ $p.Name }} </a></li>
           {{ end }}
           {{end}}
-          {{ if .PrevInSection }}
-          <li><a href="{{.PrevInSection.URL}}" class="primary-color-text "> Previous </a></li>
-          {{ end }}
-          {{ if .NextInSection }}
-          <li><a href="{{.NextInSection.URL}}" class="primary-color-text"> Next </a></li>
-          {{ end }}
+
           {{ with .Site.GetPage "page" "pages/sidebar.md" }}
           <li><div class="divider"></div></li>
           <li><a class="subheader">Useful Links</a></li>

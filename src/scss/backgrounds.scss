@@ -88,6 +88,10 @@
   background-image: url(/img/patterns/witewall_3_@2X.png);
 }
 
+.bg-pink_rice{
+  background-image: url(/img/patterns/pink_rice.png);
+}
+
 .bg-pixel_weave{
   background-image: url(/img/patterns/pixel_weave.png);
 }
@@ -95,13 +99,30 @@
   background-image: url(/img/patterns/pixel_weave_@2X.png);
 }
 
+.bg-love{
+  background-image: url(/img/patterns/hearts-seamless-backgrounds-07-150x150.jpg);
+}
+
 .bg-mag-splash{
 @media #{$large-and-up} {
-    background-image: url(/img/splash_alt_large.jpg);
+    background-image: url(/img/texture.jpg);
 
   }
 	 @media #{$medium-and-down} {
-    background-image: url(/img/splash_alt_medium.jpg);
+    background-image: url(/img/texture.jpg);
+  }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.bg-logo-splash{
+@media #{$large-and-up} {
+    background-image: url(/img/logo.png);
+
+  }
+	 @media #{$medium-and-down} {
+    background-image: url(/img/logo.png);
   }
   background-repeat: no-repeat;
   background-size: cover;
@@ -114,4 +135,9 @@
 }
 
 .bg-splash-alt{
+  @extend .bg-logo-splash
+}
+
+.bg-container{
+  @extend .bg-love
 }

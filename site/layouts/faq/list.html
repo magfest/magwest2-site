@@ -1,15 +1,19 @@
-{{ partial "header" . }}
+{{ partial "header-with-nav" . }}
 
-<div class="container partial-transparency {{ .Title }} {{ .Section | urlize }}">
+<div class="container bg-container pad-vertical {{ .Title }} {{ .Section | urlize }}">
   <h1 class="center-align secondary-color-text black-outline ">{{ .Title }}</h1>
   <ul class="faq">
     {{ range .Pages.ByWeight.Reverse }}
-    <div class="hoverable rounded">
+    <div class="hoverable rounded partial-transparency container">
+      {{ $word_count := .Content|countwords }}
+      {{ if gt $word_count 0 }}
       <li class="secondary-color-text underline ">{{ .Title }}</li>
-      {{ with .Content }}
+
       <ul>
-        <li class="flow-text context-text tertiary-color-text">{{ . }}</li>
+        <li class="flow-text context-text tertiary-color-text">{{ .Content }}</li>
       </ul>
+      {{ else }}
+      <h3 class="center-align secondary-color-text black-outline ">{{ .Title }}</h3>
       {{ end }}
     </div>
     {{ end }}

@@ -1,9 +1,9 @@
-{{ partial "header" . }}
+{{ partial "header-with-nav" . }}
 
-<div class="container partial-transparency" style="margin-top: 0.5em;">
+<div class="container bg-pink_rice" style="margin-top: 0.5em;">
   <div class="row">
     <div class="col s12">
-      {{ if .Title }}<h2 class="center-align secondary-color-text">{{ .Title }}</h2>{{ end }}
+      {{ if .Title }}<h2 class="center-align secondary-color-text black-outline">{{ .Title }}</h2>{{ end }}
 
     </div>
   </div>
@@ -26,7 +26,7 @@
       <img class="center-image {{ .Section |urlize }}" src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
     </div>
     {{ if .Content }}
-    <div class="col s12 l8 secondary-color-text context-text {{ .Section | urlize }}">
+    <div class="col s12 l8 secondary-color-text context-text black-outline {{ .Section | urlize }}">
     {{ .Content }}
     </div>
     {{ end }}

@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/css/uikit.css">
   <link rel="stylesheet" href="/css/custom.css">
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
   <link href="/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
 
   <!-- Icons -->
@@ -30,4 +31,5 @@
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
 <body class="{{ .Section | urlize }} tertiary-color">
+  {{ partial "navbar" . }}
 <main class="bg-splash">
