@@ -1,8 +1,42 @@
 {{ partial "header" . }}
+<div class="uk-modal" id="hotel-modal">
+<form class="uk-form" netlify name="RoomAvailability" onsubmit="UIkit.modal('#hotel-modal').hide();">
+  <div class="uk-modal-dialog">
+    <div class="uk-modal-header">
+      <h2 class="">Room Availability Sign Ups</h2>
+      <hr>
+    </div>
 
-<div id="index" class="container">
+
+
+        <div class="uk-form-row">
+          <label for="name" class="uk-form-label"><strong>Your Name</strong></label>
+          <div class="uk-form-controls">
+            <input name="name" class="uk-width-1-1" required>
+          </div>
+        </div>
+        <div class="uk-form-row">
+          <label for="email" class="uk-form-label"><strong>Your Email</strong></label>
+          <div class="uk-form-controls">
+            <input type="email" name="email" class="uk-width-1-1" required>
+          </div>
+        </div>
+        <hr>
+        <small>
+          Hotel rooms will be available for booking at a discounted rate of $155 a night throughout MAGWest soon. If you would like an email notification when the link is available please fill out this form.
+        </small>
+
+      <div class="uk-modal-footer">
+        <hr>
+        <input type="submit" value="Send" href="#!" class="uk-button uk-width-1-1">
+      </div>
+  </div>
+  </form>
+</div>
+
+<div id="index" class="uk-container uk-container-center">
     <div class="logo">
-        <img src="/img/logo.png"/>
+        <img class="" src="/img/logo.png"/>
         <h1>August 10-12, 2018</h1>
         <h1>Santa Clara Hyatt Regency</h1>
     </div>
@@ -12,73 +46,47 @@
         <h2><i>You see a Fwestival standing in front of you. What do you do?</i></h2>
     </div>
 
-    <div class="cta">
-        <button name="buy-badge"><a href="https://west2018.uber.magfest.org/uber/preregistration/form" target="_blank">Buy your badge</a></button>
-        <button name="book-hotel"><a class="modal-trigger" href="#hotel-modal" target="_blank">Book your hotel</a></button>
+    <div class="uk-grid cta uk-margin-remove uk-grid-medium">
+        <button name="buy-badge" class=" uk-width-1-2 uk-button uk-text-large uk-text-capitalize"><a href="https://west2018.uber.magfest.org/uber/preregistration/form" target="_blank">Buy your badge</a></button>
+        <button name="book-hotel" class=" uk-width-1-2  uk-button uk-text-large uk-text-capitalize"><a data-uk-modal="{center:true}" href="#hotel-modal" target="_blank">Book your hotel</a></button>
     </div>
-    <div class="modal modal-fixed-footer" id="hotel-modal">
-    <form class="" netlify name="RoomAvailability" onsubmit="$('#hotel-modal').modal('close');">
-      <div class="modal-content">
-        <h3 class="center-align">Room Availability Sign Ups</h3>
-        <div class="row">
-          <p>
-            Hotel rooms will be available for booking at a discounted rate of $155 a night throughout MAGWest soon. If you would like an email notification when the link is available please fill out this form.
-          </p>
-        </div>
 
-          <div class="row">
-            <div class="input-field col s12">
-              <label for="name" class="active">Your Name</label>
-              <input name="name" required>
-            </div>
-            <div class="input-field col s12">
-              <label for="email" class="active">Your Email</label>
-              <input type="email" name="email" required>
-            </div>
-          </div>
-
-      </div>
-      <div class="modal-footer">
-        <input type="submit" value="send" href="#!" class=" waves-effect waves-green btn-flat ">
-      </div>
-      </form>
-    </div>
 
 
 
     <i>or...</i>
 
     <div class="options">
-        <details>
-            <summary>Enter the arcade</summary>
-            <p>MAGWest has a giant arcade, stocked full of rhythm games, pinball, consoles, and so much more. Plus, all the machines are free-to-play. We might be a small event, but hopefully so are our lines!</p>
+        <details class="">
+            <summary class="uk-h2">Enter the arcade</summary>
+            <p class="uk-text-large">MAGWest has a giant arcade, stocked full of rhythm games, pinball, consoles, and so much more. Plus, all the machines are free-to-play. We might be a p event, but hopefully so are our lines!</p>
         </details>
         <details>
-            <summary>Rock out!</summary>
-            <p>Join us for TWO jam-packed nights of VIDEO GAME MUSIC!!!!!! <a href="//2017.magwest.org/see/rockstars" target="_blank">Last year's lineup</a> featured performers such as the Super Soul Bros., Kirby's Dream Band, Darren Korb, and more. Stay tuned for information on this year's performers!
+            <summary class="uk-h2">Rock out!</summary>
+            <p class="uk-text-large">Join us for TWO jam-packed nights of VIDEO GAME MUSIC!!!!!! <a href="//2017.magwest.org/see/rockstars" target="_blank">Last year's lineup</a> featured performers such as the Super Soul Bros., Kirby's Dream Band, Darren Korb, and more. Stay tuned for information on this year's performers!
             <br />
             Would you rather be the one making the music? Give an impromptu performance in one of our public Jam Pods or head to the Jam Space, a place to learn and make music with your new friends.</p>
         </details>
         <details>
-            <summary>Setup your rig in LAN</summary>
-            <p>BYOPC and recreate the times before reliable internet connections by staying up all night gaming with other hopefully-washed gamers.</p>
+            <summary class="uk-h2">Setup your rig in LAN</summary>
+            <p class="uk-text-large">BYOPC and recreate the times before reliable internet connections by staying up all night gaming with other hopefully-washed gamers.</p>
         </details>
         <details>
-            <summary>Run a panel</summary>
-            <p>The inaugural MAGWest had round-the-clock content run by fans, creators, and local hobos. Up to the challenge for 2018? Click <a href="https://west2018.uber.magfest.org/uber/panel_applications/index">here</a>.</p>
+            <summary class="uk-h2">Run a panel</summary>
+            <p class="uk-text-large">The inaugural MAGWest had round-the-clock content run by fans, creators, and local hobos. Up to the challenge for 2018? Click <a href="https://west2018.uber.magfest.org/uber/panel_applications/index">here</a>.</p>
         </details>
         <details class="no-caret">
-            <summary><a href="/faq">Visit the library of frequently asked questions</a></summary>
+            <summary class="uk-h2"><a href="/faq">Visit the library of frequently asked questions</a></summary>
         </details>
         <details class="no-caret">
-            <summary><a href="/codeofconduct">Read the code of conduct</a></summary>
+            <summary class="uk-h2"><a href="/codeofconduct">Read the code of conduct</a></summary>
         </details>
     </div>
 
     <div class="explainer">
-        <strong>Okay, but what the heck is a MAGWest?</strong><br />
-        <p>MAGWest is a 3-day all-hours festival celebrating the communities of people that video games can bring together, and exploring the creativity that comes with the people who are passionate about video games. Want to find out more?
-        <a href="#contact-modal" class="modal-trigger" target="_blank">Contact us.</a> Or check out <a href="http://2017.magwest.org/" target="_blank">last year's site.</a></p>
+        <strong class="uk-h1">Okay, but what the heck is a MAGWest?</strong><br />
+        <p class="uk-h3">MAGWest is a 3-day all-hours festival celebrating the communities of people that video games can bring together, and exploring the creativity that comes with the people who are passionate about video games. Want to find out more?
+        <a href="#contact-modal" data-uk-modal="{center: true}" target="_blank">Contact us.</a> Or check out <a href="http://2017.magwest.org/" target="_blank">last year's site.</a></p>
 
         <i>And always remember... w-we love you, attendee-sama...</i> 😅
     </div>

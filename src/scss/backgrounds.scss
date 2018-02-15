@@ -1,4 +1,6 @@
-@import "./node_modules/materialize-css/sass/materialize.scss";
+@import "./node_modules/materialize-css/sass/components/_color.scss";
+@import "./node_modules/materialize-css/sass/components/_variables.scss";
+
 
 .darkness{
   background-image: url(/img/patterns/darkness.png);

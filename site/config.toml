@@ -1,8 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "MAGWest 2"
+title = "MAGWest 2018"
 
 [params]
   description = "& Knuckles"
-
-  

@@ -1,82 +1,76 @@
 <header class="no-print">
-  <nav class="primary-color">
-    <div class="nav-wrapper">
-      <style scoped>
-      @media only screen and (max-width:992px){
-          .brand-logo{
-            font-size: 2.3vmax !important;
-            text-overflow: ellipsis;
-          }
-        }
-      </style>
-      <a href="{{ .Site.BaseURL }}" class="brand-logo link-color truncate logo-padding ">{{ .Site.Title }}</a>
-      {{ with .Site.Menus.main }}<a href="#" data-activates="mobile-sidebar" class="button-collapse"><i class="fa fa-bars fa-lg link-color text-darken-4"></i></a> {{ end }}
-        <ul class="right hide-on-med-and-down">
-          {{ with .Site.GetPage "page" "pages/sidebar.md" }}
-          {{ if .Params.items }}
-          <li><a class="dropdown-button link-color" data-hover="true" data-beloworigin="true" href="#!" data-activates="useful-links">Useful Links<i class="fa fa-caret-down right"></i></a></li>
-          <ul id="useful-links" class="dropdown-content">
-          {{ range $p := .Params.items }}
-            <li><a href="{{$p.href|safeURL}}" class="primary-color-text "> {{ $p.title|title }} </a></li>
-          {{ end }}
-          </ul>
-          {{ end }}
-          {{ end }}
-          {{ range $p := .Site.Menus.main }}
-            {{ if $p.HasChildren }}
-            <ul id="n{{.Identifier}}" class="dropdown-content">
-              {{ range $c := $p.Children }}
-              <li class="primary-color darken-4"><a href="{{$c.URL}}" class="link-color "> {{ $c.Name }} </a></li>
+  <nav class="uk-navbar primary-color">
+              <ul class="uk-navbar-nav uk-visible-large">
+              <li class=""><a href="{{ .Site.BaseURL }}" class="uk-navbar-brand">{{ .Site.Title }}</a></li>
+              {{ with .Site.GetPage "page" "pages/sidebar.md" }}
+              {{ if .Params.items }}
+              <li><a class="dropdown-button link-color" data-hover="true" data-beloworigin="true" href="#!" data-activates="useful-links">Useful Links<i class="fa fa-caret-down right"></i></a></li>
+              <ul id="useful-links" class="dropdown-content">
+              {{ range $p := .Params.items }}
+                <li><a href="{{$p.href|safeURL}}" class="primary-color-text "> {{ $p.title|title }} </a></li>
               {{ end }}
-            </ul>
-            <li><a class="dropdown-button link-color" data-hover="true" data-beloworigin="true" href="#!" data-activates="n{{$p.Identifier}}">{{ $p.Name }}<i class="fa fa-caret-down right"></i></a></li>
-            {{ else }}
-            <li><a href="{{$p.URL}}" class="link-color "> {{ $p.Name }} </a></li>
-            {{ end }}
-          {{end}}
-        </ul>
-        <ul class="side-nav" id="mobile-sidebar">
-          {{ if (not .Pages) and .Section }}
-            <li><a  href="../" class="primary-color-text ">Go Back</a></li>
-          {{ end }}
+              </ul>
+              {{ end }}
+              {{ end }}
+              {{ range $p := .Site.Menus.main }}
+                {{ if $p.HasChildren }}
+                <li class="uk-parent" data-uk-dropdown><a>{{ $p.Name }}</a>
+                  <div class="uk-dropdown uk-dropdown-navbar">
+                    <ul id="n{{.Identifier}}" class="uk-nav uk-nav-navbar">
+                      {{ range $c := $p.Children }}
+                      <li><a href="{{$c.URL}}" class=""> {{ $c.Name }} </a></li>
+                      {{ end }}
+                    </ul>
+                  </div></li>
 
-          {{ range $p := .Site.Menus.main }}
-          {{ if $p.HasChildren }}
-          <li class="no-padding">
-            <ul class="collapsible collapsible-accordion">
-              <li>
-                <a class="collapsible-header primary-color-text ">{{$p.Name}}<i class="fa fa-caret-down"></i></a>
-                <div class="collapsible-body">
-                  <ul>
+                {{ else }}
+                <li><a href="{{$p.URL}}" class=""> {{ $p.Name }} </a></li>
+                {{ end }}
+              {{end}}
+              </ul>
+
+              <div class="uk-hidden-large uk-container uk-padding-remove">{{ if .Site.Menus.main }}<a href="#mobile-sidebar" class="uk-navbar-toggle uk-hidden-large" data-uk-offcanvas></a>{{ end }}<a href="{{ .Site.BaseURL }}" class="uk-navbar-brand uk-navbar-center">{{ .Site.Title }}</a></div>
+
+        <div id="mobile-sidebar" class="uk-offcanvas">
+          <div class="uk-offcanvas-bar">
+            <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav id="">
+
+                {{ range $p := .Site.Menus.main }}
+                {{ if $p.HasChildren }}
+                <li class="uk-parent ">
+                  <a href="#" class="primary-color-text ">{{$p.Name}}</a>
+                  <ul class="uk-nav-sub">
                     {{ range $c := $p.Children }}
                     <li><a href="{{$c.URL}}" class="primary-color-text "> {{ $c.Name }} </a></li>
                     {{ end }}
-                    <li><div class="divider"></div></li>
                   </ul>
-                </div>
-              </li>
-            </ul>
-          </li>
-          {{ else }}
-          <li><a href="{{$p.URL}}" class="primary-color-text "> {{ $p.Name }} </a></li>
-          {{ end }}
-          {{end}}
+                </li>
+                {{ else }}
+                <li><a href="{{$p.URL}}" class="primary-color-text "> {{ $p.Name }} </a></li>
+                {{ end }}
+                {{end}}
 
-          {{ with .Site.GetPage "page" "pages/sidebar.md" }}
-          <li><div class="divider"></div></li>
-          <li><a class="subheader">Useful Links</a></li>
-          {{ range $p := .Params.items }}
-            <li><a href="{{$p.href|safeURL}}" class="primary-color-text "> {{ $p.title|title }} </a></li>
-          {{ end }}
-          {{ end }}
-          {{ with .Site.GetPage "section" "announcements" }}
-          <li><div class="divider"></div></li>
-          <li><a class="subheader">Recent Announcements</a></li>
-          {{ range $p := .Pages }}
-            <li><a href="{{$p.URL}}" class="primary-color-text "> {{ $p.Title }} </a></li>
-          {{ end }}
-          {{ end }}
-        </ul>
-    </div>
+                {{ with .Site.GetPage "page" "pages/sidebar.md" }}
+                {{ if .Params.items }}
+                {{ if .Site.Menus.main }}
+                <li class="uk-nav-divider"></li>
+                {{ end }}
+
+                <li class="uk-nav-header">Useful Links</li>
+                {{ range $p := .Params.items }}
+                  <li><a href="{{$p.href|safeURL}}" class="primary-color-text "> {{ $p.title|title }} </a></li>
+                {{ end }}
+                {{ end }}
+                {{ end }}
+                {{ with .Site.GetPage "section" "announcements" }}
+                <li class="uk-nav-divider"></li>
+                <li class="uk-nav-header">Recent Announcements</li>
+                {{ range $p := .Pages }}
+                  <li><a href="{{$p.URL}}" class="primary-color-text "> {{ $p.Title }} </a></li>
+                {{ end }}
+                {{ end }}
+              </ul>
+          </div>
+        </div>
   </nav>
 </header>
