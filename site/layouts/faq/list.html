@@ -1,21 +1,24 @@
 {{ partial "header-with-nav" . }}
 
-<div class="container bg-container pad-vertical {{ .Title }} {{ .Section | urlize }}">
-  <h1 class="center-align secondary-color-text black-outline ">{{ .Title }}</h1>
-  <ul class="faq">
+<div class="uk-container uk-container-center bg-container uk-margin-top uk-margin-bottom {{ .Title }} {{ .Section | urlize }}">
+  <h1 class="uk-text-center secondary-color-text black-outline uk-margin-top ">{{ .Title }}</h1>
+  <ul class="faq uk-padding-remove">
     {{ range .Pages.ByWeight.Reverse }}
-    <div class="hoverable rounded partial-transparency container">
-      {{ $word_count := .Content|countwords }}
-      {{ if gt $word_count 0 }}
-      <li class="secondary-color-text underline ">{{ .Title }}</li>
+    <div class="rounded partial-transparency uk-container uk-container-center uk-margin-top uk-margin-bottom">
+      <div class="uk-margin-top uk-margin-bottom">
+        {{ $word_count := .Content|countwords }}
+        {{ if gt $word_count 0 }}
+        <li class="secondary-color-text underline ">{{ .Title }}</li>
 
-      <ul>
-        <li class="flow-text context-text tertiary-color-text">{{ .Content }}</li>
-      </ul>
-      {{ else }}
-      <h3 class="center-align secondary-color-text black-outline ">{{ .Title }}</h3>
-      {{ end }}
+        <ul>
+          <li class="flow-text context-text tertiary-color-text">{{ .Content }}</li>
+        </ul>
+      </div>
     </div>
+      {{ else }}
+      <h3 class="uk-text-center uk-h1 secondary-color-text black-outline uk-margin-top ">{{ .Title }}</h3>
+      {{ end }}
+
     {{ end }}
   </ul>
 

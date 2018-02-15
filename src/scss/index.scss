@@ -3,7 +3,6 @@ $option-color: #fae3fd;
 
 #index {
   text-align: center;
-  font-size: 2em;
   color: $body-color;
   background-color: rgba(234,222,221, 0.8);
   margin-top: 2em;
@@ -49,7 +48,6 @@ $option-color: #fae3fd;
   background-color: #f9c8d9;
   box-shadow: 3px 3px 4px black;
   border: black 1px solid;
-  margin: 5px;
 }
 
 .options {
@@ -85,7 +83,7 @@ $option-color: #fae3fd;
       box-shadow: 3px 3px 4px black;
     }
   }
-  
+
   details.no-caret summary::-webkit-details-marker {
     display: none;
   }
@@ -97,13 +95,5 @@ $option-color: #fae3fd;
 
   details[open] > summary:focus {
     outline: 0 !important;
-  }
-}
-
-.explainer {
-  font-size: smaller;
-
-  strong {
-    font-weight: bolder;
   }
 }
