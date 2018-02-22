@@ -1,38 +1,4 @@
 {{ partial "header" . }}
-<div class="uk-modal" id="hotel-modal">
-<form class="uk-form" netlify name="RoomAvailability" onsubmit="UIkit.modal('#hotel-modal').hide();">
-  <div class="uk-modal-dialog">
-    <div class="uk-modal-header">
-      <h2 class="">Room Availability Sign Ups</h2>
-      <hr>
-    </div>
-
-
-
-        <div class="uk-form-row">
-          <label for="name" class="uk-form-label"><strong>Your Name</strong></label>
-          <div class="uk-form-controls">
-            <input name="name" class="uk-width-1-1" required>
-          </div>
-        </div>
-        <div class="uk-form-row">
-          <label for="email" class="uk-form-label"><strong>Your Email</strong></label>
-          <div class="uk-form-controls">
-            <input type="email" name="email" class="uk-width-1-1" required>
-          </div>
-        </div>
-        <hr>
-        <small>
-          Hotel rooms will be available for booking at a discounted rate of $155 a night throughout MAGWest soon. If you would like an email notification when the link is available please fill out this form.
-        </small>
-
-      <div class="uk-modal-footer">
-        <hr>
-        <input type="submit" value="Send" href="#!" class="uk-button uk-width-1-1">
-      </div>
-  </div>
-  </form>
-</div>
 
 <div id="index" class="uk-container uk-container-center">
     <div class="logo">
@@ -48,7 +14,7 @@
 
     <div class="uk-grid cta uk-margin-remove uk-grid-medium">
         <button name="buy-badge" class=" uk-width-1-2 uk-button uk-text-large uk-text-capitalize"><a href="https://west2018.uber.magfest.org/uber/preregistration/form" target="_blank">Buy your badge</a></button>
-        <button name="book-hotel" class=" uk-width-1-2  uk-button uk-text-large uk-text-capitalize"><a data-uk-modal="{center:true}" href="#hotel-modal" target="_blank">Book your hotel</a></button>
+        <button name="book-hotel" class=" uk-width-1-2  uk-button uk-text-large uk-text-capitalize"><a data-uk-modal="{center:true}" href="https://aws.passkey.com/go/magwest2018" target="_blank">Book your hotel</a></button>
     </div>
 
 
