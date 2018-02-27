@@ -1,5 +1,5 @@
 <div class="uk-modal" id="contact-modal">
-<form class="uk-form" netlify name="Contact" onsubmit="$('#contact-modal').modal('close');">
+<form class="uk-form" netlify netlify-honeypot="catchme" name="Contact" onsubmit="$('#contact-modal').modal('close');">
   <div class="uk-modal-dialog">
     <div class="uk-modal-header ">
       <h2 class="">Contact Form - contact@magwest.org</h2>
@@ -15,6 +15,12 @@
           <label for="email" class="uk-form-label"><strong>Your Email</strong></label>
           <div class="uk-form-controls">
           <input type="email" name="email" class="uk-width-1-1" required>
+          </div>
+        </div>
+        <div class="uk-form-row" hidden>
+          <label for="catchme" class="uk-form-label"><strong>Don't.</strong></label>
+          <div class="uk-form-controls">
+            <input name="catchme" class="uk-width-1-1">
           </div>
         </div>
         <div class="uk-form-row">
