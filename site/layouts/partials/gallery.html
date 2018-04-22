@@ -1,27 +1,10 @@
+<!-- this file actually displays gallery ITEMS and not the gallery itself (that's in list.html) -->
+
 {{ if . }}
   {{ range .ByPublishDate }}
-    <div class="uk-width-1-2" >
-
-      <div class="uk-inline">
-
-          <img class='' src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
-
-          <div class="uk-position-cover uk-flex uk-flex-center uk-flex-top">
-            <div class="primary-color  full-width rounded uk-position-z-index">
-            <a href="{{ .URL }}"><h4 class="link-color underline-on-hover truncate">{{ .Title }}</h4></a>
-          </div>
-        </div>
-
-          <div class="uk-position-cover uk-flex uk-flex-center uk-flex-bottom ">
-            <div class="primary-color full-width rounded uk-position-z-index" >
-              {{ range .Params.icons }}
-            {{ partial "icon_range" (dict "Icon" . "IconBrightness" "" "URLClass" "social-media" "IconClass" "fa-lg") }}
-            {{ end }}
-          </div>
-            </div>
-
-      </div>
-    </div>
-
+    <figure class="item">
+        <img src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
+        <figcaption><a href="{{ .URL }}">{{ .Title }}</a></figcaption>
+    </figure>
   {{ end }}
 {{ end }}

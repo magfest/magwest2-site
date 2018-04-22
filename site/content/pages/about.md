@@ -14,4 +14,4 @@ MAGFest is powered by people who often work through extreme difficulty, sometime
 
 This year, we host our second annual MAGWest aiming to embrace the community and culture of music and video games on the west coast.
 
-## We'll see you out there in Santa Clara, CA on August 10th-12th, 2018.
+## We'll see you out there in Santa Clara, CA, on August 10–12, 2018.

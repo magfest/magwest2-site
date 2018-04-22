@@ -1,6 +1,17 @@
-{{ partial "header-with-nav" . }}
+{{ partial "header" . }}
 
-<div class="container pad-vertical partial-transparency {{ .Title }} {{ .Section | urlize }}">
+<div id="index" class="uk-container uk-container-center {{ .Title }} {{ .Section | urlize }}">
+  <h1>❥ {{ .Title }}</h1>
+  {{ if .Data.Pages }}
+  <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div class="gallery">{{ partial "gallery" .Data.Pages }}</div> 
+  </div>
+  {{ else }}
+  <p class="secondary-color-text"> Information coming soon!</p>
+  {{ end }}
+</div>
+
+<!-- <div class="container pad-vertical partial-transparency {{ .Title }} {{ .Section | urlize }}">
   <h1 class="secondary-color-text center black-outline no-margin-top">{{ .Title }}</h1>
   {{ if .Data.Pages }}
   <div class="uk-child-width-expand@s uk-text-center" uk-grid>
@@ -9,6 +20,6 @@
   {{ else }}
   <p class="secondary-color-text"> Information coming soon!</p>
   {{ end }}
-</div>
+</div> -->
 
 {{ partial "footer" . }}
