@@ -1,6 +1,8 @@
 ---
 title: Code of Conduct
-url: /codeofconduct
+url: /code-of-conduct
+aliases:
+  - /codeofconduct
 ---
 The primary purpose of MAGWest is for the attendees to have fun. To make this happen, MAGFest INC has established certain rules of conduct. These rules were created to ensure the behavior of any one individual or group of attendees does not disturb the enjoyment of another attendee, nor detract from the relaxed and comfortable atmosphere of the festival. MAGWest welcomes everyone; however, the festival's management reserves the right to deny or revoke the attendance of any individual, at any time, for any reason. This action may be undertaken when an individual's presence or behavior causes significant interference with festival operations or adversely affects the organization's relationship with its guests or with its venue. MAGFest INC also reserves the right to amend these rules at any time without prior or posted notice. If you have any questions, please contact the festival operations staff for assistance.
 
