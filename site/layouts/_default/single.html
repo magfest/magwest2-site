@@ -1,12 +1,8 @@
-{{ partial "header-with-nav" . }}
+{{ partial "header" . }}
 
-<div class="container bg-pink_rice" style="margin-top: 0.5em;">
-  <div class="row">
-    <div class="col s12">
-      {{ if .Title }}<h2 class="center-align secondary-color-text black-outline">{{ .Title }}</h2>{{ end }}
+<div id="index" class="uk-container uk-container-center">
+  {{ if .Title }}<h1>❥ {{ .Title }}</h1>{{ end }}
 
-    </div>
-  </div>
   {{ if .Params.icons }}
   <div class="row center-align social-media-row">
     {{ range .Params.icons }}
@@ -14,24 +10,23 @@
     {{ end }}
   </div>
   {{ end }}
-  <div class="row">
-    {{ if eq .Dir "pages/" }}
-    {{ if .Content }}
-    <div class="col s12 secondary-color-text context-text {{ .Section | urlize }}">
-    {{ .Content }}
-    </div>
-    {{ end }}
-    {{ else }}
-    <div class="col s12 l4 right">
-      <img class="center-image {{ .Section |urlize }}" src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
-    </div>
-    {{ if .Content }}
-    <div class="col s12 l8 secondary-color-text context-text black-outline {{ .Section | urlize }}">
-    {{ .Content }}
-    </div>
-    {{ end }}
-    {{ end }}
+
+  {{ if eq .Dir "pages/" }}
+  {{ if .Content }}
+  <div class="{{ .Section | urlize }}">
+  {{ .Content }}
   </div>
+  {{ end }}
+  {{ else }}
+  <div>
+    <img class="center-image {{ .Section |urlize }}" src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
+  </div>
+  {{ if .Content }}
+  <div class="{{ .Section | urlize }}">
+  {{ .Content }}
+  </div>
+  {{ end }}
+  {{ end }}
 
 
 

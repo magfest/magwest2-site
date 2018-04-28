@@ -1,6 +1,6 @@
 ---
 title: Bring Arcade Games!
-url: /bring-arcades
+url: /bring-arcade-games
 ---
 # Want a Free Badge to MAGWest?
 

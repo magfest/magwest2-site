@@ -8,11 +8,11 @@
   <!-- Enable responsiveness on mobile devices-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-  {{ if .IsHome }}
+  <!-- {{ if .IsHome }}
   <title>{{ .Site.Title }}</title>
   {{ else }}
   <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
-  {{ end }}
+  {{ end }} -->
 
   <!-- CSS -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -30,4 +30,15 @@
   <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 </head>
 <body class="{{ .Section | urlize }} tertiary-color">
-<main class="bg-splash">
+  <header id="nav" class="primary-color">
+    <!-- <img src="/img/logo.png"> -->
+    <span><a href="/">MAGWest ❤</a></span>
+    <ul>
+      <li><a href="/about">About</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/code-of-conduct">Code of Conduct</a></li>
+      <li><a href="#contact-modal" data-uk-modal="{center: true}" target="_blank">Contact</a></li>
+      <li class="cta"><button onclick="window.open('https://west2018.uber.magfest.org/uber/preregistration/form')" name="buy-badge"><a>Buy Your Badge!</a></button></li>
+    </ul>
+  </header>
+  <main class="bg-splash">
