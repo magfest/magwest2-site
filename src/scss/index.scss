@@ -2,6 +2,7 @@ $body-color: black;
 $option-color: #fae3fd;
 
 /* HEADER STYLING */
+  
 #nav {
   background-color: #f9c8d9;
   display: flex;
@@ -35,6 +36,15 @@ $option-color: #fae3fd;
     font-size: 1em !important;
   }
 }
+
+/* MOBILE ONLY CSS */
+
+@media all and (max-device-width:600px) {
+  #nav{
+	font-size: 1em;
+  }
+}
+
 
 /* HOMEPAGE STYLING */
 
