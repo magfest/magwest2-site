@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 
 <div class="page uk-container uk-container-center">
-  {{ if .Title }}<h1>❥ {{ .Title }}</h1>{{ end }}
+  {{ if .Title }}<h1><i id="playButton" onclick="togglePlay()" class="fas fa-play"></i> {{ .Title }}&nbsp;<i class="fas fa-question"></i></h1>{{ end }}
 
   {{ if .Params.icons }}
   <div class="row center-align ">
@@ -29,7 +29,20 @@
   {{ end }}
 
 
-
+<audio id="playSource" src="/img/uploads/bands/songs/candy.mp3" />
 </div>
+
+<script>
+  var audioSource = document.getElementById('playSource');
+  var togglePlay = function(e){
+    $("#playButton").toggleClass("fa-play");
+    $("#playButton").toggleClass("fa-pause");
+    if(audioSource.paused){
+      audioSource.play();
+    } else{
+      audioSource.pause();
+    }
+  };
+</script>
 
 {{ partial "footer" . }}
