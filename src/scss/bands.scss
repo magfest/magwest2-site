@@ -60,6 +60,9 @@ $option-color: #fae3fd;
 .page a {
   color: $secondary-color;
   text-decoration: none;
+  &:active{
+    color: darken($secondary-color, 10%);
+  }
 }
 
 .page button a {
@@ -236,4 +239,26 @@ p {
 .back-arrow{
   position: absolute;
   left: 5px;
+}
+
+#playButton{
+  &:active, &:hover:active{
+    color: darken($primary-color-dark, 10%);
+  }
+
+  &:hover{
+    color: $primary-color-dark;
+    cursor: pointer;
+  }
+}
+
+#exciteButton{
+  &:active, &:hover:active{
+    color: darken($primary-color-dark, 10%);
+  }
+
+  &:hover{
+    color: $primary-color-dark;
+    cursor: pointer;
+  }
 }

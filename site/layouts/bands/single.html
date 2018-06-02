@@ -7,7 +7,7 @@
   <div class="row" style="position: relative;">
     <a href="../" class="back-arrow"><i class="fas fa-arrow-left fa-3x"></i></a>
   </div>
-  {{ if .Title }}<h1><i id="playButton" onclick="togglePlay()" class="fas fa-play"></i> {{ .Title }}&nbsp;<i id="exciteButton" class="fas fa-question"></i></h1>{{ end }}
+  {{ if .Title }}<h1><i id="playButton" onclick="togglePlay()" title="Play/Pause Music" class="fas fa-play"></i> {{ .Title }}&nbsp;<i title="Restart Song" onclick="resetAudio()" id="exciteButton" class="fas fa-question"></i></h1>{{ end }}
 
   {{ if .Params.icons }}
   <div class="row center-align ">
@@ -38,7 +38,29 @@
 <audio id="playSource" src="{{ .Params.audio | default "/img/uploads/bands/songs/candy.mp3"}}" />
 </div>
 
-<script>
+<script type="text/javascript">
+
+  {{ define "jquery" }}
+    $("#exciteButton").hover(function(){
+      if(!toggleExciteSwitch){
+
+        toggleExcite();
+        $("#exciteButton").toggleClass("fa-sync");
+        toggleExciteSwitch = true;
+      }
+
+
+    }, function() {
+      if(toggleExciteSwitch){
+        toggleExcite();
+        $("#exciteButton").toggleClass("fa-sync");
+        toggleExciteSwitch = false;
+      }
+
+    });
+    {{ end }}
+
+  var toggleExciteSwitch = false;
 
   var audioSource = document.getElementById('playSource');
   var togglePlay = function(e){
@@ -52,6 +74,20 @@
       audioSource.pause();
     }
   };
+
+  var toggleExcite = function(){
+    if(audioSource.paused){
+      $("#exciteButton").toggleClass("fa-question");
+    } else{
+      $("#exciteButton").toggleClass("fa-exclamation");
+    }
+  };
+
+  var resetAudio = function(){
+    audioSource.currentTime = 0;
+  }
+
+
 </script>
 
 {{ partial "footer" . }}
