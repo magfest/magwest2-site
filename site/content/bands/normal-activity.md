@@ -1,6 +1,7 @@
 ---
 title: Normal Activity
 image: /img/uploads/bands/normal_activity_bio_pic.png
+audio: /img/uploads/bands/songs/normal_activity/bob_omb_battlefield.mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook
