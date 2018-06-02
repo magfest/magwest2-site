@@ -1,6 +1,7 @@
 ---
 title: Super Soul Bros.
 image: /img/uploads/bands/super_soul_bros_bio_pic.png
+audio: /img/uploads/bands/songs/super_soul_bros/06 Bob-Omb Battlefield.mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook

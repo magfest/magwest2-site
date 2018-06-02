@@ -1,6 +1,7 @@
 ---
 title: Vic Viper
 image: /img/uploads/bands/vic_viper_bio_pic.jpg
+audio: /img/uploads/bands/songs/vic_viper/Vic Viper - Mega Man 9 - Flash In the Dark.mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook

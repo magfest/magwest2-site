@@ -1,6 +1,7 @@
 ---
 title: Kabuki
 image: /img/uploads/bands/kabuki_bio_pic.jpg
+audio: /img/uploads/bands/songs/kabuki/Undertale - Dating Start! (Kabuki Remix).mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook

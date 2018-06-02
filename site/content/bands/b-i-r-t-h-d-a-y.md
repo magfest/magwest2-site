@@ -2,6 +2,7 @@
 title: B/I/R/T/H/D/A/Y
 image: /img/uploads/bands/b_i_r_t_h_d_a_y_bio_pic.jpg
 publishDate: 2017-11-15T02:02:30.198Z
+audio: /img/uploads/bands/songs/birthday/Wolfdads.m4a
 icons:
   - icon: fab fa-facebook
     title: Facebook

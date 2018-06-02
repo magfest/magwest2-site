@@ -58,7 +58,7 @@ $option-color: #fae3fd;
 }
 
 .page a {
-  color: blueviolet;
+  color: $secondary-color;
   text-decoration: none;
 }
 
@@ -231,4 +231,9 @@ p {
 
 .header-image img{
   max-height: 300px;
+}
+
+.back-arrow{
+  position: absolute;
+  left: 5px;
 }

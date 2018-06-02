@@ -1,6 +1,7 @@
 ---
 title: The Runaway Four
 image: /img/uploads/bands/the_runaway_four_bio_pic.jpg
+audio: /img/uploads/bands/songs/the_runaway_four/American Dream Chaser.mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook

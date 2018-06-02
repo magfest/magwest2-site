@@ -1,6 +1,7 @@
 ---
 title: Street Cleaner
 image: /img/uploads/bands/street_cleaner_bio_pic.jpg
+audio: /img/uploads/bands/songs/street_cleaner/Street Cleaner - Payback - 03 Nightlife.mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook

@@ -1,6 +1,7 @@
 ---
 title: Extra Lives
 image: /img/uploads/bands/extra_lives_bio_pic.png
+audio: /img/uploads/bands/songs/extra_lives/05 Chemical Plant Zone (From _Sonic the Hedgehog 2_).mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook
