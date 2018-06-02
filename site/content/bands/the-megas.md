@@ -1,6 +1,7 @@
 ---
 title: The Megas
 image: /img/uploads/bands/the_megas_bio_pic.jpg
+audio: /img/uploads/bands/songs/the_megas/The Megas - The Belmonts (Cassette EP) - 01 Bloody Tears.mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook

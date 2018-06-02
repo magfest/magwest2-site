@@ -1,6 +1,7 @@
 ---
 title: Super MadNES
 image: /img/uploads/bands/super_madnes_bio_pic.jpg
+audio: /img/uploads/bands/songs/super_madnes/Super MadNES - Shadow Soldier -Ninja Gaiden - Arcade-.mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook

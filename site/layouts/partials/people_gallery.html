@@ -5,7 +5,7 @@
     <a href="{{ .URL }}">
       <figure class="item">
           <img src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
-          <figcaption><span class="option">&nbsp;{{ .Title }}&nbsp;</span></figcaption>
+          <figcaption class=""><span class="option">&nbsp;{{ .Title }}&nbsp;</span></figcaption>
       </figure>
     </a>
   {{ end }}

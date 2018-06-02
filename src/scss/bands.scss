@@ -58,7 +58,7 @@ $option-color: #fae3fd;
 }
 
 .page a {
-  color: blueviolet;
+  color: $secondary-color;
   text-decoration: none;
 }
 
@@ -180,9 +180,19 @@ p {
     border-style: solid;
     max-width: 300px;
     min-width: 300px;
+    min-height: 350px;
+    position: relative;
 
     figcaption span{
       font-size: 2em;
+    }
+    figcaption{
+      bottom: 5px;
+      width: 100%;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: -1px;
     }
 
     .option {
@@ -212,14 +222,18 @@ p {
 
     img {
       max-height: 300px;
-      min-height: 300px;
       width: auto;
-      margin-left: auto;
-      margin-right: auto;
+      height: auto;
+      margin: auto;
     }
   }
 }
 
 .header-image img{
   max-height: 300px;
+}
+
+.back-arrow{
+  position: absolute;
+  left: 5px;
 }

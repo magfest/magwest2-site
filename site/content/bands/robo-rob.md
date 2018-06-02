@@ -1,6 +1,7 @@
 ---
 title: RoboRob
 image: /img/uploads/bands/roborob_bio_pic.png
+audio: /img/uploads/bands/songs/roborob/CUPHEAD - Carnival Kerfuffle (RoboRob Remix) [Electro Swing].mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
   - icon: fab fa-facebook

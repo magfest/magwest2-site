@@ -1,7 +1,13 @@
 {{ partial "header" . }}
+{{ define "title"}}
+{{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
 
 <div class="page uk-container uk-container-center">
-  {{ if .Title }}<h1>❥ {{ .Title }}</h1>{{ end }}
+  <div class="row" style="position: relative;">
+    <a href="../" class="back-arrow"><i class="fas fa-arrow-left fa-3x"></i></a>
+  </div>
+  {{ if .Title }}<h1><i id="playButton" onclick="togglePlay()" class="fas fa-play"></i> {{ .Title }}&nbsp;<i id="exciteButton" class="fas fa-question"></i></h1>{{ end }}
 
   {{ if .Params.icons }}
   <div class="row center-align ">
@@ -29,7 +35,23 @@
   {{ end }}
 
 
-
+<audio id="playSource" src="{{ .Params.audio | default "/img/uploads/bands/songs/candy.mp3"}}" />
 </div>
+
+<script>
+
+  var audioSource = document.getElementById('playSource');
+  var togglePlay = function(e){
+    $("#playButton").toggleClass("fa-play");
+    $("#playButton").toggleClass("fa-pause");
+    $("#exciteButton").toggleClass("fa-question");
+    $("#exciteButton").toggleClass("fa-exclamation");
+    if(audioSource.paused){
+      audioSource.play();
+    } else{
+      audioSource.pause();
+    }
+  };
+</script>
 
 {{ partial "footer" . }}
