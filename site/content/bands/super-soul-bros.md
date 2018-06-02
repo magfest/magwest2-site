@@ -1,26 +1,35 @@
 ---
 title: Super Soul Bros.
-image: /img/uploads/Super Soul Bros logo_v3_regular_SSB 02.png
+image: /img/uploads/bands/super_soul_bros_bio_pic.png
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
-  - icon: facebook
+  - icon: fab fa-facebook
     title: Facebook
     url: 'https://facebook.com/supersoulbros'
-  - icon: compass
+  - icon: fas fa-compass
     title: Website
     url: 'http://www.supersoulbros.com/'
-  - icon: twitter
+  - icon: fab fa-twitter
     title: Twitter
     url: 'https://twitter.com/supersoulbros'
-  - icon: twitch
+  - icon: fab fa-twitch
     title: Twitch
     url: 'https://twitch.tv/supersoulbros'
-  - icon: youtube
+  - icon: fab fa-youtube
     title: YouTube
     url: 'https://www.youtube.com/supersoulbros'
-  - icon: instagram
+  - icon: fab fa-instagram
     title: Instagram
     url: 'https://instagram.com/supersoulbros/'
+  - icon: fab fa-bandcamp
+    title: Bandcamp
+    url: 'http://SuperSoulBros.bandcamp.com'
+  - icon: fab fa-discord
+    title: Discord
+    url: 'http://discord.gg/supersoulbros'
+  - icon: fab fa-soundcloud
+    title: Bandcamp
+    url: 'http://soundcloud.com/supersoulbros'
 ---
 The Super Soul Bros. are what would happen if you jammed a 70’s Herbie Hancock record into a Super Nintendo.
 

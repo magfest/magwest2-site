@@ -1,10 +1,10 @@
 {{ partial "header" . }}
 
-<div id="index" class="uk-container uk-container-center">
+<div class="page uk-container uk-container-center">
   {{ if .Title }}<h1>❥ {{ .Title }}</h1>{{ end }}
 
   {{ if .Params.icons }}
-  <div class="row center-align social-media-row">
+  <div class="row center-align ">
     {{ range .Params.icons }}
     {{ partial "icon_range" (dict "Icon" . "IconBrightness" "darken-4" "IconClass" "fa-fw fa-lg social-media-icon" "URLClass" "social-media-row primary-color") }}
     {{ end }}
@@ -18,7 +18,7 @@
   </div>
   {{ end }}
   {{ else }}
-  <div>
+  <div class="header-image">
     <img class="center-image {{ .Section |urlize }}" src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
   </div>
   {{ if .Content }}

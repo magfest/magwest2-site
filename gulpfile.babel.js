@@ -21,8 +21,8 @@ const defaultArgs = ["-d", "../dist", "-s", "site", "-v"];
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
 
-gulp.task("build", ["css", "js", "videos", "images", "hugo", "fonts", "scss"]);
-gulp.task("build-preview", ["css", "js", "videos", "images", "fonts", "hugo-preview", "scss"]);
+gulp.task("build", ["css", "js", "videos", "images", "hugo", "fonts", "scss", "webfonts"]);
+gulp.task("build-preview", ["css", "js", "videos", "images", "fonts", "hugo-preview", "scss", "webfonts"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -79,13 +79,19 @@ gulp.task("fonts", () => (
     .pipe(browserSync.stream())
 ));
 
+gulp.task("webfonts", () => (
+  gulp.src("./src/webfonts/**/*")
+    .pipe(gulp.dest("./dist/webfonts"))
+    .pipe(browserSync.stream())
+));
+
 gulp.task("images", () => (
   gulp.src("./src/img/**/*")
     .pipe(gulp.dest("./dist/img"))
     .pipe(browserSync.stream())
 ));
 
-gulp.task("server", ["hugo", "css", "js", "videos", "images", "fonts", "scss"], () => {
+gulp.task("server", ["hugo", "css", "js", "videos", "images", "fonts", "scss", "webfonts"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
@@ -97,7 +103,8 @@ gulp.task("server", ["hugo", "css", "js", "videos", "images", "fonts", "scss"], 
   gulp.watch("./src/scss/**/*.scss", ["scss"]);
   gulp.watch("./src/img/**/*", ["images"]);
   gulp.watch("./src/videos/**/*", ["videos"]);
-  gulp.watch("./src/fonts/**/*", ["fonts"])
+  gulp.watch("./src/fonts/**/*", ["fonts"]);
+  gulp.watch("./src/webfonts/**/*", ["webfonts"]);
   gulp.watch("./site/**/*", ["hugo"]);
 });
 

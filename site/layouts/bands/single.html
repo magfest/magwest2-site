@@ -1,0 +1,35 @@
+{{ partial "header" . }}
+
+<div class="page uk-container uk-container-center">
+  {{ if .Title }}<h1>❥ {{ .Title }}</h1>{{ end }}
+
+  {{ if .Params.icons }}
+  <div class="row center-align ">
+    {{ range .Params.icons }}
+    {{ partial "icon_range" (dict "Icon" . "IconBrightness" "darken-4" "IconClass" "fa-fw fa-lg social-media-icon" "URLClass" "social-media-row primary-color") }}
+    {{ end }}
+  </div>
+  {{ end }}
+
+  {{ if eq .Dir "pages/" }}
+  {{ if .Content }}
+  <div class="{{ .Section | urlize }}">
+  {{ .Content }}
+  </div>
+  {{ end }}
+  {{ else }}
+  <div class="header-image">
+    <img class="center-image {{ .Section |urlize }}" src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
+  </div>
+  {{ if .Content }}
+  <div class="{{ .Section | urlize }}">
+  {{ .Content }}
+  </div>
+  {{ end }}
+  {{ end }}
+
+
+
+</div>
+
+{{ partial "footer" . }}

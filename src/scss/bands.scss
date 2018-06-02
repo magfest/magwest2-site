@@ -1,0 +1,225 @@
+$body-color: black;
+$option-color: #fae3fd;
+
+@import "colors.scss";
+
+/* HEADER STYLING */
+#nav {
+  background-color: #f9c8d9;
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+  padding: 0 1.5em;
+  height: 55px;
+  justify-content: center;
+
+  div {
+    display: inline;
+    align-self: flex-end;
+    margin-left: auto;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
+    margin-left: auto;
+
+    li {
+      display: inline;
+      padding: 0 5px;
+    }
+  }
+
+  .cta button {
+    font-size: 1em !important;
+  }
+}
+
+/* HOMEPAGE STYLING */
+
+.page {
+  text-align: center;
+  color: $body-color;
+  background-color: rgba(234,222,221, 0.8);
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+.page > div {
+  padding: 10px;
+}
+
+.page h2 {
+  margin: 0;
+}
+
+.page a {
+  color: blueviolet;
+  text-decoration: none;
+}
+
+.page button a {
+  color: $body-color;
+  text-decoration: none;
+}
+
+.logo {
+  img {
+    width: 500px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    margin: 0 auto;
+  }
+}
+
+.action-text {
+  padding: 0 10px;
+}
+
+.cta button {
+  background-color: #f9c8d9;
+  box-shadow: 3px 3px 4px black;
+  border: black 1px solid;
+}
+
+.options {
+  text-align: left;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-bottom: 10px;
+
+  details:hover{
+    cursor: pointer;
+  }
+
+  details {
+    margin-left: 3em;
+    width: 85%;
+    background-image: url(/img/patterns/hearts-seamless-backgrounds-07-150x150.jpg); // http://www.vectortiles.com/seamless-heart-backgrounds/
+    // background-size: contain;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: black 1px solid;
+
+    summary {
+        padding: 2px 6px;
+        border: none;
+        box-shadow: 3px 3px 4px black;
+    }
+
+    p {
+      border-radius: 0 0 10px 10px;
+      padding: 2px 6px;
+      margin: 0;
+      box-shadow: 3px 3px 4px black;
+    }
+  }
+
+  details.no-caret summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details[open] > summary {
+    box-shadow: none;
+  //  outline: 0 !important;
+  }
+
+  details[open] > summary:focus {
+    outline: 0 !important;
+  }
+}
+
+p {
+  color: black;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.explainer p {
+  text-align: center;
+}
+
+/* GALLERY (BAND) STYLING */
+
+.uk-grid{
+  margin-left: 0;
+  &:before{
+    content: none;
+  }
+
+  &:after{
+    content: none;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  a {
+    text-decoration: none;
+    padding: 0;
+  }
+
+  .item {
+    margin: 25px 0;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.9);
+    border-width: 2px;
+    border-style: solid;
+    max-width: 300px;
+    min-width: 300px;
+
+    figcaption span{
+      font-size: 2em;
+    }
+
+    .option {
+      color: $primary-color;
+      &:before, &:after{
+        content: '\f004';
+        font-family: "Font Awesome 5 Free";
+        font-weight: 400;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+
+      }
+    }
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    &:hover .option, &:active .option{
+      &:before, &:after{
+        font-weight: 900;
+      }
+
+    }
+
+    img {
+      max-height: 300px;
+      min-height: 300px;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.header-image img{
+  max-height: 300px;
+}

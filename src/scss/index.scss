@@ -146,25 +146,3 @@ p {
 .explainer p {
   text-align: center;
 }
-
-/* GALLERY (BAND) STYLING */
-
-.gallery {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-
-  .item {
-    margin: 0;
-
-    figcaption {
-      font-size: 2em;
-    }
-  
-    img {
-      max-height: 300px;
-      min-height: 300px;
-      width: auto;
-    }
-  }
-}

@@ -1,0 +1,12 @@
+<!-- this file actually displays gallery ITEMS and not the gallery itself (that's in list.html) -->
+
+{{ if . }}
+  {{ range .ByPublishDate }}
+    <a href="{{ .URL }}">
+      <figure class="item">
+          <img src="{{ .Params.image | default "/img/default_announcement.jpeg"}}">
+          <figcaption><span class="option">&nbsp;{{ .Title }}&nbsp;</span></figcaption>
+      </figure>
+    </a>
+  {{ end }}
+{{ end }}
