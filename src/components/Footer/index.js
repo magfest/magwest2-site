@@ -15,8 +15,8 @@ const FooterWrapper = styled(Grid, {
   fontSize: '0.75em',
 })(theme => ({
   background: theme.palette.background.default,
-  padding: `0px 0`,
   bottom: '0',
+  left: '0',
   height: '125px',
   '& a:link, & a:visited': {
     cursor: 'pointer',

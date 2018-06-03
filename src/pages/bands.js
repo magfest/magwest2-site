@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import styled from '../utils/styled';
-import { Typography, Grid, List, ListItem, ListItemText, ListSubheader } from '@material-ui/core';
+import { Typography, Grid, List, ListItem, ListItemText, ListSubheader, Avatar } from '@material-ui/core';
 import Section from '../components/Section';
 
 class IndexPage extends React.Component{
@@ -31,13 +31,17 @@ class IndexPage extends React.Component{
     return data.allMarkdownRemark.edges
       .filter(edge => edge.node.frontmatter.templateKey === 'band-page')
       .map(edge => (
-        <ListItem key={edge.node.id}>
-          <Link to={edge.node.fields.slug}>
-            <Typography variant="title">
+        <Link to={edge.node.fields.slug}>
+          <ListItem style={{ borderTop: 'solid 2px grey'}} key={edge.node.id}>
+            <Avatar
+              src={edge.node.frontmatter.image}
+              alt={edge.node.frontmatter.title}
+            />
+            <ListItemText>
               {edge.node.frontmatter.title}
-            </Typography>
-          </Link>
-        </ListItem>
+            </ListItemText>
+          </ListItem>
+        </Link>
       ));
   };
 
@@ -52,12 +56,7 @@ class IndexPage extends React.Component{
           <Helmet title="Bands" />
 
           <List>
-            <ListItem style={this.state.active == '' ? {} : {display: 'none'}}>
-            <List>
-              {bandButtons}
-            </List>
-            </ListItem>
-            {bands}
+            {bandButtons}
           </List>
         </Grid>
       </Section>

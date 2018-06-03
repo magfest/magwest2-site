@@ -24,6 +24,7 @@
     "mdi-material-ui": "3.2.0",
     "netlify-identity-widget": "1.4.11",
     "react-helmet": "5.2.0",
+    "react-smooth-marquee": "^1.0.0",
     "typeface-merriweather": "0.0.54",
     "typeface-open-sans": "0.0.54",
     "typeface-roboto": "0.0.54"
