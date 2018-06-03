@@ -65,15 +65,23 @@ class App extends Component {
   }
 
   playAudio = () => {
-    this.audioRef.current.play();
+    if(this.audioRef.current){
+      this.audioRef.current.play();
+    }
+
   }
 
   pauseAudio = () => {
-    this.audioRef.current.pause();
+    if(this.audioRef.current){
+      this.audioRef.current.pause();
+    }
   }
 
   isPausedAudio = () => {
-    return this.audioRef.current.paused;
+    if(this.audioRef.current){
+      return this.audioRef.current.paused;
+    }
+    return null;
   }
 
   togglePlay = () => {
