@@ -13,7 +13,7 @@ class NavButton extends Component{
 
   defaultStyle = (newStyle) => {
     let propStyle = Object.assign({}, this.props.style ? this.props.style : {});
-    let madeStyle = Object.assign({ textAlign: 'center', width: 75, height: 75, margin: '0', marginLeft: 'auto', marginRight: 'auto', backgroundColor: 'blue', borderRadius: 50}, propStyle);
+    let madeStyle = Object.assign({ textAlign: 'center', width: 40, height: 40, margin: '0', marginLeft: 'auto', marginRight: 'auto', backgroundColor: 'blue', borderRadius: 50}, propStyle);
     return Object.assign(madeStyle, newStyle);
   }
 

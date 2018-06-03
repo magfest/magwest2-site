@@ -21,14 +21,21 @@ const Placeholder = styled('div')(theme => ({
   margin: `${theme.spacing.unit * 2}px 0`,
 }));
 const ArticleImage = styled('img')(theme => ({
-  objectFit: 'cover',
+  flex: '1 0 auto',
   width: '100%',
-  height: 366,
 }));
 const ArticleTitle = styled('div')(theme => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+}));
+
+const BandInfo = styled('div')(theme => ({
+  height: 'auto',
+  maxHeight: '500px',
+  width: '100%',
+  position: 'relative',
+  display: 'flex',
 }));
 
 const BandTitle = styled(Grid, {
@@ -100,10 +107,10 @@ class BandPage extends Component {
             </TitleItem>
 
           </BandTitle>
-          <div style={{ position: 'relative'}}>
+          <BandInfo style={{ backgroundImage: page.frontmatter.image}}>
             {this.state.showSummary ? <Content content={page.html} /> : <ArticleImage src={page.frontmatter.image} />}
 
-          </div>
+          </BandInfo>
 
           <Grid container spacing={0}>
             <TitleItem xs={3}>

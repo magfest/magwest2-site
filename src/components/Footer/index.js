@@ -18,7 +18,7 @@ const FooterWrapper = styled(Grid, {
   background: theme.palette.background.default,
   bottom: '0',
   left: '0',
-  height: '125px',
+  height: '50px',
   '& a:link, & a:visited': {
     cursor: 'pointer',
     color: 'inherit',
@@ -66,32 +66,7 @@ let FooterPadding = { display : 'flex', alignItems: 'center'};
 class Footer extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      homeButtonStyle: this.defaultHomeButtonStyle()
-    }
   }
-
-  defaultHomeButtonStyle = (newStyle) => {
-    return Object.assign({width: 50, height: 50, marginLeft: 'auto', marginRight: 'auto', backgroundColor: 'blue', borderRadius: 50}, newStyle)
-  }
-
-  onMouseEnterHomeButton = () => {
-    this.setState({
-      homeButtonStyle: this.defaultHomeButtonStyle({backgroundColor: 'red'})
-    });
-  };
-
-  onClickHomeButton = () => {
-    this.setState({
-      homeButtonStyle: this.defaultHomeButtonStyle({backgroundColor: 'violet'})
-    })
-  }
-
-  onMouseLeaveHomeButton = () => {
-    this.setState({
-      homeButtonStyle: this.defaultHomeButtonStyle()
-    });
-  };
 
   handleLogin = type => () => {
     netlifyIdentity.open(type);
