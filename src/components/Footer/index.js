@@ -4,6 +4,8 @@ import { Grid, Typography } from 'material-ui';
 import logoImage from '../../images/logo.png';
 import styled from '../../utils/styled';
 import netlifyIdentity from 'netlify-identity-widget';
+import NavButton from '../NavButton';
+import BuyBadgeIcon from '@material-ui/icons/ShoppingCart';
 
 const FooterWrapper = styled(Grid, {
   component: 'footer',
@@ -53,8 +55,7 @@ const HomeButton = styled('div')(theme => ({
 }));
 
 
-let verticalPadding = 25;
-let FooterPadding = {paddingTop: verticalPadding, paddingBottom: verticalPadding};
+let FooterPadding = { display : 'flex', alignItems: 'center'};
 
 
 class Footer extends Component {
@@ -92,25 +93,18 @@ class Footer extends Component {
   };
   render() {
     const { data: { site } } = this.props;
+    var smallIcon = {style: {width: '55%', height: '100%'}};
+    var ticketIcon = {style: {width: '55%', height: '100%'}};
     return (
-      <FooterWrapper style={{ position: 'sticky', bottom: 0}}>
+      <FooterWrapper style={{position: 'sticky', bottom: 0, height: 125}}>
         <Left style={FooterPadding} item xs={3}>
-          <a href="https://west2018.uber.magfest.org/uber/preregistration/form" target="_blank">
-            <HomeButton onMouseEnter={this.onMouseEnterHomeButton} onMouseUp={this.onMouseEnterHomeButton} onMouseDown={this.onClickHomeButton} onMouseLeave={this.onMouseLeaveHomeButton} style={this.state.homeButtonStyle}>
-            </HomeButton>
-          </a>
+          <NavButton style={{ borderRadius: 5}} icon={BuyBadgeIcon} target='_blank' iconProps={ticketIcon} to='https://west2018.uber.magfest.org/uber/preregistration/form' />
         </Left>
         <Middle style={FooterPadding} item xs={6}>
-          <Link to="/">
-            <HomeButton onMouseEnter={this.onMouseEnterHomeButton} onMouseUp={this.onMouseEnterHomeButton} onMouseDown={this.onClickHomeButton} onMouseLeave={this.onMouseLeaveHomeButton} style={this.state.homeButtonStyle}>
-            </HomeButton>
-          </Link>
+          <NavButton to='/' iconProps={smallIcon} />
         </Middle>
         <Right style={FooterPadding} item xs={3}>
-          <Link to="/">
-            <HomeButton onMouseEnter={this.onMouseEnterHomeButton} onMouseUp={this.onMouseLeaveHomeButton} onMouseDown={this.onClickHomeButton} onMouseLeave={this.onMouseLeaveHomeButton} style={this.state.homeButtonStyle}>
-            </HomeButton>
-          </Link>
+          <NavButton to='/about' iconProps={smallIcon} />
         </Right>
       </FooterWrapper>
     );

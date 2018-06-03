@@ -24,6 +24,10 @@ const Main = styled('main')(theme => ({
   borderTop: `1px solid ${theme.palette.grey[200]}`,
   margin: `0 -${theme.spacing.unit * 2}px`,
   padding: `0 ${theme.spacing.unit * 2}px`,
+  height: 'calc(100% - 125px)',
+  '& > section': {
+    height: '100%'
+  },
 }));
 const Wrapper = styled('div')(theme => ({
   padding: `0 ${theme.spacing.unit * 2}px`,

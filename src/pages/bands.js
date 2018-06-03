@@ -32,11 +32,11 @@ class IndexPage extends React.Component{
       .filter(edge => edge.node.frontmatter.templateKey === 'band-page')
       .map(edge => (
         <ListItem key={edge.node.id}>
-          <a onClick={() => {this.setState({active: edge.node.id})}}>
+          <Link to={edge.node.fields.slug}>
             <Typography variant="title">
               {edge.node.frontmatter.title}
             </Typography>
-          </a>
+          </Link>
         </ListItem>
       ));
   };

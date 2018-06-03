@@ -1,5 +1,10 @@
 html, body {
   font-family: "Open Sans", Roboto, "Helvetica Neue", Arial, sans-serif;
+  height: 100%;
+}
+
+#___gatsby, #___gatsby > div, #___gatsby > div > div {
+  height: 100%;
 }
 a:link, a:visited {
   cursor: pointer;
