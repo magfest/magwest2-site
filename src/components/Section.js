@@ -7,7 +7,7 @@ const Section = styled(Grid, {
   justify: 'center',
   container: true,
 })(theme => ({
-  padding: '2em 0 2em 0',
+  padding: '0',
 }));
 
 export default Section;
