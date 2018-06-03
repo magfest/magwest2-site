@@ -92,7 +92,9 @@ class BandPage extends Component {
             <Typography style={{ margin: '0 auto'}} variant="display1">{page.frontmatter.title}</Typography>
             </TitleItem>
             <TitleItem xs={2}>
-              <IconButton component={preview ? null : Link} to="/bands">
+              <IconButton onClick={() => {this.setState({
+                showSummary: !this.state.showSummary
+              })}}>
                 <Info style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
