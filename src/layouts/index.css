@@ -5,6 +5,7 @@ html, body {
 
 #___gatsby, #___gatsby > div, #___gatsby > div > div {
   height: 100%;
+  padding: 0;
 }
 a:link, a:visited {
   cursor: pointer;
@@ -13,4 +14,10 @@ a:link, a:visited {
 a:hover, a:active {
   cursor: pointer;
   color: inherit;
+}
+
+/* IE 6 */
+* html footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }

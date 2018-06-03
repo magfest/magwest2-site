@@ -6,15 +6,18 @@ import styled from '../../utils/styled';
 import netlifyIdentity from 'netlify-identity-widget';
 import NavButton from '../NavButton';
 import BuyBadgeIcon from '@material-ui/icons/ShoppingCart';
+import ContactIcon from '@material-ui/icons/Email';
 
 const FooterWrapper = styled(Grid, {
   component: 'footer',
   container: true,
-  spacing: 16,
+  spacing: 0,
   fontSize: '0.75em',
 })(theme => ({
   background: theme.palette.background.default,
   padding: `0px 0`,
+  bottom: '0',
+  height: '125px',
   '& a:link, & a:visited': {
     cursor: 'pointer',
     color: 'inherit',
@@ -25,6 +28,7 @@ const FooterWrapper = styled(Grid, {
     color: 'inherit',
     textDecoration: 'underline',
   },
+  position: 'fixed'
 }));
 const Left = styled(Grid)(theme => ({
   textAlign: 'right',
@@ -96,7 +100,7 @@ class Footer extends Component {
     var smallIcon = {style: {width: '55%', height: '100%'}};
     var ticketIcon = {style: {width: '55%', height: '100%'}};
     return (
-      <FooterWrapper style={{position: 'sticky', bottom: 0, height: 125}}>
+      <FooterWrapper>
         <Left style={FooterPadding} item xs={3}>
           <NavButton style={{ borderRadius: 5}} icon={BuyBadgeIcon} target='_blank' iconProps={ticketIcon} to='https://west2018.uber.magfest.org/uber/preregistration/form' />
         </Left>
@@ -104,7 +108,7 @@ class Footer extends Component {
           <NavButton to='/' iconProps={smallIcon} />
         </Middle>
         <Right style={FooterPadding} item xs={3}>
-          <NavButton to='/about' iconProps={smallIcon} />
+          <NavButton to='/about' iconProps={smallIcon} icon={ContactIcon} />
         </Right>
       </FooterWrapper>
     );

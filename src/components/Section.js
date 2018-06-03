@@ -3,7 +3,7 @@ import styled from '../utils/styled';
 
 const Section = styled(Grid, {
   component: 'section',
-  spacing: 16,
+  spacing: 0,
   justify: 'center',
   container: true,
 })(theme => ({

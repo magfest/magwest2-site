@@ -6,6 +6,7 @@ import { Typography, Grid } from '@material-ui/core';
 import Section from '../components/Section';
 import App from '../components/App';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
+import { Info, Stars, MicNone, Computer, } from '@material-ui/icons';
 
 import {AudioContext} from '../utils/music-player';
 
@@ -20,13 +21,13 @@ class HomePage extends React.Component{
       <AudioContext.Consumer>{value => {
       return (<Section>
         <Helmet title="Home" />
-        <App to="/faq" />
-        <App to="/bands" icon={MusicNoteIcon}/>
-        <App to="/faq"/>
-        <App to="/faq"/>
-        <App to="/faq"/>
-        <App to="/faq"/>
-        <App to="/faq"/>
+        <App to="/faq" title="F.A.Q" />
+        <App to="/bands" title="Music" icon={MusicNoteIcon}/>
+        <App to="/about" title="About" icon={Info}/>
+        <App to="/codeofconduct" title="Code of Conduct"/>
+        <App to="/lan" iconProps={{style: {width: '90%', height: '100%'}}} title="LAN" icon={Computer}/>
+        <App to="/panels" title="Panels" icon={MicNone}/>
+        <App to="/guests" title="Guests" icon={Stars}/>
       </Section>)}}</AudioContext.Consumer>
     );
   }

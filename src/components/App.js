@@ -35,11 +35,12 @@ class App extends Component{
 
   render(){
     var Icon = this.props.icon ? this.props.icon : DefaultIcon;
+    var iconProps = this.props.iconProps ? this.props.iconProps : {style: { width: '100%', height: '100%'}};
     return(<Grid style={{ display : 'flex', alignItems: 'center'}} item xs={6} sm={4} md={3}>
 
       <div style={this.state.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
         <Link to={this.props.to}>
-          <Icon  style={{ width: '100%', height: '100%'}}/>
+          <Icon {...iconProps}/>
           <Typography>
             {`${this.props.title ? this.props.title : ''}`}
           </Typography>
