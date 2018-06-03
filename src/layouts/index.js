@@ -23,8 +23,7 @@ const Main = styled('main')(theme => ({
   borderBottom: `1px solid ${theme.palette.grey[200]}`,
   borderTop: `1px solid ${theme.palette.grey[200]}`,
   margin: `0 -${theme.spacing.unit * 2}px`,
-  minHeight: 'calc(100% - 125px)',
-  marginBottom: '125px',
+  height: 'calc(100% - 125px)',
   overflowY: 'scroll',
   '& > section': {
     height: '100%'

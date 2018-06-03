@@ -7,6 +7,7 @@ import netlifyIdentity from 'netlify-identity-widget';
 import NavButton from '../NavButton';
 import BuyBadgeIcon from '@material-ui/icons/ShoppingCart';
 import ContactIcon from '@material-ui/icons/Email';
+import HomeIcon from '@material-ui/icons/Home';
 
 const FooterWrapper = styled(Grid, {
   component: 'footer',
@@ -105,7 +106,7 @@ class Footer extends Component {
           <NavButton style={{ borderRadius: 5}} icon={BuyBadgeIcon} target='_blank' iconProps={ticketIcon} to='https://west2018.uber.magfest.org/uber/preregistration/form' />
         </Left>
         <Middle style={FooterPadding} item xs={6}>
-          <NavButton to='/' iconProps={smallIcon} />
+          <NavButton to='/' icon={HomeIcon} iconProps={smallIcon} />
         </Middle>
         <Right style={FooterPadding} item xs={3}>
           <NavButton to='/about' iconProps={smallIcon} icon={ContactIcon} />
