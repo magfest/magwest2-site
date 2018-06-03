@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Grid } from 'material-ui';
+import { Typography, Grid } from '@material-ui/core';
 import Section from '../components/Section';
 
 const NotFoundPage = () => (

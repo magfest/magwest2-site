@@ -1,4 +1,4 @@
-import { Grid } from 'material-ui';
+import { Grid } from '@material-ui/core';
 import styled from '../utils/styled';
 
 const Section = styled(Grid, {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
-import { Grid, Typography } from 'material-ui';
+import { Grid, Typography } from '@material-ui/core';
 import logoImage from '../../images/logo.png';
 import styled from '../../utils/styled';
 import netlifyIdentity from 'netlify-identity-widget';

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
-import { Grid, Typography, IconButton } from 'material-ui';
+import { Grid, Typography, IconButton } from '@material-ui/core';
 import ArrowLeft from 'mdi-material-ui/ArrowLeft';
 import styled from '../utils/styled';
 import Section from '../components/Section';

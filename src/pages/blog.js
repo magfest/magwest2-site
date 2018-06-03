@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import styled from '../utils/styled';
-import { Typography, Grid } from 'material-ui';
+import { Typography, Grid } from '@material-ui/core';
 import Section from '../components/Section';
 
 const List = styled('ul')(theme => ({

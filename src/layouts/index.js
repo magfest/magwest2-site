@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import netlifyIdentity from 'netlify-identity-widget';
-import { Grid } from 'material-ui';
+import { Grid } from '@material-ui/core';
 // Import Google Fonts
 import 'typeface-open-sans';
 import 'typeface-merriweather';
