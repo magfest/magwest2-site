@@ -1,5 +1,9 @@
 html, body {
   font-family: "Open Sans", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+}
+
+body{
   height: 100%;
 }
 
