@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import styled from '../utils/styled';
-import { Typography, Grid, List, ListItem, ListItemText, ListSubheader } from '@material-ui/Core';
+import { Typography, Grid, List, ListItem, ListItemText, ListSubheader } from '@material-ui/core';
 import Section from '../components/Section';
 
 class IndexPage extends React.Component{
