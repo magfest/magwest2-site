@@ -7,22 +7,21 @@ import withRoot from '../utils/withRoot';
 import Section from '../components/Section';
 import Content from '../components/Content';
 
-const AboutPage = ({ data, preview }) => {
+const CodeOfConductPage = ({ data, preview }) => {
   const { markdownRemark: page } = data;
   return (
     <Section spacing={0} style={{ paddingTop: '1em'}}>
       <Grid item xs={11} sm={8} md={6}>
         <Helmet title={page.frontmatter.title} />
-        <Typography variant="display1">{page.frontmatter.title}</Typography>
         <Content content={page.html} />
       </Grid>
     </Section>
   );
 };
-export default AboutPage;
+export default CodeOfConductPage;
 
 export const query = graphql`
-  query GetAboutPage($id: String!) {
+  query GetCocPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
