@@ -13,6 +13,7 @@ export default createMuiTheme({
     primary: pink,
     secondary: green,
     error: red,
+    action: grey[100],
   },
   typography: {
     fontFamily: bodyFont,

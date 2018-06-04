@@ -15,14 +15,14 @@ icons:
     title: Twitter
     url: 'https://twitter.com/_RichBrown'
 ---
-Normal Activity is a VGM band from Los Angeles. Formed in 2013 at Cal State Northridge, Normal Activity features funky acoustic arrangements of both modern and classic video games. MAGWest hype!!!
+### Normal Activity is a VGM band from Los Angeles. Formed in 2013 at Cal State Northridge, Normal Activity features funky acoustic arrangements of both modern and classic video games. MAGWest hype!!!
 
-Rich Brown-Keys
+# Rich Brown-Keys
 
-Jojo Ramirez-Drums
+# Jojo Ramirez-Drums
 
-Victor San Pedro-Guitar
+# Victor San Pedro-Guitar
 
-Nick De La O-Bass
+# Nick De La O-Bass
 
-Stephen Spencer-Sax
+# Stephen Spencer-Sax

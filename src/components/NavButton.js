@@ -35,7 +35,8 @@ class NavButton extends Component{
 
   render(){
     var Icon = this.props.icon ? this.props.icon : DefaultIcon;
-    var iconProps = this.props.iconProps ? this.props.iconProps : {style: { width: '75%', height: '75%'}};
+    var defaultIconStyle = {color: 'action', style: { width: '75%', height: '75%', color: 'white'}};
+    var iconProps = this.props.iconProps ? Object.assign(defaultIconStyle, this.props.iconProps) : defaultIconStyle;
 
     return(
       <div style={this.state.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>

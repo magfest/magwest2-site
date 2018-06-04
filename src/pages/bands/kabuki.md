@@ -18,4 +18,8 @@ icons:
     title: YouTube
     url: 'https://www.youtube.com/c/Kabukimusic'
 ---
-Kabuki is a DJ, electronic music producer, and video game music remixer from Los Angeles. Inspired by music from anime and video games of his youth, his dance tunes make your heart and body move, including remixes from Undertale, Pokémon, Metroid, Love Live!, and Your Name. He releases with record label Tiny Waves and performs at clubs and conventions—most recently at SXSW 2018.
+### Kabuki is a DJ, electronic music producer, and video game music remixer from Los Angeles.
+
+### Inspired by music from anime and video games of his youth, his dance tunes make your heart and body move, including remixes from Undertale, Pokémon, Metroid, Love Live!, and Your Name.
+
+### He releases with record label Tiny Waves and performs at clubs and conventions—most recently at SXSW 2018.

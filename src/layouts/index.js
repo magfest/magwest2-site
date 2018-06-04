@@ -109,7 +109,7 @@ class App extends Component {
         />
         <audio ref={this.audioRef} src={this.state.audioSource}/>
         <Main>{children({...this.props, audio: audio})}</Main>
-        <Footer data={{ site }} onMouseEnter={() => {this.audioRef.current.play()}} />
+        <Footer goBack={this.props.history.goBack} data={{ site }} onMouseEnter={() => {this.audioRef.current.play()}} />
       </Wrapper>
     );
   }

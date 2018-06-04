@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Grid, Typography} from '@material-ui/core';
 import Link from './Link';
 import DefaultIcon from '@material-ui/icons/QuestionAnswer';
+import '../utils/fontawesome-all.min.js';
 
 class App extends Component{
   constructor(props){
@@ -35,7 +36,10 @@ class App extends Component{
 
   render(){
     var Icon = this.props.icon ? this.props.icon : DefaultIcon;
-    var iconProps = this.props.iconProps ? this.props.iconProps : {style: { width: '100%', height: '100%'}};
+    var defaultIconStyle = {style: { width: '100%', height: '100%', color: 'white'}};
+    var iconProps = this.props.iconProps ? Object.assign(defaultIconStyle, this.props.iconProps) : defaultIconStyle;
+
+
     return(<Grid style={{ display : 'flex', alignItems: 'center'}} item xs={6} sm={4} md={3}>
 
       <div style={this.state.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>

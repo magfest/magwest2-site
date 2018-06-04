@@ -18,8 +18,8 @@ icons:
     title: Instagram
     url: 'https://instagram.com/supermadnes/'
 ---
-Super MadNES is a Los Angeles, CA based tribute to retro video games and traditional 80s heavy metal music, creating riff-oriented guitar & synth arrangements to classic NES, SNES and arcade soundtracks.
+### Super MadNES is a Los Angeles, CA based tribute to retro video games and traditional 80s heavy metal music, creating riff-oriented guitar & synth arrangements to classic NES, SNES and arcade soundtracks.
 
-The band is releasing their 2nd full length NES themed album featuring "Castlevania III" and "Batman" this summer 2018, including tours in the east and west coast.
+### The band is releasing their 2nd full length NES themed album featuring "Castlevania III" and "Batman" this summer 2018, including tours in the east and west coast.
 
-At MAGWest 2018, they will be performing the music from classic games such as Castlevania 3, Batman, Double Dragon, Ninja Gaiden, Megaman X and Super Ghouls ’N Ghost along with an action fueled pixelated visual show.
+### At MAGWest 2018, they will be performing the music from classic games such as Castlevania 3, Batman, Double Dragon, Ninja Gaiden, Megaman X and Super Ghouls ’N Ghost along with an action fueled pixelated visual show.

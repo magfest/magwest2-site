@@ -9,6 +9,9 @@ import Section from '../components/Section';
 import Content from '../components/Content';
 import Marquee from "react-smooth-marquee"
 import {AudioContext} from '../utils/music-player';
+import SocialMediaRow from '../components/SocialMediaRow';
+
+var screenHeight = '400px';
 
 const Article = styled(Grid, { component: 'article' })(theme => ({
   padding: `${theme.spacing.unit * 2}px 0`,
@@ -21,8 +24,9 @@ const Placeholder = styled('div')(theme => ({
   margin: `${theme.spacing.unit * 2}px 0`,
 }));
 const ArticleImage = styled('img')(theme => ({
-  flex: '1 0 auto',
-  width: '100%',
+  maxHeight: screenHeight,
+  maxWidth: '100%'
+
 }));
 const ArticleTitle = styled('div')(theme => ({
   display: 'flex',
@@ -32,10 +36,14 @@ const ArticleTitle = styled('div')(theme => ({
 
 const BandInfo = styled('div')(theme => ({
   height: 'auto',
-  maxHeight: '500px',
+  height: screenHeight,
+  maxHeight: screenHeight,
   width: '100%',
   position: 'relative',
   display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  overflowY: 'scroll',
 }));
 
 const BandTitle = styled(Grid, {
@@ -45,6 +53,7 @@ const BandTitle = styled(Grid, {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  maxHeight: '300px'
 }));
 
 const TitleItem = styled(Grid, {
@@ -83,11 +92,8 @@ class BandPage extends Component {
   render() {
     const { data: { markdownRemark: page }, preview } = this.props;
     let PlayingIcon = this.state.paused ? PlayArrow : Pause;
-    return (
-      <AudioContext.Consumer>
-      { value => {
-      return (<Section style={{padding: '0'}}>
-        <Article item xs={12} sm={8}>
+    return (<Section style={{padding: '0'}}>
+        <Article style={{ position: 'relative'}} item xs={12} sm={8}>
 
           <BandTitle>
             <TitleItem xs={2}>
@@ -96,7 +102,7 @@ class BandPage extends Component {
               </IconButton>
             </TitleItem>
             <TitleItem xs={8}>
-            <Typography style={{ margin: '0 auto'}} variant="display1">{page.frontmatter.title}</Typography>
+            <Typography style={{ margin: '0 auto'}} variant="headline">{page.frontmatter.title}</Typography>
             </TitleItem>
             <TitleItem xs={2}>
               <IconButton onClick={() => {this.setState({
@@ -108,11 +114,11 @@ class BandPage extends Component {
 
           </BandTitle>
           <BandInfo style={{ backgroundImage: page.frontmatter.image}}>
-            {this.state.showSummary ? <Content content={page.html} /> : <ArticleImage src={page.frontmatter.image} />}
+            {this.state.showSummary ? <Content style={{ padding: '0 10px', position: 'absolute', top: 0, display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center', flexDirection: 'column', overflowY: 'hidden'}} content={page.html} /> : <ArticleImage src={page.frontmatter.image} />}
 
           </BandInfo>
-
-          <Grid container spacing={0}>
+          <SocialMediaRow icons={page.frontmatter.icons} />
+          <Grid style={{ position: 'relative', bottom: 0}} container spacing={0}>
             <TitleItem xs={3}>
               <IconButton component={preview ? null : Link} to="/bands">
                 <Shuffle style={{ fontSize: '48'}} />
@@ -140,8 +146,7 @@ class BandPage extends Component {
             </TitleItem>
           </Grid>
         </Article>
-      </Section>)}}
-      </AudioContext.Consumer>
+      </Section>
     );
   }
 }

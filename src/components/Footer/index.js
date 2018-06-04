@@ -6,7 +6,7 @@ import styled from '../../utils/styled';
 import netlifyIdentity from 'netlify-identity-widget';
 import NavButton from '../NavButton';
 import BuyBadgeIcon from '@material-ui/icons/ShoppingCart';
-import ContactIcon from '@material-ui/icons/Email';
+import BackIcon from '@material-ui/icons/KeyboardArrowLeft';
 import HomeIcon from '@material-ui/icons/Home';
 
 const FooterWrapper = styled(Grid, {
@@ -73,18 +73,19 @@ class Footer extends Component {
   };
   render() {
     const { data: { site } } = this.props;
-    var smallIcon = {style: {width: '55%', height: '100%'}};
-    var ticketIcon = {style: {width: '55%', height: '100%'}};
+    var smallIcon = {style: {width: '75%', height: '100%', color: 'white',}};
+    var ticketIcon = {style: {width: '55%', height: '100%', color: 'white'}};
     return (
       <FooterWrapper>
-        <Left style={FooterPadding} item xs={3}>
-          <NavButton style={{ borderRadius: 5}} icon={BuyBadgeIcon} target='_blank' iconProps={ticketIcon} to='https://west2018.uber.magfest.org/uber/preregistration/form' />
+        <Left onClick={() => {this.props.goBack()}} style={FooterPadding} item xs={3}>
+          <NavButton iconProps={smallIcon} icon={BackIcon} />
         </Left>
         <Middle style={FooterPadding} item xs={6}>
           <NavButton to='/' icon={HomeIcon} iconProps={smallIcon} />
         </Middle>
         <Right style={FooterPadding} item xs={3}>
-          <NavButton to='/about' iconProps={smallIcon} icon={ContactIcon} />
+          <NavButton style={{ borderRadius: 5}} icon={BuyBadgeIcon} target='_blank' iconProps={ticketIcon} to='https://west2018.uber.magfest.org/uber/preregistration/form' />
+
         </Right>
       </FooterWrapper>
     );

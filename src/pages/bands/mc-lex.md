@@ -18,4 +18,10 @@ icons:
     title: Instagram
     url: 'https://instagram.com/lextheconartist'
 ---
-LEX the Lexicon Artist is Taipei-raised, Oakland-based entertainer Alex Sun Liu. Inspired by off-the-wall internet rappers, LEX combines frank storytelling, sharp commentary, and a comically huge ego to deliver the unique perspective of a weird Asian nerd in America. LEX invokes early 2000’s hip-hop swagger, nerdy charisma, viral pop sensibility, internet rapper antics, and unrestrained live show energy - all to tell the most irreverent stories possible. LEX’s full-length debut album, “Raging Ego”, is set to release on June 6th, 2018.
+### LEX the Lexicon Artist is Taipei-raised, Oakland-based entertainer Alex Sun Liu.
+
+### Inspired by off-the-wall internet rappers, LEX combines frank storytelling, sharp commentary, and a comically huge ego to deliver the unique perspective of a weird Asian nerd in America.
+
+### LEX invokes early 2000’s hip-hop swagger, nerdy charisma, viral pop sensibility, internet rapper antics, and unrestrained live show energy - all to tell the most irreverent stories possible.
+
+###LEX’s full-length debut album, “Raging Ego”, is set to release on June 6th, 2018.
