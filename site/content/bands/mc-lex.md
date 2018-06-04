@@ -1,5 +1,5 @@
 ---
-title: MC Lex
+title: LEX the Lexicon Artist
 image: /img/uploads/bands/mc_lex_bio_pic.jpg
 audio: /img/uploads/bands/songs/mc_lex/LEX the Lexicon Artist - Peep Game (Teaser).mp3
 publishDate: 2017-11-15T02:02:30.198Z
