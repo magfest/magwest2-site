@@ -53,7 +53,7 @@ class SocialMediaButton extends Component{
     return(
       <Holder item xs={this.props.xs ? this.props.xs : 2}>
         <div style={this.state.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
-          <SocialMediaIcon target={this.props.target ? this.props.target : ''} to={this.props.to}>
+          <SocialMediaIcon target={this.props.target ? this.props.target : '_blank'} to={this.props.to}>
             <i {...iconProps} className={Icon}></i>
             <Typography>
               {`${this.props.title ? this.props.title : ''}`}

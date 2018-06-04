@@ -25,8 +25,8 @@ class SocialMediaRow extends Component{
       return [];
     }
     var icons = [];
-    this.props.icons.forEach((item) => {
-      icons.push(<SocialMediaButton alt={item.title} to={item.url} key={item.title} item={true} xs={2} icon={item.icon} />);
+    this.props.icons.forEach((item, index) => {
+      icons.push(<SocialMediaButton alt={item.title} to={item.url} key={item.title + index} item={true} xs={2} icon={item.icon} />);
     })
     return icons;
   }

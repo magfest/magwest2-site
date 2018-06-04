@@ -72,18 +72,14 @@ class BandPage extends Component {
       showSummary: false,
       paused: true
     }
+    setTimeout(() => {
+      this.props.audio.updateSource(`/uploads/songs${this.props.location.pathname}song.mp3`);
+      this.setState({
+        paused: false,
+      })
+    }, 750);
 
   }
-
-  componentDidMount = () => {
-    this.props.audio.updateSource(`/uploads/songs${this.props.location.pathname}song.mp3`);
-    setTimeout(() => {
-      this.props.audio.play();
-      this.setState({
-        paused: false
-      });
-    }, 500);
-  };
 
   togglePlay = () => {
     this.props.audio.togglePlay();
@@ -124,12 +120,12 @@ class BandPage extends Component {
           <SocialMediaRow icons={page.frontmatter.icons} />
           <Grid style={{ position: 'relative', bottom: 0}} container spacing={0}>
             <TitleItem xs={3}>
-              <IconButton component={preview ? null : Link} to="/bands">
-                <Shuffle style={{ fontSize: '48'}} />
+              <IconButton onClick={() => this.props.audio.shuffle()}>
+                <Shuffle style={this.props.audio.shuffled ? { fontSize: '48', color: 'green'} : { fontSize: '48', color: 'black'}} />
               </IconButton>
             </TitleItem>
             <TitleItem xs={2}>
-              <IconButton component={preview ? null : Link} to="/bands">
+              <IconButton onClick={this.props.audio.previous}>
                 <SkipPrevious style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
@@ -139,13 +135,13 @@ class BandPage extends Component {
               </IconButton>
             </TitleItem>
             <TitleItem xs={2}>
-              <IconButton component={preview ? null : Link} to="/bands">
+              <IconButton onClick={this.props.audio.next}>
                 <SkipNext style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
             <TitleItem xs={3}>
-              <IconButton component={preview ? null : Link} to="/bands">
-                <Loop style={{ fontSize: '48'}} />
+              <IconButton onClick={this.props.audio.loop}>
+                <Loop  style={{ fontSize: '48', color: this.props.audio.looping ? 'green' : 'black'}} />
               </IconButton>
             </TitleItem>
           </Grid>

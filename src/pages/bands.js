@@ -31,8 +31,8 @@ class IndexPage extends React.Component{
     return data.allMarkdownRemark.edges
       .filter(edge => edge.node.frontmatter.templateKey === 'band-page')
       .map(edge => (
-        <Link to={edge.node.fields.slug}>
-          <ListItem style={{ borderTop: 'solid 2px grey'}} key={edge.node.id}>
+        <Link key={edge.node.fields.slug} to={edge.node.fields.slug}>
+          <ListItem button divider key={edge.node.id}>
             <Avatar
               src={edge.node.frontmatter.image}
               alt={edge.node.frontmatter.title}
