@@ -72,6 +72,10 @@ class BandPage extends Component {
       showSummary: false,
       paused: true
     }
+
+  }
+
+  componentDidMount = () => {
     props.audio.updateSource(`/uploads/songs${props.location.pathname}song.mp3`);
     setTimeout(() => {
       this.props.audio.play();
@@ -79,7 +83,7 @@ class BandPage extends Component {
         paused: false
       });
     }, 1000);
-  }
+  };
 
   togglePlay = () => {
     this.props.audio.togglePlay();
