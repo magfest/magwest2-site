@@ -31,10 +31,12 @@ class IndexPage extends React.Component{
     // Iterate through each post, putting all found FAQ pages into `faqs`
     data.allMarkdownRemark.edges.forEach(edge => {
       console.log(edge);
-      if (edge.node.frontmatter.key)) {
-        if(edge.node.frontmatter.type)){
-          faqs[edge.node.frontmatter.key] = faqs[edge.node.frontmatter.key] ? faqs[edge.node.frontmatter.key] : {question: '', answer: ''}
-          faqs[edge.node.frontmatter.key][edge.node.frontmatter.type] = edge.node;
+      if(edge.node.frontmatter){
+        if (edge.node.frontmatter.key) {
+          if(edge.node.frontmatter.type){
+            faqs[edge.node.frontmatter.key] = faqs[edge.node.frontmatter.key] ? faqs[edge.node.frontmatter.key] : {question: '', answer: ''}
+            faqs[edge.node.frontmatter.key][edge.node.frontmatter.type] = edge.node;
+          }
         }
       }
     });
