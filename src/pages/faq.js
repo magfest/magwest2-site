@@ -31,9 +31,9 @@ class IndexPage extends React.Component{
     // Iterate through each post, putting all found FAQ pages into `faqs`
     data.allMarkdownRemark.edges.forEach(edge => {
       console.log(edge);
-      if (_.get(edge, `node.frontmatter.key`)) {
-        if(_.get(edge, `node.frontmatter.type`)){
-          faqs[edge.node.frontmatter.key] = _.get(faqs, edge.node.frontmatter.key) ? faqs[edge.node.frontmatter.key] : {question: '', answer: ''}
+      if (edge.node.frontmatter.key)) {
+        if(edge.node.frontmatter.type)){
+          faqs[edge.node.frontmatter.key] = faqs[edge.node.frontmatter.key] ? faqs[edge.node.frontmatter.key] : {question: '', answer: ''}
           faqs[edge.node.frontmatter.key][edge.node.frontmatter.type] = edge.node;
         }
       }
