@@ -18,6 +18,9 @@ import { loginUser, logoutUser } from '../utils/identityActions';
 
 import { AudioContext } from '../utils/music-player';
 
+import { NotificationStack, Notification } from 'react-notification';
+import { OrderedSet } from 'immutable';
+
 const Main = styled('main')(theme => ({
   backgroundColor: 'white',
   borderBottom: `1px solid ${theme.palette.grey[200]}`,
@@ -68,6 +71,14 @@ class App extends Component {
       shuffled: false,
       playlistOrder: playlistOrder,
       playlistIndex: 0,
+      notifications: OrderedSet(),
+      notification: {
+        isActive: false,
+        action: 'Dismiss',
+        dismissAfter: false,
+        message: 'Band Name',
+        title: 'Now Playing'
+      }
     };
   }
 
@@ -81,7 +92,7 @@ class App extends Component {
     this.setState({
       shuffled: !this.state.shuffled,
       playlistIndex: 0,
-      playlistOrder: createShuffledSetlist()
+      playlistOrder: this.createShuffledSetlist()
     });
   }
 
@@ -109,7 +120,7 @@ class App extends Component {
     return newOrder;
   }
 
-  loadFromPlaylist = () => {
+  loadFromPlaylist = (message) => {
     let playlist = this.state.playlist;
     let playlistOrder = this.state.playlistOrder;
     console.log(this.state);
@@ -129,15 +140,17 @@ class App extends Component {
 
     if(this.props.location.pathname.indexOf("bands/") != -1 && nextSong != "/"){
       this.props.history.push(nextSong);
+      message = null;
     }
-    console.log(playlistIndex);
+
     this.setState({
       playlistIndex: playlistIndex
     })
-    this.updateAudioSource(newSource);
+    this.updateAudioSource(newSource, nextSong, message);
+
   }
 
-  loadFromPlaylistBackwards = () => {
+  loadFromPlaylistBackwards = (message) => {
     let playlist = this.state.playlist;
     let playlistOrder = this.state.playlistOrder;
     let playlistIndex = this.state.playlistIndex;
@@ -156,17 +169,25 @@ class App extends Component {
 
     if(this.props.location.pathname.indexOf("bands/") != -1 && nextSong != "/"){
       this.props.history.push(nextSong);
+      message = null;
     }
-    this.updateAudioSource(newSource);
+    this.setState({
+      playlistIndex: playlistIndex
+    })
+    this.updateAudioSource(newSource, nextSong, message);
   }
 
-  updateAudioSource = (source) => {
+  updateAudioSource = (source, key, message) => {
     this.setState({
       audioSource: source,
-      activeSource: source
+      activeSource: key ? key : trimSourceForPath(source)
     });
     setTimeout(() => {
       this.playAudio();
+      if(message){
+        this.addMusicNotification(message, key ? key : trimSourceForPath(source));
+      }
+
     }, 300);
   }
 
@@ -220,11 +241,41 @@ class App extends Component {
     }
   }
 
+  addMusicNotification (message, key) {
+    return this.setState({
+      notifications: this.state.notifications.add({
+        message: message, // Name
+        title: "Now Playing",
+        key: key, // the band slug
+        action: 'Dismiss',
+        dismissAfter: false,
+        onClick: (notification, deactivate) => {
+          deactivate();
+          this.removeMusicNotification(notification.key);
+        },
+      })
+    });
+  }
+
+  removeMusicNotification (key) {
+    this.setState({
+      notifications: this.state.notifications.filter(n => n.key !== key)
+    })
+  }
+
+  defaultStyleFactory = (index, style, notification) => {
+    return Object.assign(
+      {},
+      style,
+      { bottom: `${2 + index * 4}rem` }
+    );
+  }
 
 
   render() {
     const { children, data: { site, markdownRemark: page} } = this.props;
     const audio = this.createAudioObject();
+    const notifications = this.state.notifications.toArray();
     return (
       <Wrapper>
         <Helmet
@@ -234,8 +285,16 @@ class App extends Component {
           ]}
         />
         <audio onEnded={this.loadFromPlaylist} ref={this.audioRef} src={this.state.audioSource}/>
-        <Main>{children({...this.props, audio: audio})}</Main>
+        <Main>{children({...this.props, audio: audio, createMusicNotification: this.addMusicNotification, removeMusicNotification: this.removeMusicNotification })}</Main>
         <Footer goBack={this.props.history.goBack} data={{ site }} onMouseEnter={() => {this.audioRef.current.play()}} />
+        <NotificationStack barStyleFactory={this.defaultStyleFactory} notifications={notifications} onDismiss={(notification) => {
+          this.setState({
+            notifications: this.state.notifications.delete(notification)
+          })
+        }} />
+        <Notification
+          { ...this.state.notification }
+         />
       </Wrapper>
     );
   }

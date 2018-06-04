@@ -125,7 +125,7 @@ class BandPage extends Component {
               </IconButton>
             </TitleItem>
             <TitleItem xs={2}>
-              <IconButton onClick={this.props.audio.previous}>
+              <IconButton onClick={() => this.props.audio.previous(`${page.frontmatter.title}`)}>
                 <SkipPrevious style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
@@ -135,7 +135,7 @@ class BandPage extends Component {
               </IconButton>
             </TitleItem>
             <TitleItem xs={2}>
-              <IconButton onClick={this.props.audio.next}>
+              <IconButton onClick={() => this.props.audio.next(`${page.frontmatter.title}`)}>
                 <SkipNext style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
