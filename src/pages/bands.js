@@ -52,7 +52,7 @@ class IndexPage extends React.Component{
     return (
       <Section>
       <Typography style={{textAlign: 'center', position: 'sticky', top: 0, backgroundColor: 'white'}} variant="display1">2018</Typography>
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12}>
           <Helmet title="Bands" />
 
           <List>

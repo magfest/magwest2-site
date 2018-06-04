@@ -10,8 +10,8 @@ import Content from '../components/Content';
 const AboutPage = ({ data, preview }) => {
   const { markdownRemark: page } = data;
   return (
-    <Section>
-      <Grid item xs={12} sm={8}>
+    <Section style={{ paddingTop: '1em'}}>
+      <Grid item xs={11} sm={8} md={6}>
         <Helmet title={page.frontmatter.title} />
         <Typography variant="display1">{page.frontmatter.title}</Typography>
         <Content content={page.html} />

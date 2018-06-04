@@ -11,6 +11,7 @@ const StyledTypography = styled(Typography)(theme => ({
   borderRadius: '10px',
   width: '100%',
   textAlign: 'left',
+  margin: '0 auto',
 }));
 
 class Answer extends Component {

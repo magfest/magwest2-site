@@ -12,18 +12,6 @@ class IndexPage extends React.Component{
     active: ''
   }
 
-  faqSort = (value1, value2) => {
-    if(value1.frontmatter.title < value2.frontmatter.title){
-      return -1;
-    }
-    else if(value1.frontmatter.title > value2.frontmatter.title){
-      return 1;
-    }
-    else{
-      return 0;
-    }
-  }
-
   makeConversation = () => {
     const {data} = this.props;
     // FAQ pages:
@@ -32,10 +20,12 @@ class IndexPage extends React.Component{
     data.allMarkdownRemark.edges.forEach(edge => {
       console.log(edge);
       if(edge.node.frontmatter){
+        let type = edge.node.fields.slug.indexOf("answer/") != -1 ? "answer" : null;
+        type = edge.node.fields.slug.indexOf("question/") != -1 && type == null ? "question" : type;
         if (edge.node.frontmatter.key) {
-          if(edge.node.frontmatter.type){
+          if(type){
             faqs[edge.node.frontmatter.key] = faqs[edge.node.frontmatter.key] ? faqs[edge.node.frontmatter.key] : {question: '', answer: ''}
-            faqs[edge.node.frontmatter.key][edge.node.frontmatter.type] = edge.node;
+            faqs[edge.node.frontmatter.key][type] = edge.node;
           }
         }
       }
@@ -45,12 +35,18 @@ class IndexPage extends React.Component{
     let questionStyle = { width: '75%', marginLeft: 'auto', display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end'}
     let answerStyle = { width: '75%', marginRight: 'auto', display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}
     Object.values(faqs).forEach(page => {
-      faqComponents.push(<ListItem style={questionStyle} key={page.question.frontmatter.slug}>
-        <Question content={page.question.html} />
-      </ListItem>);
-      faqComponents.push(<ListItem style={answerStyle} key={page.answer.frontmatter.slug}>
-        <Answer content={page.answer.html} />
-      </ListItem>);
+      if(page.question.frontmatter && page.answer.frontmatter){
+        faqComponents.push(<ListItem id={page.question.frontmatter.key} ><ListItemText>{page.question.frontmatter.key}</ListItemText></ListItem>)
+        faqComponents.push(<ListItem style={questionStyle} key={page.question.frontmatter.slug}>
+          <Question content={page.question.html} />
+        </ListItem>);
+
+
+        faqComponents.push(<ListItem style={answerStyle} key={page.answer.frontmatter.slug}>
+          <Answer content={page.answer.html} />
+        </ListItem>);
+      }
+
     })
     return faqComponents;
 
@@ -62,7 +58,7 @@ class IndexPage extends React.Component{
     return (
       <Section>
       <Typography style={{textAlign: 'center', position: 'sticky', top: 0, backgroundColor: 'white'}} variant="display1">Frequently Asked Questions</Typography>
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12}>
           <Helmet title="F.A.Q" />
 
           <List>

@@ -2,17 +2,16 @@
 templateKey: about-page
 title: About Us
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+###  MAGFEST, the music and gaming festival, is a 501c3 non-profit dedicated to promoting and preserving video game music, art, history, and culture.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+We’ve done this for 16 years by running our annual east coast event in the Washington DC area, which has grown to 20,000 people attending over 4 days. We have always had the dream taking MAGFest global.
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+Last year, this goal was realized as we kicked off our very first expansion event, MAGWest, in Santa Clara, CA. This event was the first of many MAGFest expansion events. It was 5 years in the making and the process of creating it has transformed every aspect of our entire organization and everyone in it.
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+We looked hard to find a city with a vibrant music community and empower them to take leadership positions in MAGWest, and put their own spin on what a MAGFest event should be. San Jose fits that bill perfectly, and we’re super-excited it is now home of MAGFest’s west coast operations. If you want to get involved, check out the Volunteer page. It’s our hope that MAGFest’s presence in the area can be an amplifying force for the vibrant community that already exists here.
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+MAGFest is powered by people who often work through extreme difficulty, sometimes forging new paths where no roadmap exists, sometimes stumbling and getting back up. We want to break down the walls between staff and attendees and let our attendees create entirely new types of experiences. We provide the space, you guys bring the rest.
+
+This year, we host our second annual MAGWest aiming to embrace the community and culture of music and video games on the west coast.
+
+### We’ll see you out there in Santa Clara, CA, on August 10–12, 2018.
