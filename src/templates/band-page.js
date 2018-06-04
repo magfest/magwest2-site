@@ -76,13 +76,13 @@ class BandPage extends Component {
   }
 
   componentDidMount = () => {
-    this.props.audio.updateSource(`/uploads/songs${props.location.pathname}song.mp3`);
+    this.props.audio.updateSource(`/uploads/songs${this.props.location.pathname}song.mp3`);
     setTimeout(() => {
       this.props.audio.play();
       this.setState({
         paused: false
       });
-    }, 1000);
+    }, 500);
   };
 
   togglePlay = () => {
