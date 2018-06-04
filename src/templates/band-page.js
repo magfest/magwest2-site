@@ -78,7 +78,7 @@ class BandPage extends Component {
       this.setState({
         paused: false
       });
-    }, 100);
+    }, 1000);
   }
 
   togglePlay = () => {
