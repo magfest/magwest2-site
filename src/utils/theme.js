@@ -1,9 +1,9 @@
 // Setup base Material-UI theme
-import createMuiTheme from 'material-ui/styles/createMuiTheme';
-import pink from 'material-ui/colors/pink';
-import green from 'material-ui/colors/green';
-import red from 'material-ui/colors/red';
-import grey from 'material-ui/colors/grey';
+import createMuiTheme from '@material-ui/styles/createMuiTheme';
+import pink from '@material-ui/colors/pink';
+import green from '@material-ui/colors/green';
+import red from '@material-ui/colors/red';
+import grey from '@material-ui/colors/grey';
 
 const headlineFont = `Merriweather, Georgia, serif`;
 const bodyFont = `"Open Sans", Roboto, "Helvetica Neue", Arial, sans-serif`;
