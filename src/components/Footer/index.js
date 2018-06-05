@@ -33,15 +33,18 @@ const FooterWrapper = styled(Grid, {
 }));
 const Left = styled(Grid)(theme => ({
   textAlign: 'right',
+  position: 'relative',
   [theme.breakpoints.down('sm')]: {
     textAlign: 'center',
   },
 }));
 const Middle = styled(Grid)(theme => ({
   textAlign: 'center',
+  position: 'relative',
 }));
 const Right = styled(Grid)(theme => ({
   textAlign: 'left',
+  position: 'relative',
   [theme.breakpoints.down('sm')]: {
     textAlign: 'center',
   },
