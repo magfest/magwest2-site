@@ -9,6 +9,11 @@ import Content from '../components/Content';
 
 const Article = styled(Grid, { component: 'article' })(theme => ({
   padding: `${theme.spacing.unit * 2}px 0`,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative',
 }));
 
 const Placeholder = styled('div')(theme => ({

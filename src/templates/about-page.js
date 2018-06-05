@@ -9,6 +9,11 @@ import Content from '../components/Content';
 
 const Article = styled(Grid, { component: 'article' })(theme => ({
   padding: `${theme.spacing.unit * 2}px 0`,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative',
+  flexDirection: 'column',
 }));
 
 const Placeholder = styled('div')(theme => ({
@@ -32,7 +37,7 @@ const AboutPage = ({ data, preview }) => {
   const { markdownRemark: page } = data;
   return (
     <Section spacing={0}>
-      <Article style={{ position: 'relative'}} item xs={11} sm={8} md={6}>
+      <Article  item xs={11} sm={8} md={6}>
         <Helmet title={page.frontmatter.title} />
         <Typography variant="display1">{page.frontmatter.title}</Typography>
         <Content content={page.html} />

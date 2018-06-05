@@ -15,6 +15,11 @@ var screenHeight = '400px';
 
 const Article = styled(Grid, { component: 'article' })(theme => ({
   padding: `${theme.spacing.unit * 2}px 0`,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative',
+  flexDirection: 'column',
 }));
 
 const Placeholder = styled('div')(theme => ({
