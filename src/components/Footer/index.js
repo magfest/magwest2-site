@@ -5,9 +5,6 @@ import logoImage from '../../images/logo.png';
 import styled from '../../utils/styled';
 import netlifyIdentity from 'netlify-identity-widget';
 import NavButton from '../NavButton';
-import BuyBadgeIcon from '@material-ui/icons/ShoppingCart';
-import BackIcon from '@material-ui/icons/KeyboardArrowLeft';
-import HomeIcon from '@material-ui/icons/Home';
 
 const FooterWrapper = styled(Grid, {
   component: 'footer',

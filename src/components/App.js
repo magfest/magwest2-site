@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Grid, Typography} from '@material-ui/core';
 import Link from './Link';
 import DefaultIcon from '@material-ui/icons/QuestionAnswer';
-import '../utils/fontawesome-all.min.js';
 
 class App extends Component{
   constructor(props){

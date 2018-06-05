@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Link from './Link';
-import '../utils/fontawesome-all.min.js';
 import {Grid} from '@material-ui/core';
 
 import SocialMediaButton from  './SocialMediaButton';
