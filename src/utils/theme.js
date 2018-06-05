@@ -10,10 +10,13 @@ const bodyFont = `"Open Sans", Roboto, "Helvetica Neue", Arial, sans-serif`;
 
 export default createMuiTheme({
   palette: {
-    primary: pink,
+    primary: grey.dark,
     secondary: green,
     error: red,
-    action: grey[100],
+    action: {
+      hoverOpacity: 0.25,
+      main: grey
+    },
   },
   typography: {
     fontFamily: bodyFont,

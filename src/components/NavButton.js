@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Grid, Typography} from '@material-ui/core';
 import Link from './Link';
-import DefaultIcon from '@material-ui/icons/QuestionAnswer';
+
+const defaultIcon = "fas fa-fire";
 
 class NavButton extends Component{
   constructor(props){
@@ -35,13 +36,13 @@ class NavButton extends Component{
 
   render(){
     var Icon = this.props.icon ? this.props.icon : DefaultIcon;
-    var defaultIconStyle = {color: 'action', style: { width: '75%', height: '75%', color: 'white'}};
-    var iconProps = this.props.iconProps ? Object.assign(defaultIconStyle, this.props.iconProps) : defaultIconStyle;
+    var defaultIconStyle = { width: '75%', height: '75%', color: 'white'};
+    var iconProps = this.props.iconProps ? Object.assign({}, defaultIconStyle, this.props.iconProps) : defaultIconStyle;
 
     return(
       <div style={this.state.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
         <Link target={this.props.target ? this.props.target : ''} to={this.props.to}>
-          <Icon {...iconProps}  />
+          <i className={Icon} style={iconProps}></i>
           <Typography>
             {`${this.props.title ? this.props.title : ''}`}
           </Typography>

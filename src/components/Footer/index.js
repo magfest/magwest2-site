@@ -73,18 +73,18 @@ class Footer extends Component {
   };
   render() {
     const { data: { site } } = this.props;
-    var smallIcon = {style: {width: '75%', height: '100%', color: 'white',}};
-    var ticketIcon = {style: {width: '55%', height: '100%', color: 'white'}};
+    var smallIcon = {width: '75%', height: '100%', color: 'white'};
+    var ticketIcon = {width: '55%', height: '100%', color: 'white'};
     return (
       <FooterWrapper>
         <Left onClick={() => {this.props.goBack()}} style={FooterPadding} item xs={3}>
-          <NavButton iconProps={smallIcon} icon={BackIcon} />
+          <NavButton iconProps={smallIcon} icon={"fas fa-arrow-left"} />
         </Left>
         <Middle style={FooterPadding} item xs={6}>
-          <NavButton to='/' icon={HomeIcon} iconProps={smallIcon} />
+          <NavButton to='/' icon={"fas fa-home"} iconProps={smallIcon} />
         </Middle>
         <Right style={FooterPadding} item xs={3}>
-          <NavButton style={{ borderRadius: 5}} icon={BuyBadgeIcon} target='_blank' iconProps={ticketIcon} to='https://west2018.uber.magfest.org/uber/preregistration/form' />
+          <NavButton style={{ borderRadius: 5}} icon={"fas fa-shopping-cart"} target='_blank' iconProps={ticketIcon} to='https://west2018.uber.magfest.org/uber/preregistration/form' />
 
         </Right>
       </FooterWrapper>

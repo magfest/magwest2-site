@@ -7,7 +7,7 @@ import Section from '../components/Section';
 import Answer from '../components/Answer';
 import Question from '../components/Question';
 
-class IndexPage extends React.Component{
+class FaqPage extends React.Component{
   state = {
     active: ''
   }
@@ -18,7 +18,6 @@ class IndexPage extends React.Component{
     let faqs = {};
     // Iterate through each post, putting all found FAQ pages into `faqs`
     data.allMarkdownRemark.edges.forEach(edge => {
-      console.log(edge);
       if(edge.node.frontmatter){
         let type = edge.node.fields.slug.indexOf("answer/") != -1 ? "answer" : null;
         type = edge.node.fields.slug.indexOf("question/") != -1 && type == null ? "question" : type;
@@ -36,13 +35,13 @@ class IndexPage extends React.Component{
     let answerStyle = { width: '75%', marginRight: 'auto', display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}
     Object.values(faqs).forEach(page => {
       if(page.question.frontmatter && page.answer.frontmatter){
-        faqComponents.push(<ListItem id={page.question.frontmatter.key} ><ListItemText>{page.question.frontmatter.key}</ListItemText></ListItem>)
-        faqComponents.push(<ListItem style={questionStyle} key={page.question.frontmatter.slug}>
+        faqComponents.push(<ListItem key={`${page.question.frontmatter.key}ID`} id={page.question.frontmatter.key} ><ListItemText>{page.question.frontmatter.key}</ListItemText></ListItem>)
+        faqComponents.push(<ListItem style={questionStyle} key={page.question.fields.slug}>
           <Question content={page.question.html} />
         </ListItem>);
 
 
-        faqComponents.push(<ListItem style={answerStyle} key={page.answer.frontmatter.slug}>
+        faqComponents.push(<ListItem style={answerStyle} key={page.answer.fields.slug}>
           <Answer content={page.answer.html} />
         </ListItem>);
       }
@@ -69,7 +68,7 @@ class IndexPage extends React.Component{
     );
   }
 }
-export default IndexPage;
+export default FaqPage;
 
 export const pageQuery = graphql`
   query FAQIndexQuery {

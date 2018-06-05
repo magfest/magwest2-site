@@ -8,13 +8,15 @@ const StyledTypography = styled(Typography)(theme => ({
   },
   backgroundColor: 'lightblue',
   padding: '0 3px',
-  borderRadius: '10px',
-  width: '100%',
-  textAlign: 'right',
-  margin: '0 auto',
+  borderRadius: '10px 10px 0 10px',
+  maxWidth: '100%',
+  minWidth: '25%',
+  textAlign: 'left',
+  margin: '0',
   '& p': {
     marginLeft: 'auto',
     marginRight: 'auto',
+    width: '90%',
   }
 }));
 

@@ -43,7 +43,7 @@ class App extends Component{
     return(<Grid style={{ display : 'flex', alignItems: 'center'}} item xs={6} sm={4} md={3}>
 
       <div style={this.state.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
-        <Link to={this.props.to}>
+        <Link to={this.props.to} target={this.props.target}>
           <Icon {...iconProps}/>
           <Typography>
             {`${this.props.title ? this.props.title : ''}`}

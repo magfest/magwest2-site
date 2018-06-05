@@ -44,9 +44,9 @@ function getRandomIntInclusive(min, max) {
 
 function trimSourceForPath(source){
   source = source.substring(14, source.length);
-  console.log(source);
+  //console.log(source);
   source = source.substring(0, source.length-8);
-  console.log(source);
+  //console.log(source);
   return source;
 }
 
@@ -57,7 +57,7 @@ class App extends Component {
     typeof window !== 'undefined' && netlifyIdentity.init();
     this.audioRef = React.createRef();
     var audioSource = props.location.pathname.indexOf("bands/") != -1 ? `/uploads/songs${props.location.pathname}song.mp3` : "/uploads/songs/song.mp3";
-    console.log(props);
+    //console.log(props);
     var playlist = this.createSetlist();
     var playlistOrder = [];
     for(var i = 0; i < playlist.length; i++){
@@ -123,7 +123,7 @@ class App extends Component {
   loadFromPlaylist = (message) => {
     let playlist = this.state.playlist;
     let playlistOrder = this.state.playlistOrder;
-    console.log(this.state);
+    //console.log(this.state);
     let playlistIndex = this.state.playlistIndex;
     if(playlistIndex < playlistOrder.length){
       playlistIndex = playlistIndex == playlistOrder.length-1 ? 0 : playlistIndex + 1;
@@ -292,9 +292,6 @@ class App extends Component {
             notifications: this.state.notifications.delete(notification)
           })
         }} />
-        <Notification
-          { ...this.state.notification }
-         />
       </Wrapper>
     );
   }

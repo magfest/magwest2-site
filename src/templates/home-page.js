@@ -26,7 +26,7 @@ class HomePage extends React.Component{
         <App to="/about" title="About" icon={Info}/>
         <App to="/codeofconduct" title="Code of Conduct"/>
         <App to="/lan" iconProps={{style: {width: '90%', height: '100%', color: 'white'}}} title="LAN" icon={Computer}/>
-        <App to="/panels" title="Panels" icon={MicNone}/>
+        <App to="https://west2018.uber.magfest.org/uber/panel_applications/index" target="_blank" title="Panels" icon={MicNone}/>
         <App to="/guests" title="Guests" icon={Stars}/>
       </Section>)}}</AudioContext.Consumer>
     );

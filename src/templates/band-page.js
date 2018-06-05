@@ -25,7 +25,8 @@ const Placeholder = styled('div')(theme => ({
 }));
 const ArticleImage = styled('img')(theme => ({
   maxHeight: screenHeight,
-  maxWidth: '100%'
+  maxWidth: '100%',
+  fade: 'red'
 
 }));
 const ArticleTitle = styled('div')(theme => ({
@@ -97,18 +98,18 @@ class BandPage extends Component {
 
           <BandTitle>
             <TitleItem xs={2}>
-              <IconButton  component={preview ? null : Link} to="/bands">
-                <ArrowBack  style={{ fontSize: '48'}}  />
+              <IconButton color='secondary'  component={preview ? null : Link} to="/bands">
+                <ArrowBack color='primary' style={{ fontSize: '48'}}  />
               </IconButton>
             </TitleItem>
             <TitleItem xs={8}>
             <Typography style={{ margin: '0 auto'}} variant="headline">{page.frontmatter.title}</Typography>
             </TitleItem>
             <TitleItem xs={2}>
-              <IconButton onClick={() => {this.setState({
+              <IconButton color={this.state.showSummary ? 'primary' : 'secondary'} onClick={() => {this.setState({
                 showSummary: !this.state.showSummary
               })}}>
-                <Info style={{ fontSize: '48'}} />
+                <Info color={this.state.showSummary ? 'secondary' : 'primary'} style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
 
@@ -120,28 +121,28 @@ class BandPage extends Component {
           <SocialMediaRow icons={page.frontmatter.icons} />
           <Grid style={{ position: 'relative', bottom: 0}} container spacing={0}>
             <TitleItem xs={3}>
-              <IconButton onClick={() => this.props.audio.shuffle()}>
-                <Shuffle style={this.props.audio.shuffled ? { fontSize: '48', color: 'green'} : { fontSize: '48', color: 'black'}} />
+              <IconButton color={this.props.audio.shuffled ? 'primary' : 'secondary'} onClick={() => this.props.audio.shuffle()}>
+                <Shuffle color={this.props.audio.shuffled ? 'secondary' : 'primary'} style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
             <TitleItem xs={2}>
-              <IconButton onClick={() => this.props.audio.previous(`${page.frontmatter.title}`)}>
-                <SkipPrevious style={{ fontSize: '48'}} />
+              <IconButton color='secondary' onClick={() => this.props.audio.previous(`${page.frontmatter.title}`)}>
+                <SkipPrevious color='primary' style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
             <TitleItem xs={2}>
-              <IconButton onClick={this.togglePlay}>
-                <PlayingIcon  style={{ fontSize: '48'}} />
+              <IconButton color='secondary' onClick={this.togglePlay}>
+                <PlayingIcon color='primary' style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
             <TitleItem xs={2}>
-              <IconButton onClick={() => this.props.audio.next(`${page.frontmatter.title}`)}>
-                <SkipNext style={{ fontSize: '48'}} />
+              <IconButton color='secondary' onClick={() => this.props.audio.next(`${page.frontmatter.title}`)}>
+                <SkipNext color='primary' style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
             <TitleItem xs={3}>
-              <IconButton onClick={this.props.audio.loop}>
-                <Loop  style={{ fontSize: '48', color: this.props.audio.looping ? 'green' : 'black'}} />
+              <IconButton color={this.props.audio.looping ? 'primary' : 'secondary'} onClick={this.props.audio.loop}>
+                <Loop color={this.props.audio.looping ? 'secondary' : 'primary'} style={{ fontSize: '48'}} />
               </IconButton>
             </TitleItem>
           </Grid>
