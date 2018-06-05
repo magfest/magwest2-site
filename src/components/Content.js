@@ -5,6 +5,8 @@ import styled from '../utils/styled';
 const StyledTypography = styled(Typography)(theme => ({
   '& img': {
     maxWidth: '100%',
+    padding: '0',
+    width: '100%',
   },
 }));
 
