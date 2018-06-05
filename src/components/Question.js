@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Typography from 'material-ui/Typography';
+import {Typography} from '@material-ui/core';
 import styled from '../utils/styled';
 
 const StyledTypography = styled(Typography)(theme => ({
