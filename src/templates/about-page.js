@@ -18,7 +18,9 @@ const AboutPage = ({ data, preview }) => {
       <Article style={{ position: 'relative'}}  item xs={11} sm={8} md={6}>
         <Helmet title={page.frontmatter.title} />
         <Typography variant="display1">{page.frontmatter.title}</Typography>
-        
+        <div>
+          <Content content={page.html} />
+        </div>
       </Article>
     </Section>
   );
