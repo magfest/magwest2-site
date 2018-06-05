@@ -6,6 +6,7 @@ import styled from '../utils/styled';
 import withRoot from '../utils/withRoot';
 import Section from '../components/Section';
 import Content from '../components/Content';
+import Question from '../components/Question';
 
 const Article = styled(Grid, { component: 'article' })(theme => ({
   padding: `${theme.spacing.unit * 2}px 0`,
@@ -19,7 +20,7 @@ const AboutPage = ({ data, preview }) => {
         <Helmet title={page.frontmatter.title} />
         <Typography variant="display1">{page.frontmatter.title}</Typography>
         <div>
-          <Content content={page.html} />
+          <Question content={page.html} />
         </div>
       </Article>
     </Section>
