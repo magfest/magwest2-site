@@ -11,23 +11,6 @@ const Article = styled(Grid, { component: 'article' })(theme => ({
   padding: `${theme.spacing.unit * 2}px 0`,
 }));
 
-const Placeholder = styled('div')(theme => ({
-  height: 366,
-  backgroundColor: '#eee',
-  textAlign: 'center',
-  margin: `${theme.spacing.unit * 2}px 0`,
-}));
-const ArticleImage = styled('img')(theme => ({
-  objectFit: 'cover',
-  width: '100%',
-  height: 366,
-}));
-const ArticleTitle = styled('div')(theme => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-}));
-
 const CodeOfConductPage = ({ data, preview }) => {
   const { markdownRemark: page } = data;
   return (
