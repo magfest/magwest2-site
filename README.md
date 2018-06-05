@@ -1,120 +1,140 @@
-# Victor Hugo CMS Template
-<!-- Markdown snippet -->
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/bdougie/restaurant-template-cms&stack=cms)
+![gatsby-starter-procyon](https://github.com/danielmahon/gatsby-starter-procyon/raw/master/src/images/logo.png)
 
-![casper theme image](https://s3-us-west-1.amazonaws.com/publis-brian-images/restaurant.jpg)
+# gatsby-starter-procyon
 
-**A [Hugo](http://gohugo.io/) boilerplate for creating truly epic websites**
+### _Work in Progress!! Netlify CMS Edition_
 
-This is a boilerplate for using Hugo as a static site generator and Gulp + Weback as your
-asset pipeline.
+An opinionated Gatsby starter designed for trash-eating pandas.
 
-It's setup to use post-css and babel for CSS and JavaScript.
+~~[View Demo - https://gatsby-starter-procyon.netlify.com/](https://gatsby-starter-procyon.netlify.com/)  
+Click "Login" in the footer to enable client-side editing.  
+`Email: demo@demo.com` `Password: demo`  
+_You'll get an error when trying to save changes to remote, but you get the idea..._~~
 
-## Usage
-Be sure that you have the latest node, npm and [Hugo](https://gohugo.io/overview/installing/) installed. If you need to install hugo, run:
+> View the [GraphCMS](https://graphcms.com/) version on the `master` branch:  
+> [https://github.com/danielmahon/gatsby-starter-procyon](https://github.com/danielmahon/gatsby-starter-procyon)
 
-Clone this repository and run:
+### Features
 
-```bash
-npm install
+* [Gatsby](https://www.gatsbyjs.org/) + [ReactJS](https://reactjs.org/) (server side rendering)
+* [Netlify CMS](https://www.netlifycms.org/) Headless Git-based CMS
+* ~~[GraphCMS](https://graphcms.com/) Headless CMS via [gatsby-source-graphcms](https://github.com/GraphCMS/gatsby-source-graphcms)~~
+* ~~[DraftJS](https://draftjs.org/) (in-place) [Medium](https://medium.com)-like Editing~~
+* ~~[Apollo GraphQL](https://www.apollographql.com/) (client-side)~~
+* ~~Local caching between builds~~
+* [Material-UI](https://material-ui-next.com/) (layout, typography, components, etc)
+* Styled-Components™-like API via Material-UI
+* [Netlify](https://www.netlify.com/) Deployment Friendly
+* [Netlify Identity](https://www.netlify.com/docs/identity/) Authentication (enables editing)
+* [Versionist](https://github.com/danielmahon/versionist) automated deployment and CHANGELOG (forked until [#115](https://github.com/resin-io/versionist/pull/115))
+* Automatic rebuilds ~~with GraphCMS and Netlify web hooks~~
+* PWA (Progressive Web App)
+* [Google Fonts](https://fonts.google.com/)
+* Trash Panda Approved\*
+
+### Coming Soon™
+
+* [ ] Enhanced `styled` API supporting `React.forwardRef` and `props`
+* [ ] Dynamic page and section creation
+* [ ] Example on how to use Markdown AST to render components
+* [ ] Transactional emails
+* [ ] Contact form and message management
+* [ ] Links to sites that used `gatsby-starter-procyon`
+
+For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+
+## Install
+
+Make sure that you have the Gatsby CLI program installed:
+
+```sh
+npm install --global gatsby-cli
+```
+
+And run from your CLI:
+
+```sh
+gatsby new gatsby-starter-procyon https://github.com/danielmahon/gatsby-starter-procyon#netlifycms
+cd gatsby-starter-procyon
+```
+
+#### ~~Setup GraphCMS~~
+
+1.  ~~Create an account at [GraphCMS](https://graphcms.com).~~
+2.  ~~Create a new project using the blog template.~~
+3.  ~~Add at least one "Blog Post" to the CMS, be sure to fill out the `title`, `coverImage`, `content` and `slug`. These are required for the initial Gatsby build.~~
+4.  ~~Create `.env.development` and `.env.production` in the root folder and add the following environmental variables with your token and endpoint:~~
+
+```
+GATSBY_GRAPHQLCMS_ENDPOINT=
+GATSBY_GRAPHQLCMS_TOKEN=
+```
+
+Then you can run it by:
+
+```sh
 npm start
 ```
 
-Then visit http://localhost:3000/ - BrowserSync will automatically reload CSS or
-refresh the page when stylesheets or content changes.
+Navigate to [https://localhost:5000](https://localhost:5000) in your browser.
 
-To build your static output to the `/dist` folder, use:
+## Deploy
 
-```bash
-npm run build
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danielmahon/gatsby-starter-procyon#netlifycms)
+
+#### Automatic versioning, deployment and CHANGELOG
+
+This starter supports automatic versioning and CHANGELOG generation based on your git commits via [versionist](https://github.com/resin-io/versionist). Link your GitHub repo to Netlify to include automatic deployments.
+
+First, create a GitHub repo and link it to Netlify:  
+[https://www.netlify.com/docs/continuous-deployment/](https://help.github.com/articles/create-a-repo/).
+
+```sh
+# Initialize your repo
+git init
+# Add all files not in .gitignore
+git add -A
+# Create your first commit
+git commit -m "Initial commit"
+# Sets your remote origin to your GitHub repo
+git remote add origin https://github.com/[username]/[repo-name].git
+# Set your local master to track origin/master
+git branch -u origin/master
+# Push your first release
+npm run release:patch
+# 0.0.1 -> 0.0.2
+# You can also increment by minor or major versions
+# npm run release:minor
+# npm run release:major
 ```
 
-## Structure
+Make more changes...
 
+```sh
+git commit -m "Made something do something"
+npm run release:patch
+# 0.0.2 -> 0.0.3
 ```
-|--site                // Everything in here will be built with hugo
-|  |--content          // Pages and collections - ask if you need extra pages
-|  |--data             // YAML data files with any data for use in examples
-|  |--layouts          // This is where all templates go
-|  |  |--partials      // This is where includes live
-|  |  |--index.html    // The index page
-|  |--static           // Files in here ends up in the public folder
-|--src                 // Files that will pass through the asset pipeline
-|  |--css              // CSS files in the root of this folder will end up in /css/...
-|  |--js               // app.js will be compiled to /js/app.js with babel
-```
-## CMS
 
-### How it works
+#### ~~Setup Netlify Identity~~
 
-Netlify CMS is a single-page app that you pull into the `/admin` part of your site.
+~~There is a "Login" link in the site footer that launches the Netlify Identity Widget. The first time it opens it should ask you for your Netlify site's domain. Paste that in then you will be able to sign-up or login. I recommend starting with the simple email sign-up for local development.~~
 
-It presents a clean UI for editing content stored in a Git repository.
+#### ~~DraftJS Client-Side CMS Editing~~
 
-You setup a YAML config to describe the content model of your site, and typically
-tweak the main layout of the CMS a bit to fit your own site.
+~~Go to a blog post page and make sure you are logged in. Click inside the main post's content and start editing! You should see a "reset" and "save" button to the bottom-right of the content. Clicking save will use Apollo to update your GraphCMS content and if you setup web-hooks between GraphCMS and Netlify it will also trigger a rebuild of your static site! In the meantime Apollo will locally cache your changes so you will continue to see your changes until you refresh the site (which clears the cache). When the rebuild is done you can refresh the page and see the updated content.~~
 
-### Setup GitHub as a Backend
+## Questions
 
-In the `config.yml` file [change the GitHub owner and repo](https://github.com/bdougie/strata-cms-template/blob/master/site/static/admin/config.yml#L3) to reflect your repo:
+**Q: Why... this?**  
+A: Well, I wanted to rebuild some small client marketing sites using the same tech I am currently using for web(native) apps, like ReactJS. Gatsby seemed cool, Netlify makes it easy, and I wanted in-place editing like Medium™. So I created a proof-of-concept and I was surprised it worked.
 
-```yaml
-backend:
-  name: github
-  repo: owner/repo # Path to your Github repository
-  branch: master # Branch to update (master by default)
-  
-  ...
-```
-When a user navigates to `/admin` she'll be prompted to login, and once authenticated
-she'll be able to create new content or edit existing content.
-The default Github-based authenticator integrates with Netlify's [Authentication Provider feature](https://www.netlify.com/docs/authentication-providers) and the repository
-backend integrates directly with Github's API.
+**Q: You're an idiot and this is :poop:**  
+A: Thanks, and I welcome all creative criticism.
 
-To get everything hooked up, setup continuous deployment from Github to Netlify
-and then follow [the documentation](https://www.netlify.com/docs/authentication-providers)
-to setup Github as an authentication provider.
+**Q: What's Procyon? Why Trash Pandas?**  
+A: Look it up and because.
 
-That's it, now you should be able to go to the `/admin` section of your site and
-log in.
+## Todo
 
-### Find out more and contribute
-
-Visit the [Netlify CMS](https://github.com/netlify/netlify-cms/) to find out more and contribute. 
-
-## Basic Concepts
-
-You can read more about Hugo's template language in their documentation here:
-
-https://gohugo.io/templates/overview/
-
-The most useful page there is the one about the available functions:
-
-https://gohugo.io/templates/functions/
-
-For assets that are completely static and don't need to go through the asset pipeline,
-use the `site/static` folder. Images, font-files, etc, all go there.
-
-Files in the static folder ends up in the web root. So a file called `site/static/favicon.ico`
-will end up being available as `/favicon.ico` and so on...
-
-The `src/js/app.js` file is the entrypoint for webpack and will be built to `/dist/app.js`.
-
-You can use ES6 and use both relative imports or import libraries from npm.
-
-Any CSS file directly under the `src/css/` folder will get compiled with [PostCSS Next](http://cssnext.io/)
-to `/dist/css/{filename}.css`. Import statements will be resolved as part of the build
-
-## Deploying to netlify
-
-- Push your clone to your own GitHub repository.
-- [Create a new site on Netlify](https://app.netlify.com/start) and link the repository.
-
-Now netlify will build and deploy your site whenever you push to git.
-
-##  Enjoy!!
-
-#### License
-
-[MIT](LICENSE)
+Lots of stuff. Check issues in the future.

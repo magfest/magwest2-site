@@ -1,0 +1,22 @@
+html, body {
+  font-family: "Open Sans", Roboto, "Helvetica Neue", Arial, sans-serif;
+  height: 100%;
+}
+
+#___gatsby, #___gatsby > div, #___gatsby > div > div {
+  height: 100%;
+}
+a:link, a:visited {
+  cursor: pointer;
+  color: inherit;
+}
+a:hover, a:active {
+  cursor: pointer;
+  color: inherit;
+}
+
+/* IE 6 */
+* html footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
