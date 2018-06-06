@@ -3,7 +3,6 @@ import Link from './Link';
 import {Grid} from '@material-ui/core';
 
 import SocialMediaButton from  './SocialMediaButton';
-
 import styled from '../utils/styled';
 
 const Row = styled(Grid)(theme => ({
@@ -25,7 +24,7 @@ class SocialMediaRow extends Component{
     }
     var icons = [];
     this.props.icons.forEach((item, index) => {
-      icons.push(<SocialMediaButton alt={item.title} to={item.url} key={item.title + index} item={true} xs={2} icon={item.icon} />);
+      icons.push(<SocialMediaButton alt={item.title} to={item.url} key={item.title + index} icon={item.icon} />);
     })
     return icons;
   }
