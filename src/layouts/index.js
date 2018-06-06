@@ -247,7 +247,6 @@ class App extends Component {
     });
   }
 
-  updateProgress = (played, loaded, played)
 
   addMusicNotification (message, key) {
     return this.setState({
