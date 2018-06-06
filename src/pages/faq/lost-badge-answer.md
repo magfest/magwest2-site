@@ -1,7 +1,7 @@
 ---
 date: '2018-04-09T12:41:43-04:00'
 tag: faq
-key: 18
+key: 4
 ---
 Unfortunately, you will need to buy a new badge at the current price.
 

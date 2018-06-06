@@ -1,7 +1,7 @@
 ---
-date: '2018-04-09T12:41:43-04:00'
+date: '2018-03-29T22:19:22-24:00'
 tag: faq
-key: 14
+key: 8
 ---
 Anyone picking up a badge needs a government issued photo ID that matches the name of the badge being picked up and your date of birth.
 

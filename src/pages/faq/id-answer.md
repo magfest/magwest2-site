@@ -1,7 +1,7 @@
 ---
-date: '2018-04-09T12:41:43-04:00'
+date: '2018-03-29T22:19:22-24:00'
 tag: faq
-key: 15
+key: 10
 ---
 We understand that people under 18 often do not have an official photo ID, but please notify us ahead of time at [contact@magwest.org](mailto:contact@magwest.org) to make arrangements.
 

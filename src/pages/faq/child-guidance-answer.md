@@ -1,7 +1,7 @@
 ---
-date: '2018-04-09T12:41:43-04:00'
+date: '2018-03-09T12:15:21-00:00'
 tag: faq
-key: 8
+key: 4
 ---
 All children 12 and under will need to be accompanied by an adult with a paid badge.
 

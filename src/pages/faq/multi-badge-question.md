@@ -1,6 +1,6 @@
 ---
-date: '2018-04-09T12:41:43-04:00'
+date: '2018-03-29T22:19:22-24:00'
 tag: faq
-key: 13
+key: 5
 ---
 I bought more than one badge in my name. Will this present a problem when picking up my badges?

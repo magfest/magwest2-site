@@ -1,7 +1,7 @@
 ---
-date: '2018-04-09T12:41:43-04:00'
+date: '2018-02-15T11:11:11-00:00'
 tag: faq
-key: 5
+key: 4
 ---
 To transfer your registration to another person, open your confirmation email and send them the personalized link referenced in the last paragraph.
 

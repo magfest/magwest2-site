@@ -1,6 +1,6 @@
 ---
-date: '2018-04-09T12:41:43-04:00'
+date: '2018-03-09T12:15:21-00:00'
 tag: faq
-key: 7
+key: 2
 ---
-How much are badges for children? Do they need to be registered?
+Each attendee, including children, at MAGWest will need to be registered and have a badge.

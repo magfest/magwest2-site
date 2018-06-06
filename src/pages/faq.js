@@ -26,7 +26,20 @@ class FaqPage extends React.Component{
 
     Object.keys(faqs).forEach(key => {
       faqComponents.push(<ListItem key={key} id={key} ><ListItemText style={{ textAlign: 'center'}}>{key}</ListItemText></ListItem>);
-      faqs[key].forEach(item => {
+      faqs[key].sort((a, b) => {
+        let aKey = a.frontmatter.key;
+        let bKey = b.frontmatter.key;
+
+        if(aKey > bKey){
+          return 1;
+        }
+        else if(aKey < bKey){
+          return -1;
+        }
+        else{
+          return 0;
+        }
+      }).forEach(item => {
         let Type = item.fields.slug.indexOf("answer/") != -1 ? Answer : item.fields.slug.indexOf("question/") != -1 ? Question : null;
         let FAQPosition = Type == Answer ? 'flex-start' : 'flex-end';
         let FAQStyle = {alignItems: FAQPosition, justifyContent: FAQPosition}
