@@ -18,7 +18,6 @@ const Button = styled(IconButton)(theme => ({
   margin: '2rem 0',
   marginLeft: 'auto',
   marginRight: 'auto',
-  backgroundColor: convertColorStringToRGBA(theme.palette.primary.main, 0.3),
   '& span': {
     height: '100%',
     flexDirection: 'column'
