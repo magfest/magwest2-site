@@ -8,60 +8,55 @@ import Answer from '../components/Answer';
 import Question from '../components/Question';
 
 class FaqPage extends React.Component{
-  state = {
-    active: ''
-  }
-
-  makeConversation = () => {
-    const {data} = this.props;
-    // FAQ pages:
+  constructor(props){
+    super(props);
     let faqs = {};
     // Iterate through each post, putting all found FAQ pages into `faqs`
-    data.allMarkdownRemark.edges.forEach(edge => {
-      if(edge.node.frontmatter){
-        let type = edge.node.fields.slug.indexOf("answer/") != -1 ? "answer" : null;
-        type = edge.node.fields.slug.indexOf("question/") != -1 && type == null ? "question" : type;
-        if (edge.node.frontmatter.key) {
-          if(type){
-            faqs[edge.node.frontmatter.key] = faqs[edge.node.frontmatter.key] ? faqs[edge.node.frontmatter.key] : {question: '', answer: ''}
-            faqs[edge.node.frontmatter.key][type] = edge.node;
-          }
+    props.data.allMarkdownRemark.edges.forEach(edge => {
+      if(edge.node.frontmatter.tag == 'faq'){
+        if(!faqs[edge.node.frontmatter.date]){
+          faqs[edge.node.frontmatter.date] = [];
         }
+        faqs[edge.node.frontmatter.date].push(edge.node);
       }
     });
 
     let faqComponents = [];
-    let questionStyle = { width: '75%', marginLeft: 'auto', display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end'}
-    let answerStyle = { width: '75%', marginRight: 'auto', display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start'}
-    Object.values(faqs).forEach(page => {
-      if(page.question.frontmatter && page.answer.frontmatter){
-        faqComponents.push(<ListItem key={`${page.question.frontmatter.key}ID`} id={page.question.frontmatter.key} ><ListItemText>{page.question.frontmatter.key}</ListItemText></ListItem>)
-        faqComponents.push(<ListItem style={questionStyle} key={page.question.fields.slug}>
-          <Question content={page.question.html} />
-        </ListItem>);
+    let defaultFAQStyle = { width: '75%', display: 'flex'};
 
-
-        faqComponents.push(<ListItem style={answerStyle} key={page.answer.fields.slug}>
-          <Answer content={page.answer.html} />
-        </ListItem>);
-      }
+    Object.keys(faqs).forEach(key => {
+      faqComponents.push(<ListItem key={key} id={key} ><ListItemText style={{ textAlign: 'center'}}>{key}</ListItemText></ListItem>);
+      faqs[key].forEach(item => {
+        let Type = item.fields.slug.indexOf("answer/") != -1 ? Answer : item.fields.slug.indexOf("question/") != -1 ? Question : null;
+        let FAQPosition = Type == Answer ? 'flex-start' : 'flex-end';
+        let FAQStyle = {alignItems: FAQPosition, justifyContent: FAQPosition}
+        let FAQMarginStyle = Type == Answer ? {marginRight: 'auto'} : { marginLeft: 'auto'};
+        if(Type){
+          faqComponents.push(<ListItem style={Object.assign({}, defaultFAQStyle, FAQStyle, FAQMarginStyle)} key={item.fields.slug}>
+            <Type content={item.html} />
+          </ListItem>);
+        }
+      });
 
     })
-    return faqComponents;
+    this.state = {
+      faqs: faqComponents
+    };
+    console.log(props);
+    props.title('F.A.Q');
+    props.titleProps({
+      leftLink: '/'
+    });
 
-  };
+  }
 
   render() {
-    const {data} = this.props;
-    let faqs = this.makeConversation();
     return (
       <Section>
-      <Typography style={{textAlign: 'center', position: 'sticky', top: 0, backgroundColor: 'white'}} variant="display1">Frequently Asked Questions</Typography>
         <Grid item xs={12}>
           <Helmet title="F.A.Q" />
-
           <List>
-            {faqs}
+            {this.state.faqs}
           </List>
         </Grid>
       </Section>
@@ -72,7 +67,7 @@ export default FaqPage;
 
 export const pageQuery = graphql`
   query FAQIndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___date] }) {
       edges {
         node {
           excerpt(pruneLength: 400)
@@ -83,7 +78,7 @@ export const pageQuery = graphql`
           html
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MM/DD/YY hh:mm:ssA")
             tag
             key
           }

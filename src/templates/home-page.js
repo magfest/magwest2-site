@@ -14,6 +14,9 @@ class HomePage extends React.Component{
   state = {
     active: ''
   }
+  componentDidMount = () => {
+    this.props.title('');
+  }
 
   render() {
     const {data} = this.props;

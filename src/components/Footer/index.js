@@ -15,7 +15,7 @@ const FooterWrapper = styled(Grid, {
   background: theme.palette.background.default,
   bottom: '0',
   left: '0',
-  height: '50px',
+  height: '10%',
   '& a:link, & a:visited': {
     cursor: 'pointer',
     color: 'inherit',
@@ -77,8 +77,8 @@ class Footer extends Component {
     var ticketIcon = {width: '55%', height: '100%', color: 'white'};
     return (
       <FooterWrapper>
-        <Left onClick={() => {this.props.goBack()}} style={FooterPadding} item xs={3}>
-          <NavButton iconProps={smallIcon} icon={"fas fa-arrow-left"} />
+        <Left style={FooterPadding} item xs={3}>
+          <NavButton to="mailto:contact@magwest.org" iconProps={smallIcon} icon={"fas fa-envelope"} />
         </Left>
         <Middle style={FooterPadding} item xs={6}>
           <NavButton to='/' icon={"fas fa-home"} iconProps={smallIcon} />

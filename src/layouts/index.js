@@ -20,16 +20,18 @@ import { AudioContext } from '../utils/music-player';
 
 import { NotificationStack, Notification } from 'react-notification';
 import { OrderedSet } from 'immutable';
+import TitleBar from '../components/TitleBar';
+import Link from '../components/Link';
 
 const Main = styled('main')(theme => ({
   backgroundColor: 'white',
   borderBottom: `1px solid ${theme.palette.grey[200]}`,
   borderTop: `1px solid ${theme.palette.grey[200]}`,
   margin: `0 -${theme.spacing.unit * 2}px`,
-  height: 'calc(100% - 50px)',
+  height: '90%',
   overflowY: 'scroll',
   '& > section': {
-    height: '100%'
+    height: '90%'
   },
 }));
 const Wrapper = styled('div')(theme => ({
@@ -78,7 +80,10 @@ class App extends Component {
         dismissAfter: false,
         message: 'Band Name',
         title: 'Now Playing'
-      }
+      },
+      title: '',
+      titleProps: {},
+
     };
   }
 
@@ -271,6 +276,29 @@ class App extends Component {
     );
   }
 
+  setTitle = (title) => {
+    if(title == null){
+      return this.state.title;
+    }
+    else{
+      this.setState({
+        title: title
+      });
+    }
+
+  }
+
+  setTitleProps = (props) => {
+    if(props == null){
+      return this.state.titleProps;
+    }
+    else{
+      this.setState({
+        titleProps: props
+      })
+    }
+  }
+
 
   render() {
     const { children, data: { site, markdownRemark: page} } = this.props;
@@ -285,13 +313,20 @@ class App extends Component {
           ]}
         />
         <audio onEnded={this.loadFromPlaylist} ref={this.audioRef} src={this.state.audioSource}/>
-        <Main>{children({...this.props, audio: audio, createMusicNotification: this.addMusicNotification, removeMusicNotification: this.removeMusicNotification })}</Main>
-        <Footer goBack={this.props.history.goBack} data={{ site }} onMouseEnter={() => {this.audioRef.current.play()}} />
-        <NotificationStack barStyleFactory={this.defaultStyleFactory} notifications={notifications} onDismiss={(notification) => {
-          this.setState({
-            notifications: this.state.notifications.delete(notification)
-          })
-        }} />
+        <Main>
+
+        {this.state.title ? <TitleBar title={this.state.title} {...this.state.titleProps} /> : null }
+
+        {children({...this.props, title: this.setTitle, titleProps: this.setTitleProps, audio: audio, createMusicNotification: this.addMusicNotification, removeMusicNotification: this.removeMusicNotification })}
+
+        </Main>
+        <Footer goBack={this.props.history.goBack} data={{ site }} />
+
+        <NotificationStack            barStyleFactory={this.defaultStyleFactory} notifications={notifications} onDismiss={(notification) => {
+            this.setState({
+              notifications: this.state.notifications.delete(notification)
+            })
+          }} />
       </Wrapper>
     );
   }

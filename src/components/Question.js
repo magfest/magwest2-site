@@ -1,24 +1,13 @@
 import React, { Component } from 'react';
 import {Typography} from '@material-ui/core';
 import styled from '../utils/styled';
+import createFAQStyle from '../utils/faqStyles';
 
-const StyledTypography = styled(Typography)(theme => ({
-  '& img': {
-    maxWidth: '100%',
-  },
-  backgroundColor: 'lightblue',
+const StyledTypography = styled(Typography)(theme => (createFAQStyle({
   padding: '0 3px',
-  borderRadius: '10px 10px 0 10px',
-  maxWidth: '100%',
-  minWidth: '25%',
-  textAlign: 'left',
-  margin: '0',
-  '& p': {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '90%',
-  }
-}));
+  borderBottomRightRadius: '0px',
+  backgroundColor: theme.palette.primary.light,
+})));
 
 class Question extends Component {
   render() {

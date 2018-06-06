@@ -6,6 +6,7 @@ import styled from '../utils/styled';
 import withRoot from '../utils/withRoot';
 import Section from '../components/Section';
 import Content from '../components/Content';
+import TitleBar from '../components/TitleBar';
 
 const Article = styled(Grid, { component: 'article' })(theme => ({
   padding: `${theme.spacing.unit * 2}px 0`,
@@ -15,8 +16,10 @@ const CodeOfConductPage = ({ data, preview }) => {
   const { markdownRemark: page } = data;
   return (
     <Section spacing={0}>
+      <TitleBar title={page.frontmatter.title} />
       <Article style={{ position: 'relative'}} item xs={11} sm={8} md={6}>
         <Helmet title={page.frontmatter.title} />
+
         <Content content={page.html} />
       </Article>
     </Section>

@@ -33,7 +33,7 @@ class SocialMediaRow extends Component{
   render() {
     var icons = this.createSocialMediaIcons();
     return (
-      <Row container >
+      <Row container style={this.props.style} >
         {icons}
       </Row>
     );

@@ -1,25 +1,13 @@
 import React, { Component } from 'react';
 import {Typography} from '@material-ui/core';
 import styled from '../utils/styled';
+import createFAQStyle from '../utils/faqStyles';
 
-const StyledTypography = styled(Typography)(theme => ({
-  '& img': {
-    maxWidth: '100%',
-  },
-  backgroundColor: 'pink',
+const StyledTypography = styled(Typography)(theme => (createFAQStyle({
   padding: '0 3px',
-  borderRadius: '10px 10px 10px 0',
-  maxWidth: '100%',
-  minWidth: '25%',
-  textAlign: 'left',
-  margin: '0',
-  position: 'relative',
-  '& p, & h1, & h2, & h3, & h4, & h5, & h6': {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    width: '90%',
-  }
-}));
+  borderBottomLeftRadius: '0px',
+  backgroundColor: theme.palette.secondary.light,
+})));
 
 const Karet = styled('div')(theme => ({
   width: '10px',

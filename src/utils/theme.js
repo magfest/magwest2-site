@@ -7,11 +7,22 @@ import grey from '@material-ui/core/colors/grey';
 
 const headlineFont = `Merriweather, Georgia, serif`;
 const bodyFont = `"Open Sans", Roboto, "Helvetica Neue", Arial, sans-serif`;
+console.log(grey);
 
 export default createMuiTheme({
   palette: {
-    primary: grey.dark,
-    secondary: green,
+    primary: {
+      light: "#9be7ff",
+      main: "#64b5f6",
+      dark: "#2286c3",
+      contrastText: "#000"
+    },
+    secondary: {
+      light: "#ff94c2",
+      main: "#f06292",
+      dark: "#ba2d65",
+      contrastText: "#000"
+    },
     error: red,
     action: {
       hoverOpacity: 0.25,
@@ -21,7 +32,7 @@ export default createMuiTheme({
   typography: {
     fontFamily: bodyFont,
     // fontSize: 14, // default
-    // color: grey[500],
+    color: grey[900],
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 600,
@@ -37,12 +48,13 @@ export default createMuiTheme({
     title: { fontFamily: headlineFont, color: grey[900], fontWeight: 400 },
     body1: {
       fontFamily: bodyFont,
-      color: grey[700],
+      color: grey[900],
       fontWeight: 400,
       margin: '1em 0',
       '& h2': { fontFamily: headlineFont, color: grey[900], fontWeight: 400 },
       '& h3': { fontFamily: headlineFont, color: grey[900], fontWeight: 400 },
     },
+    '& p': { color: grey[900] },
   },
   overrides: {
     MuiGrid: {
