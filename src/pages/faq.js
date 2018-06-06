@@ -42,12 +42,14 @@ class FaqPage extends React.Component{
     this.state = {
       faqs: faqComponents
     };
-    console.log(props);
-    props.title('F.A.Q');
-    props.titleProps({
-      leftLink: '/'
-    });
 
+  }
+
+  componentDidMount = () => {
+    this.props.title("F.A.Q")
+    this.props.titleProps({
+      leftLink: '/'
+    })
   }
 
   render() {

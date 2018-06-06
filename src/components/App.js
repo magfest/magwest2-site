@@ -1,7 +1,46 @@
 import React, { Component } from 'react';
-import {Grid, Typography} from '@material-ui/core';
+import {Grid, Typography, IconButton} from '@material-ui/core';
+import PropTypes from 'prop-types';
 import Link from './Link';
-import DefaultIcon from '@material-ui/icons/QuestionAnswer';
+import styled from '../utils/styled';
+import { convertColorStringToRGBA } from '../utils/tools';
+
+const defaultIcon = "fas fa-fire";
+
+const Button = styled(IconButton)(theme => ({
+  position: 'relative',
+  color: theme.palette.primary.main,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  height: '100%',
+  margin: '2rem 0',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  backgroundColor: convertColorStringToRGBA(theme.palette.primary.main, 0.3),
+  '& span': {
+    height: '100%',
+    flexDirection: 'column'
+  }
+}));
+
+const Icon = styled('i')(theme => ({
+  position: 'relative',
+  color: theme.palette.secondary.main,
+  fontSize: '100px',
+  height: 150,
+  borderRadius: 5,
+}));
+
+const StyledLink = styled(Link)(theme => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  height: '100%',
+  flexDirection: 'column'
+}));
 
 class App extends Component{
   constructor(props){
@@ -17,43 +56,31 @@ class App extends Component{
     return Object.assign(madeStyle, newStyle);
   }
 
-  onMouseEnter = () => {
-    this.setState({style: this.defaultStyle({backgroundColor: 'slateblue'})})
-  }
-
-  onMouseLeave = () => {
-    this.setState({style: this.defaultStyle()})
-  }
-
-  onMouseDown = () => {
-    this.setState({style: this.defaultStyle({backgroundColor: 'steelblue'})})
-  }
-
-  onMouseUp = () => {
-    this.setState({style: this.defaultStyle({backgroundColor: 'slateblue'})})
-  }
-
   render(){
-    var Icon = this.props.icon ? this.props.icon : DefaultIcon;
-    var defaultIconStyle = {style: { width: '100%', height: '100%', color: 'white'}};
-    var iconProps = this.props.iconProps ? Object.assign(defaultIconStyle, this.props.iconProps) : defaultIconStyle;
-
+    var icon = this.props.icon ? this.props.icon : defaultIcon;
 
     return(<Grid style={{ display : 'flex', alignItems: 'center'}} item xs={6} sm={4} md={3}>
 
-      <div style={this.state.style} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp}>
-        <Link to={this.props.to} target={this.props.target}>
-          <Icon {...iconProps}/>
-          <Typography>
-            {`${this.props.title ? this.props.title : ''}`}
-          </Typography>
+
+        <Link style={{textDecorationLine: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', flexDirection: 'column'}} to={this.props.to} target={this.props.target}>
+          <Button>
+            <Icon className={icon}/>
+            <Typography variant="title">
+              {`${this.props.title ? this.props.title : ''}`}
+            </Typography>
+          </Button>
         </Link>
-      </div>
+
 
 
 
       </Grid>)
   }
 }
+
+App.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
 
 export default App;

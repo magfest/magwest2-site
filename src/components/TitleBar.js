@@ -14,7 +14,7 @@ const TitleBarWrapper = styled(Grid, {
   position: 'sticky',
   top: 0,
   textAlign: 'center',
-  backgroundColor: theme.palette.secondary.main,
+  backgroundColor: theme.palette.background.default,
   zIndex: 100,
   width: '100%',
   height: '10% !important',
@@ -31,8 +31,6 @@ const TitleBlock = styled(Grid, {
 
 const TitleButton = styled(IconButton)(theme => ({
   position: 'relative',
-  width: '100%',
-  height: '100%',
 }));
 
 const TitleIcon = styled('i')(theme => ({
@@ -51,12 +49,12 @@ class TitleBar extends Component{
   }
 
   render(){
-    const leftBlock = this.props.leftBlock ? this.props.leftBlock : <TitleButton {...this.props.leftButtonProps} >
+    const leftBlock = this.props.leftBlock ? this.props.leftBlock : this.props.disableLeftIcon ? null : <Link to="/" ><TitleButton {...this.props.leftButtonProps} >
       <TitleIcon className={`${this.props.leftIconCSS ? this.props.leftIconCSS : 'fas fa-arrow-left fa-2x'}`} />
-    </TitleButton>;
-    const rightBlock = this.props.rightBlock ? this.props.rightBlock : <TitleButton {...this.props.rightButtonProps} >
+    </TitleButton></Link>;
+    const rightBlock = this.props.rightBlock ? this.props.rightBlock : this.props.rightIconCSS ? <TitleButton {...this.props.rightButtonProps} >
       <TitleIcon className={`${this.props.rightIconCSS ? this.props.rightIconCSS : 'fas fa-cog fa-2x'}`} />
-    </TitleButton>;
+    </TitleButton> : null;
     return (<TitleBarWrapper style={this.state.style}>
       <TitleBlock xs={3}>
         {this.props.leftLink ? <Link children={leftBlock} to={this.props.leftLink} /> : leftBlock}

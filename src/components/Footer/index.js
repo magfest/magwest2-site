@@ -28,35 +28,11 @@ const FooterWrapper = styled(Grid, {
   },
   position: 'fixed'
 }));
-const Left = styled(Grid)(theme => ({
-  textAlign: 'right',
+const Tile = styled(Grid)(theme => ({
   position: 'relative',
-  [theme.breakpoints.down('sm')]: {
-    textAlign: 'center',
-  },
-}));
-const Middle = styled(Grid)(theme => ({
-  textAlign: 'center',
-  position: 'relative',
-}));
-const Right = styled(Grid)(theme => ({
-  textAlign: 'left',
-  position: 'relative',
-  [theme.breakpoints.down('sm')]: {
-    textAlign: 'center',
-  },
-}));
-const FooterLink = styled(Link)(theme => ({
-  display: 'inline-block',
-}));
-const Caption = styled(Typography, { variant: 'caption' })(theme => ({
-  display: 'block',
-  lineHeight: '80px',
-  [theme.breakpoints.down('sm')]: {
-    lineHeight: '40px',
-  },
-}));
-const HomeButton = styled('div')(theme => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center'
 }));
 
 
@@ -77,16 +53,16 @@ class Footer extends Component {
     var ticketIcon = {width: '55%', height: '100%', color: 'white'};
     return (
       <FooterWrapper>
-        <Left style={FooterPadding} item xs={3}>
+        <Tile style={FooterPadding} item xs={3}>
           <NavButton to="mailto:contact@magwest.org" iconProps={smallIcon} icon={"fas fa-envelope"} />
-        </Left>
-        <Middle style={FooterPadding} item xs={6}>
+        </Tile>
+        <Tile style={FooterPadding} item xs={6}>
           <NavButton to='/' icon={"fas fa-home"} iconProps={smallIcon} />
-        </Middle>
-        <Right style={FooterPadding} item xs={3}>
+        </Tile>
+        <Tile style={FooterPadding} item xs={3}>
           <NavButton style={{ borderRadius: 5}} icon={"fas fa-shopping-cart"} target='_blank' iconProps={ticketIcon} to='https://west2018.uber.magfest.org/uber/preregistration/form' />
 
-        </Right>
+        </Tile>
       </FooterWrapper>
     );
   }

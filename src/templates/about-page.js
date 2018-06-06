@@ -16,10 +16,13 @@ const Article = styled(Grid, { component: 'article' })(theme => ({
 class AboutPage extends React.Component {
   constructor(props){
     super(props);
-    props.title("About");
-    props.titleProps({
-      leftLink: '/',
-    });
+  }
+
+  componentDidMount = () => {
+    this.props.title("About")
+    this.props.titleProps({
+      leftLink: '/'
+    })
   }
   render(){
     const { markdownRemark: page } = this.props.data;

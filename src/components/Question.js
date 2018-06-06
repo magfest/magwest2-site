@@ -3,15 +3,17 @@ import {Typography} from '@material-ui/core';
 import styled from '../utils/styled';
 import createFAQStyle from '../utils/faqStyles';
 
-const StyledTypography = styled(Typography)(theme => (createFAQStyle({
-  padding: '0 3px',
-  borderBottomRightRadius: '0px',
-  backgroundColor: theme.palette.primary.light,
-})));
+
 
 class Question extends Component {
   render() {
     const { content, ...props } = this.props;
+    const StyledTypography = styled(Typography)(theme => (createFAQStyle({
+      padding: '0 3px',
+      borderBottomRightRadius: '0px',
+      backgroundColor: theme.palette.primary.light,
+      width: content.indexOf("img") != -1 ? '100%' : 'auto',
+    })));
 
     // Set prop defaults
     props.component = props.component || 'div';

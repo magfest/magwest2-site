@@ -16,7 +16,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { loginUser, logoutUser } from '../utils/identityActions';
 
-import { AudioContext } from '../utils/music-player';
 
 import { NotificationStack, Notification } from 'react-notification';
 import { OrderedSet } from 'immutable';
@@ -24,7 +23,7 @@ import TitleBar from '../components/TitleBar';
 import Link from '../components/Link';
 
 const Main = styled('main')(theme => ({
-  backgroundColor: 'white',
+  backgroundColor: theme.palette.background.default,
   borderBottom: `1px solid ${theme.palette.grey[200]}`,
   borderTop: `1px solid ${theme.palette.grey[200]}`,
   margin: `0 -${theme.spacing.unit * 2}px`,

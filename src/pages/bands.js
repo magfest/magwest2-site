@@ -10,8 +10,12 @@ class IndexPage extends React.Component{
 
   constructor(props){
     super(props);
-    props.title("2018")
-    props.titleProps({
+
+  }
+
+  componentDidMount = () => {
+    this.props.title("2018")
+    this.props.titleProps({
       leftLink: "/"
     })
   }

@@ -57,13 +57,7 @@ class BandPage extends Component {
 
   constructor(props){
     super(props);
-    props.title(props.data.markdownRemark.frontmatter.title);
-    props.titleProps({
-      rightButtonProps: {
-        onClick: this.toggleInfo,
-      },
-      leftLink: '/bands'
-    });
+
     this.state = {
       showSummary: false,
       paused: true
@@ -75,6 +69,17 @@ class BandPage extends Component {
       })
     }, 750);
 
+  }
+
+  componentDidMount = () => {
+    this.props.title(this.props.data.markdownRemark.frontmatter.title);
+    this.props.titleProps({
+      rightButtonProps: {
+        onClick: this.toggleInfo,
+      },
+      leftLink: '/bands',
+      rightIconCSS: 'fas fa-info'
+    });
   }
 
   toggleInfo = () => {

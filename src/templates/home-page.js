@@ -8,30 +8,28 @@ import App from '../components/App';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import { Info, Stars, MicNone, Computer, } from '@material-ui/icons';
 
-import {AudioContext} from '../utils/music-player';
-
 class HomePage extends React.Component{
   state = {
     active: ''
   }
   componentDidMount = () => {
-    this.props.title('');
+    this.props.title('MAGWest 2018 - A Work In Progress');
+    this.props.titleProps({
+      disableLeftIcon: true
+    })
   }
 
   render() {
     const {data} = this.props;
-    return (
-      <AudioContext.Consumer>{value => {
-      return (<Section>
+    return (<Section>
         <Helmet title="Home" />
-        <App to="/faq" title="F.A.Q" />
-        <App to="/bands" title="Music" icon={MusicNoteIcon}/>
-        <App to="/about" title="About" icon={Info}/>
-        <App to="/codeofconduct" title="Code of Conduct"/>
-        <App to="/lan" iconProps={{style: {width: '90%', height: '100%', color: 'white'}}} title="LAN" icon={Computer}/>
-        <App to="https://west2018.uber.magfest.org/uber/panel_applications/index" target="_blank" title="Panels" icon={MicNone}/>
-        <App to="/guests" title="Guests" icon={Stars}/>
-      </Section>)}}</AudioContext.Consumer>
+        <App to="/about" title="About" icon={'fas fa-info'} />
+        <App to="https://west2018.uber.magfest.org/uber/panel_applications/index" target="_blank" title="Panels" icon={'fas fa-microphone'} />
+        <App to="/faq" title="F.A.Q" icon={'far fa-question-circle'}/>
+        <App to="/guests" title="Guests" icon={'far fa-star'} />
+        <App to="/bands" title="Music" icon={'fas fa-music'}/>
+        <App to="/codeofconduct" title="Code of Conduct" icon={'fas fa-book'}/>
+      </Section>
     );
   }
 }

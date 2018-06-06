@@ -3,20 +3,7 @@ import {Typography} from '@material-ui/core';
 import styled from '../utils/styled';
 import createFAQStyle from '../utils/faqStyles';
 
-const StyledTypography = styled(Typography)(theme => (createFAQStyle({
-  padding: '0 3px',
-  borderBottomLeftRadius: '0px',
-  backgroundColor: theme.palette.secondary.light,
-})));
 
-const Karet = styled('div')(theme => ({
-  width: '10px',
-  height: '10px',
-  backgroundColor: 'red',
-  position: 'absolute',
-  bottom: '0',
-  left: '0',
-}));
 
 class Answer extends Component {
   render() {
@@ -24,9 +11,15 @@ class Answer extends Component {
 
     // Set prop defaults
     props.component = props.component || 'div';
+    const StyledTypography = styled(Typography)(theme => (createFAQStyle({
+      padding: '0 3px',
+      borderBottomLeftRadius: '0px',
+      backgroundColor: theme.palette.secondary.light,
+      width: content.indexOf("img") != -1 ? '100%' : 'auto',
+    })));
 
     if (React.isValidElement(content)) {
-      return <StyledTypography {...props}>{content}<Karet></Karet></StyledTypography>;
+      return <StyledTypography {...props}>{content}</StyledTypography>;
     }
     return (
       <StyledTypography
