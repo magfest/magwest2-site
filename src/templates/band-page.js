@@ -59,16 +59,10 @@ class BandPage extends Component {
     super(props);
 
     this.state = {
-      showSummary: false,
-      paused: true
+      showSummary: false
     }
-    setTimeout(() => {
-      this.props.audio.updateSource(`/uploads/songs${this.props.location.pathname}song.mp3`);
-      this.setState({
-        paused: false,
-      })
-    }, 750);
 
+    this.props.audio.updateSource(`/uploads/songs${this.props.location.pathname}song.mp3`);
   }
 
   componentDidMount = () => {
@@ -90,9 +84,6 @@ class BandPage extends Component {
 
   togglePlay = () => {
     this.props.audio.togglePlay();
-    this.setState({
-      paused: !this.state.paused
-    })
 
   }
 
@@ -109,7 +100,7 @@ class BandPage extends Component {
       backgroundRepeat: 'no-repeat',
       backgroundImage: `url('${page.frontmatter.image}')`
     }));
-    let PlayingIcon = this.state.paused ? PlayArrow : Pause;
+    let PlayingIcon = this.props.audio.paused() ? PlayArrow : Pause;
     return (<Section>
         <Article style={{ position: 'relative'}} item xs={12} sm={8}>
           <BandInfo style={{ backgroundImage: page.frontmatter.image}}>

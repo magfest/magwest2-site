@@ -22,6 +22,8 @@ import { OrderedSet } from 'immutable';
 import TitleBar from '../components/TitleBar';
 import Link from '../components/Link';
 
+import ReactPlayer from 'react-player';
+
 const Main = styled('main')(theme => ({
   backgroundColor: theme.palette.background.default,
   borderBottom: `1px solid ${theme.palette.grey[200]}`,
@@ -82,6 +84,7 @@ class App extends Component {
       },
       title: '',
       titleProps: {},
+      playing: false,
 
     };
   }
@@ -195,6 +198,12 @@ class App extends Component {
     }, 300);
   }
 
+  delayedPlayAudio = () => {
+    setTimeout(() => {
+      this.playAudio();
+    }, 300);
+  }
+
   createAudioObject = () => {
     return {
       ref: this.audioRef,
@@ -215,34 +224,26 @@ class App extends Component {
   }
 
   playAudio = () => {
-    if(this.audioRef.current){
-      this.audioRef.current.play();
-    }
+    this.setState({
+      playing: true
+    });
 
   }
 
   pauseAudio = () => {
-    if(this.audioRef.current){
-      this.audioRef.current.pause();
-    }
+    this.setState({
+      playing: false
+    });
   }
 
   isPausedAudio = () => {
-    if(this.audioRef.current){
-      return this.audioRef.current.paused;
-    }
-    return null;
+    return !this.state.playing;
   }
 
   togglePlay = () => {
-    if(this.isPausedAudio()){
-      this.playAudio();
-      return true;
-    }
-    else{
-      this.pauseAudio();
-      return false;
-    }
+    this.setState({
+      playing: !this.state.playing
+    });
   }
 
   addMusicNotification (message, key) {
@@ -311,7 +312,7 @@ class App extends Component {
             { name: 'description', content: site.siteMetadata.description },
           ]}
         />
-        <audio onEnded={this.loadFromPlaylist} ref={this.audioRef} src={this.state.audioSource}/>
+        <ReactPlayer onError={this.delayedPlayAudio} onEnded={this.loadFromPlaylist} style={{ display: 'none'}} url={this.state.audioSource} playing={this.state.playing} />
         <Main>
 
         {this.state.title ? <TitleBar title={this.state.title} {...this.state.titleProps} /> : null }

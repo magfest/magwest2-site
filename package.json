@@ -26,6 +26,7 @@
     "netlify-identity-widget": "1.4.11",
     "react-helmet": "5.2.0",
     "react-notification": "^6.8.2",
+    "react-player": "^1.6.2",
     "react-smooth-marquee": "^1.0.0",
     "typeface-merriweather": "0.0.54",
     "typeface-open-sans": "0.0.54",
