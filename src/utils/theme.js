@@ -7,7 +7,6 @@ import grey from '@material-ui/core/colors/grey';
 
 const headlineFont = `Merriweather, Georgia, serif`;
 const bodyFont = `"Open Sans", Roboto, "Helvetica Neue", Arial, sans-serif`;
-console.log(grey);
 
 export default createMuiTheme({
   palette: {
