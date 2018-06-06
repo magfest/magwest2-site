@@ -1,5 +1,7 @@
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ReactPlayer from 'react-player';
 import Helmet from 'react-helmet';
 import netlifyIdentity from 'netlify-identity-widget';
 import { Grid } from '@material-ui/core';
@@ -21,9 +23,7 @@ import { NotificationStack, Notification } from 'react-notification';
 import { OrderedSet } from 'immutable';
 import TitleBar from '../components/TitleBar';
 import Link from '../components/Link';
-if (typeof window !== `undefined`) {
-  import ReactPlayer from 'react-player';
-}
+
 
 const Main = styled('main')(theme => ({
   backgroundColor: theme.palette.background.default,
@@ -247,6 +247,8 @@ class App extends Component {
     });
   }
 
+  updateProgress = (played, loaded, played)
+
   addMusicNotification (message, key) {
     return this.setState({
       notifications: this.state.notifications.add({
@@ -313,7 +315,8 @@ class App extends Component {
             { name: 'description', content: site.siteMetadata.description },
           ]}
         />
-        <ReactPlayer onError={this.delayedPlayAudio} onEnded={this.loadFromPlaylist} style={{ display: 'none'}} url={this.state.audioSource} playing={this.state.playing} />
+
+        {typeof window !== `undefined` ? <ReactPlayer onError={this.delayedPlayAudio} onEnded={this.loadFromPlaylist} style={{ display: 'none'}} url={this.state.audioSource} playing={this.state.playing} /> : null}
         <Main>
 
         {this.state.title ? <TitleBar title={this.state.title} {...this.state.titleProps} /> : null }
