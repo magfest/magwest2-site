@@ -21,8 +21,9 @@ import { NotificationStack, Notification } from 'react-notification';
 import { OrderedSet } from 'immutable';
 import TitleBar from '../components/TitleBar';
 import Link from '../components/Link';
-
-import ReactPlayer from 'react-player';
+if (typeof window !== `undefined`) {
+  import ReactPlayer from 'react-player';
+}
 
 const Main = styled('main')(theme => ({
   backgroundColor: theme.palette.background.default,
