@@ -7,7 +7,7 @@
   <div class="row" style="position: relative;">
     <a href="../" class="back-arrow"><i class="fas fa-arrow-left fa-3x"></i></a>
   </div>
-  {{ if .Title }}<h1><i id="playButton" onclick="togglePlay()" title="Play/Pause Music" class="fas fa-play"></i> {{ .Title }}&nbsp;<i title="Restart Song" onclick="resetAudio()" id="exciteButton" class="fas fa-question"></i></h1>{{ end }}
+  {{ if .Title }}<h1>{{ if .Params.audio }}<i id="playButton" onclick="togglePlay()" title="Play/Pause Music" class="fas fa-play"></i> {{ end }}{{ .Title }}{{ if .Params.audio }}&nbsp;<i title="Restart Song" onclick="resetAudio()" id="exciteButton" class="fas fa-question"></i>{{ end }}</h1>{{ end }}
 
   {{ if .Params.icons }}
   <div class="row center-align ">
