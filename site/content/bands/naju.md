@@ -1,6 +1,6 @@
 ---
 title: Naju
-image: /img/uploads/bands/naju_bio_pic.png
+image: /img/uploads/bands/naju_bio_pic.jpg
 audio: /img/uploads/bands/songs/naju/LifeForce.mp3
 publishDate: 2017-11-15T02:02:30.198Z
 icons:
