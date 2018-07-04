@@ -1,6 +1,6 @@
 <header class="no-print">
   <nav class="uk-navbar primary-color">
-              <ul class="uk-navbar-nav uk-visible-large">
+              <ul class="uk-navbar-nav uk-visible-large" style="width: 100%; height: 100%">
               <li class=""><a href="{{ .Site.BaseURL }}" class="uk-navbar-brand">{{ .Site.Title }}</a></li>
               {{ with .Site.GetPage "page" "pages/sidebar.md" }}
               {{ if .Params.items }}
@@ -18,13 +18,13 @@
                   <div class="uk-dropdown uk-dropdown-navbar">
                     <ul id="n{{.Identifier}}" class="uk-nav uk-nav-navbar">
                       {{ range $c := $p.Children }}
-                      <li><a href="{{$c.URL}}" class=""> {{ $c.Name }} </a></li>
+                      <li {{ if in $p.Identifier "cta"}}class="cta"{{end}}><a href="{{$c.URL}}" class=""> {{ $c.Name }} </a></li>
                       {{ end }}
                     </ul>
                   </div></li>
 
                 {{ else }}
-                <li><a href="{{$p.URL}}" class=""> {{ $p.Name }} </a></li>
+                <li {{ if in $p.Identifier "cta"}}class="cta right"{{end}}><a href="{{$p.URL}}" class="{{ $p.Identifier}}" {{ if in $p.URL "modal" }} data-uk-modal="{center: true}" target="_blank" {{ end }}> {{ $p.Name }} </a></li>
                 {{ end }}
               {{end}}
               </ul>

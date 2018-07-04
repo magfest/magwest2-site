@@ -2,7 +2,7 @@ $body-color: black;
 $option-color: #fae3fd;
 
 /* HEADER STYLING */
-  
+
 #nav {
   background-color: #f9c8d9;
   display: flex;
@@ -92,10 +92,15 @@ $option-color: #fae3fd;
   padding: 0 10px;
 }
 
-.cta button {
+.cta button, nav .cta a {
   background-color: #f9c8d9;
   box-shadow: 3px 3px 4px black;
   border: black 1px solid;
+}
+
+nav .cta.right {
+    float: right !important;
+    padding-right: 35px;
 }
 
 .options {

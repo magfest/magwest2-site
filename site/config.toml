@@ -1,6 +1,56 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "MAGWest 2018"
+title = "MAGWest ❤ 2018"
 
 [params]
   description = "& Knuckles"
+
+[menu]
+
+  [[menu.main]]
+    identifier="bands"
+    name="Bands"
+    url="/bands/"
+    weight = 1
+
+  [[menu.main]]
+    identifier="guests"
+    name="Guests"
+    url="/guests/"
+    weight = 1
+
+  [[menu.main]]
+    identifier="visualists"
+    name="Visualists"
+    url="/visualists/"
+    weight = 1
+
+  [[menu.main]]
+    identifier="about"
+    name="About"
+    url="/about/"
+    weight = 1
+
+  [[menu.main]]
+    identifier="faq"
+    name="FAQ"
+    url="/faq/"
+    weight = 1
+
+  [[menu.main]]
+    identifier="coc"
+    name="Code Of Conduct"
+    url="/code-of-conduct/"
+    weight = 1
+
+  [[menu.main]]
+    identifier="contact"
+    name="Contact"
+    url="#contact-modal"
+    weight = 1
+
+  [[menu.main]]
+    identifier="cta-buynow"
+    name="Buy Your Badge!"
+    url="https://west2018.uber.magfest.org/uber/preregistration/form"
+    weight = 0
