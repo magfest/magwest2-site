@@ -14,43 +14,49 @@ title = "MAGWest ❤ 2018"
     weight = 1
 
   [[menu.main]]
-    identifier="guests"
-    name="Guests"
-    url="/guests/"
-    weight = 1
-
-  [[menu.main]]
     identifier="visualists"
     name="Visualists"
     url="/visualists/"
-    weight = 1
+    weight = 2
 
   [[menu.main]]
-    identifier="about"
-    name="About"
-    url="/about/"
-    weight = 1
+    identifier="guests"
+    name="Guests"
+    url="/guests/"
+    weight = 3
 
   [[menu.main]]
     identifier="faq"
     name="FAQ"
     url="/faq/"
-    weight = 1
+    weight = 4
 
   [[menu.main]]
     identifier="coc"
     name="Code Of Conduct"
     url="/code-of-conduct/"
-    weight = 1
+    weight = 5
 
   [[menu.main]]
     identifier="contact"
     name="Contact"
     url="#contact-modal"
-    weight = 1
+    weight = 6
+
+  [[menu.main]]
+    identifier="about"
+    name="About"
+    url="/about/"
+    weight = 0
 
   [[menu.main]]
     identifier="cta-buynow"
     name="Buy Your Badge!"
     url="https://west2018.uber.magfest.org/uber/preregistration/form"
     weight = 0
+
+  [[menu.main]]
+    identifier="cta-booknow"
+    name="Book Your Hotel"
+    url="https://aws.passkey.com/go/magwest2018"
+    weight = 1
