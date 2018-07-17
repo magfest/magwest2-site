@@ -26,22 +26,34 @@ title = "MAGWest ❤ 2018"
     weight = 3
 
   [[menu.main]]
+    identifier="arcade"
+    name="Arcade"
+    url="/arcades/"
+    weight = 4
+
+  [[menu.main]]
+    identifier="consoles"
+    name="Consoles"
+    url="/consoles/"
+    weight = 5
+    
+  [[menu.main]]
     identifier="faq"
     name="FAQ"
     url="/faq/"
-    weight = 4
+    weight = 5
 
   [[menu.main]]
     identifier="coc"
     name="Code Of Conduct"
     url="/code-of-conduct/"
-    weight = 5
+    weight = 7
 
   [[menu.main]]
     identifier="contact"
     name="Contact"
     url="#contact-modal"
-    weight = 6
+    weight = 8
 
   [[menu.main]]
     identifier="about"
