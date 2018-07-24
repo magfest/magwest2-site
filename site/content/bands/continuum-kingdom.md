@@ -2,6 +2,7 @@
 title: Continuum Kingdom
 image: /img/uploads/bands/continuum_kingdom_bio_pic.jpeg
 publishDate: 2017-11-15T02:02:30.198Z
+audio: /img/uploads/bands/songs/contiuum_kingdom/Continuum Kingdom - Girl! ( ft. Terror Pigeon! ).mp3
 icons:
   - icon: fab fa-facebook
     title: Facebook
