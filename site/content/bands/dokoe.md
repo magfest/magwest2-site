@@ -2,6 +2,7 @@
 title: Dokoe
 image: /img/uploads/bands/dokoe_bio_pic.jpg
 publishDate: 2017-22-15T02:02:30.198Z
+audio: /img/uploads/bands/songs/dokoe/dokoe - Dokoe demo - 01 Rewind To Infinite.mp3
 icons:
   - icon: fab fa-facebook
     title: Facebook
