@@ -15,3 +15,5 @@ icons:
     url: 'https://soundcloud.com/mikebleeds'
 ---
 (mike)Bleeds from San Diego began making chiptune music in 2007 and has been playing numerous gigs throughout California since. With 2 gameboys running LSDJ, he produces tracks ranging from influences of drum and bass, hard trance, and happy hardcore. Bleeds’ style and composition has known to be dirty and raw combined with pent up energy of dance tracks that will get you moving.
+
+Visuals Provided By: [Neon Death Cat](../../visualists/neon-death-cat/)

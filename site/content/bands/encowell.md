@@ -15,3 +15,5 @@ icons:
     url: 'https://twitter.com/ENCowell'
 ---
 Combining the past with the present, E.N.Cowell forges something new with blazing synths, 16-bit/8-bit crunch, and cinematic flare. The end result is dark and heavy beats with hypnotic power that is sure to make you move.
+
+Visuals Provided By: [Starpause](../../visualists/starpause/)

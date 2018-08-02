@@ -9,3 +9,5 @@ icons:
     url: 'https://tnwm.bandcamp.com/'
 ---
 The Night Wet Met (FKA The Kevyn Gnartinez Band) are four dorks who make music you might like.
+
+Visuals Provided By: [VISMANCIENNE](../../visualists/vismancienne/) and [Noukon](../../visualists/noukon/)

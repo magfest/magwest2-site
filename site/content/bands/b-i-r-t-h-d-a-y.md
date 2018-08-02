@@ -24,3 +24,5 @@ B/I/R/T/H/D/A/Y formed in the fall of 2016 and is comprised of Nick Galvez and I
 Their debut album, “Wolfdads”, has received critical acclaim for running the gamut from progressive rock, to electro, to jazz fusion and even chiptunes.
 
 Using a combination of synthesizers, guitars, and raw nerd power, B/I/R/T/H/D/A/Y is here to take you to the future the past promised you.
+
+Visuals provided by: [Noukon](../../visualists/noukon/)

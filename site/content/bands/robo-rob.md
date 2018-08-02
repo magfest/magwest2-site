@@ -21,3 +21,5 @@ icons:
     url: 'http://bit.ly/RoboRobSpotify'
 ---
 RoboRob is a multi-genre producer/DJ currently based out of Dallas, TX. He's successfully remixed music from video games like Overwatch, Donkey Kong Country, Undertale, Chrono Trigger and has released tracks on labels like Tiny Waves, Gamechops, Gravitas Recordings, Chiptunes = WIN, and Damn Son Music. He has toured the nation, played multiple music and anime conventions, raves, and has shared stage with artists such as: Tiesto, Benny Benassi, Excision, Global Deejays, Hyper Potions, Varien, Joyryde, and more. Find his music on Spotify, iTunes, Bandcamp, and Soundcloud.
+
+Visuals Provided By: [Neon Death Cat](../../visualists/neon-death-cat/)
