@@ -72,3 +72,9 @@ title = "MAGWest ❤ 2018"
     name="Book Your Hotel"
     url="https://aws.passkey.com/go/magwest2018"
     weight = 1
+
+  [[menu.main]]
+    identifier="cta-schedule"
+    name="Schedule"
+    url="https://west2018.uber.magfest.org/uber/schedule/"
+    weight = -10
