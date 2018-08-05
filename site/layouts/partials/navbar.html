@@ -24,7 +24,7 @@
                   </div></li>
 
                 {{ else }}
-                <li {{ if in $p.Identifier "cta"}}class="cta right"{{end}}><a href="{{$p.URL}}" class="{{ $p.Identifier}}" {{ if in $p.URL "modal" }} data-uk-modal="{center: true}" target="_blank" {{ end }}> {{ $p.Name }} </a></li>
+                <li {{ if in $p.Identifier "cta"}}class="cta right"{{end}}><a href="{{$p.URL}}" class="{{ $p.Identifier}}" {{ if in $p.URL "modal" }} target="_blank" {{ end }}> {{ $p.Name }} </a></li>
                 {{ end }}
               {{end}}
               </ul>
