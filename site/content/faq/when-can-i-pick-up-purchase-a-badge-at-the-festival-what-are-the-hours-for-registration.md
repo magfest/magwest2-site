@@ -4,7 +4,7 @@ title: >-
   Registration?
 weight: '860'
 ---
-Registration opens each morning, starting on Friday, at 9:30 AM and will close each night at 1:00 AM (and 3:00 PM on Sunday.) Your badge may be picked up or purchased at Registration at any time we are open.
+Registration opens each morning, starting on Friday, at 9:00 AM and will close each night at 12:00 AM (and 1:00 PM on Sunday.) Your badge may be picked up or purchased at Registration at any time we are open.
 
 
 
